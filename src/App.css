@@ -1,38 +1,72 @@
-.App {
+.logo-container {
+  margin-left: 4rem;
+}
+
+figure {
+  width: fit-content;
   text-align: center;
+  margin: 2rem -2rem 0 -2.5rem;
+}
+figure img {
+  max-height: 130px;
+  max-width: 180px;
+}
+figure figcaption {
+  font-size: 0.8rem;
+  width: 65%;
+  margin: -1rem auto auto auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-wrapper {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-wrapper .line {
+  rotate: 90deg;
+  margin-right: 0.5rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-wrapper .line::after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background-color: black;
+}
+.nav-wrapper nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.nav-wrapper nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.nav-wrapper nav .internal-link {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-wrapper nav .internal-link li {
+  padding: 2.5rem;
+  rotate: -90deg;
+}
+.nav-wrapper nav .internal-link .item {
+  font-size: x-large;
+  padding: 1rem;
+}
+.nav-wrapper nav .internal-link .item i {
+  rotate: 90deg;
 }
 
-.App-link {
-  color: #61dafb;
+#home {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carousel-container {
+  width: 900px;
+  height: 400px;
+  background-color: gray;
 }
+
+/*# sourceMappingURL=App.css.map */

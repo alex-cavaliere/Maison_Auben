@@ -1,0 +1,67 @@
+
+.logo-container{
+    margin-left: 4rem;
+}
+figure{
+    width: fit-content;
+    text-align: center;
+    margin: 2rem -2rem 0 -2.5rem;
+    & img{
+        max-height: 130px;
+        max-width: 180px;
+    }
+    & figcaption{
+        font-size: 0.8rem;
+        width: 65%;
+        margin: -1rem auto auto auto;
+    }
+}
+.nav-wrapper{
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    & .line{
+        rotate: 90deg;
+        margin-right: 0.5rem;
+        &::after{
+            content: '';
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            background-color: black;
+        }
+    }
+    & nav{
+        display: flex;
+        flex-direction: column;
+        & ul{
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+        }
+        & .internal-link{
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+            & li{
+                padding: 2.5rem;
+                rotate: -90deg;
+            }
+            & .item{
+                font-size: x-large;
+                padding: 1rem;
+                & i{
+                    rotate: 90deg;
+                }
+            }
+        } 
+    }
+}
+#home{
+    display: flex;
+}
+.carousel-container{
+    width: 900px;
+    height: 400px;
+    background-color: gray;
+}
