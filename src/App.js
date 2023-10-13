@@ -22,13 +22,14 @@ function App() {
               <li className='item'><span><i class="fa-brands fa-pinterest"></i></span></li>
               <li className='item'><span><i class="fa-brands fa-instagram"></i></span></li>
               <li className='item'><span><i class="fa-brands fa-facebook-f"></i></span></li>
+              <li className='line'></li>
             </ul>
           </nav>
         </aside>
         <section>
-        <div className='carousel-container'>
-
-        </div>
+          <div className='carousel-container'>
+            <div className='carousel'></div>
+          </div>
         </section>
       </div>
     </div>

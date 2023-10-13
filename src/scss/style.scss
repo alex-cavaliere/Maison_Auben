@@ -1,38 +1,40 @@
 
-.logo-container{
-    margin-left: 4rem;
+header{
+    position: relative;
 }
+
 figure{
-    width: fit-content;
+    width: min-content;
     text-align: center;
-    margin: 2rem -2rem 0 -2.5rem;
+    margin: 1rem 0 0 5rem;
     & img{
-        max-height: 130px;
-        max-width: 180px;
+        max-height: 100px;
+        max-width: 150px;
     }
     & figcaption{
-        font-size: 0.8rem;
-        width: 65%;
+        font-size: 0.6rem;
+        width: 85%;
         margin: -1rem auto auto auto;
     }
 }
 .nav-wrapper{
     display: flex;
-    width: 20%;
     flex-direction: column;
     & .line{
         rotate: 90deg;
-        margin-right: 0.5rem;
+        margin: 3rem 0.2rem 0 0;
         &::after{
             content: '';
             display: inline-block;
-            width: 100px;
-            height: 1px;
+            vertical-align: middle;
+            width: 120px;
+            height: 0.5px;
             background-color: black;
         }
     }
     & nav{
         display: flex;
+        width: 20vw;
         flex-direction: column;
         & ul{
             display: flex;
@@ -40,19 +42,18 @@ figure{
             list-style-type: none;
         }
         & .internal-link{
-            width: 200px;
+            margin: 0 0 0 -3.5rem;
             display: flex;
-            justify-content: space-between;
-            & li{
-                padding: 2.5rem;
+            justify-content: space-around;
+            & li:not(.item){
+                text-align: center;
+                padding: 2.5rem 0rem 2.5rem 0.5rem;
                 rotate: -90deg;
             }
             & .item{
                 font-size: x-large;
-                padding: 1rem;
-                & i{
-                    rotate: 90deg;
-                }
+                text-align: center;
+              
             }
         } 
     }
@@ -60,8 +61,23 @@ figure{
 #home{
     display: flex;
 }
+section{
+    width: 80vw;
+}
 .carousel-container{
-    width: 900px;
-    height: 400px;
-    background-color: gray;
+    & .carousel{
+        width: 90%;
+        height: 550px;
+        background-color: gray;
+    }
+}
+
+@media screen and (max-width:800px){
+
+    figure{
+        margin-left: 1rem;
+        & figcaption{
+            visibility: hidden;
+        }
+    }
 }
