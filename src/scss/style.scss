@@ -1,15 +1,22 @@
 
 header{
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 92%;
+    & .logo-container{
+        width: fit-content;
+    }
 }
 
 figure{
     width: min-content;
     text-align: center;
-    margin: 1rem 0 0 5rem;
+    margin: 1rem 0 0 4rem;
     & img{
-        max-height: 100px;
-        max-width: 150px;
+        max-height: 120px;
+        max-width: 170px;
     }
     & figcaption{
         font-size: 0.6rem;
@@ -20,14 +27,16 @@ figure{
 .nav-wrapper{
     display: flex;
     flex-direction: column;
-    & .line{
-        rotate: 90deg;
-        margin: 3rem 0.2rem 0 0;
+    & .line-1{
+        margin: 1rem 0.2rem 0 0;
+        &:nth-child(3){
+            display: none;
+        }
         &::after{
             content: '';
             display: inline-block;
             vertical-align: middle;
-            width: 120px;
+            width: 98px;
             height: 0.5px;
             background-color: black;
         }
@@ -49,6 +58,9 @@ figure{
                 text-align: center;
                 padding: 2.5rem 0rem 2.5rem 0.5rem;
                 rotate: -90deg;
+            }
+            & li:nth-child(2){
+                display: none;
             }
             & .item{
                 font-size: x-large;
@@ -74,10 +86,44 @@ section{
 
 @media screen and (max-width:800px){
 
+    .header-sub{
+        display: none;
+    }
     figure{
         margin-left: 1rem;
+        & img{
+            height: 5rem;
+            width: 7rem;
+        }
         & figcaption{
             visibility: hidden;
         }
     }
+}
+@media screen and (max-width: 450px) {
+    .carousel-container{
+        & .carousel{
+            height: 300px;
+        }
+    }   
+    .nav-wrapper{
+        display: flex;
+        flex-direction: column;
+        & .line-1{
+            &:nth-child(3){
+                display: block;
+            }
+        }
+        & nav{
+            & .internal-link{
+                & li:not(.item, .line-1){
+                    display: none;
+                }
+                & li:nth-child(2){
+                    display: block;
+                }
+            } 
+        }
+    }
+   
 }

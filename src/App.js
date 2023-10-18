@@ -10,19 +10,23 @@ function App() {
             <figcaption>ARCHITECTES D'INTÉRIEUR & DÉCORATEURS</figcaption>
           </figure>
         </div>
+        <div className='header-sub'>
+          <p>AUDREY & BENJAMIN</p>
+        </div>
       </header>
       <div id="home">
         <aside className='nav-wrapper'>
           <nav>
             <ul className='internal-link'>
-              <li className='line'></li>
+              <li className='line-1'></li>
+              <li>PROJET</li>
+              <li className='line-1'></li>
               <li>PROJETS</li>
               <li>L'AGENCE</li>
               <li>CONTACT</li>
               <li className='item'><span><i class="fa-brands fa-pinterest"></i></span></li>
               <li className='item'><span><i class="fa-brands fa-instagram"></i></span></li>
               <li className='item'><span><i class="fa-brands fa-facebook-f"></i></span></li>
-              <li className='line'></li>
             </ul>
           </nav>
         </aside>
