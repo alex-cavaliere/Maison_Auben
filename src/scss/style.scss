@@ -1,4 +1,9 @@
-
+#main{
+    #agence{
+        display: flex;
+        margin-top: 3rem;
+    }
+}
 header{
     position: relative;
     display: flex;
@@ -13,81 +18,127 @@ header{
 figure{
     width: min-content;
     text-align: center;
-    margin: 1rem 0 0 4rem;
+    margin: 1rem 0 0 4.5rem;
     & img{
         max-height: 120px;
         max-width: 170px;
     }
     & figcaption{
         font-size: 0.6rem;
-        width: 85%;
+        width: 90%;
         margin: -1rem auto auto auto;
     }
 }
 .nav-wrapper{
-    display: flex;
-    flex-direction: column;
-    & .line-1{
-        margin: 1rem 0.2rem 0 0;
-        &:nth-child(3){
-            display: none;
-        }
+    position: relative;
+    & ul{
+        margin: 0 0 0 -2.5rem;
+    }
+    & .section-title{
+        position: absolute;
+        left: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: max-content;
+        font-size: 35px;
+        letter-spacing: 0.25em;   
+        font-weight: 100;
+        margin: 0;
+        background-color: white;
+        z-index: 9999;
+    }
+    & .line-1::after{
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.5px;
+        height: 98px;
+        background-color: black;
+    }
+    & .line-2{
+        width: 18vw;
+        height: 400px;
         &::after{
             content: '';
             display: inline-block;
             vertical-align: middle;
-            width: 98px;
-            height: 0.5px;
+            width: 0.5px;
+            height: 100%;
             background-color: black;
         }
     }
-    & nav{
-        display: flex;
-        width: 20vw;
-        flex-direction: column;
-        & ul{
-            display: flex;
-            flex-direction: column;
-            list-style-type: none;
+    & .line-1, .line-2{
+        text-align: center;
+        padding: 1rem 0rem 1.5rem 0.5rem;
+        &.hidden{
+            display: none;
         }
-        & .internal-link{
-            margin: 0 0 0 -3.5rem;
-            display: flex;
-            justify-content: space-around;
-            & li:not(.item){
-                text-align: center;
-                padding: 2.5rem 0rem 2.5rem 0.5rem;
-                rotate: -90deg;
-            }
-            & li:nth-child(2){
-                display: none;
-            }
-            & .item{
-                font-size: x-large;
-                text-align: center;
-              
-            }
-        } 
     }
 }
+.internal-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style-type: none;
+    width: 20vw;
+    & h1, li:not(.item):not(.line-1){
+        text-align: center;
+        padding: 2.5rem 0rem 2.5rem 0.5rem;
+        rotate: -90deg;
+    }
+    & .nav-hidden{
+        display: none;
+    }
+    & .item{
+        font-size: x-large;
+        text-align: center;
+        padding: 0.5rem 0 0.5rem 0;
+    }
+} 
 #home{
     display: flex;
 }
-section{
-    width: 80vw;
-}
 .carousel-container{
+    margin-bottom: 2rem;
+    width: 100%;
     & .carousel{
         width: 90%;
         height: 550px;
         background-color: gray;
     }
 }
+@media screen and (max-width:1440px) {
+    .nav-wrapper{
+        & .section-title{
+            font-size: 2rem;
+            left: -1rem;
+        }
+    }
+}
+@media screen and (max-width:1255px) {
+    .nav-wrapper{
+        & .section-title{
+            left: -1.5rem;
+        }
+    }
+}
 
+@media screen and (max-width:998px) {
+    .nav-wrapper{
+        & .section-title{
+            left: -3rem;
+        }
+    }
+}
 @media screen and (max-width:800px){
 
     .header-sub{
         display: none;
+    }
+    #agence{
+        .section-title{
+            left: -4rem;
+        }
     }
     figure{
         margin-left: 1rem;
@@ -99,18 +150,11 @@ section{
             visibility: hidden;
         }
     }
-}
-@media screen and (max-width: 450px) {
-    .carousel-container{
-        & .carousel{
-            height: 300px;
-        }
-    }   
     .nav-wrapper{
         display: flex;
         flex-direction: column;
         & .line-1{
-            &:nth-child(3){
+            &.hidden{
                 display: block;
             }
         }
@@ -125,5 +169,24 @@ section{
             } 
         }
     }
-   
+}
+@media screen and (max-width:580px) {
+    #agence{
+        & .section-title{
+            left: -5rem;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .carousel-container{
+        & .carousel{
+            height: 200px;
+        }
+    }   
+    #agence{
+        & .section-title{
+            font-size: 1.5rem;
+            left: -4.5rem;
+        }
+    }
 }

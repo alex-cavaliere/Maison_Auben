@@ -1,3 +1,8 @@
+#main #agence {
+  display: flex;
+  margin-top: 3rem;
+}
+
 header {
   position: relative;
   display: flex;
@@ -12,7 +17,7 @@ header .logo-container {
 figure {
   width: min-content;
   text-align: center;
-  margin: 1rem 0 0 4rem;
+  margin: 1rem 0 0 4.5rem;
 }
 figure img {
   max-height: 120px;
@@ -20,73 +25,114 @@ figure img {
 }
 figure figcaption {
   font-size: 0.6rem;
-  width: 85%;
+  width: 90%;
   margin: -1rem auto auto auto;
 }
 
 .nav-wrapper {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
-.nav-wrapper .line-1 {
-  margin: 1rem 0.2rem 0 0;
+.nav-wrapper ul {
+  margin: 0 0 0 -2.5rem;
 }
-.nav-wrapper .line-1:nth-child(3) {
-  display: none;
+.nav-wrapper .section-title {
+  position: absolute;
+  left: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: max-content;
+  font-size: 35px;
+  letter-spacing: 0.25em;
+  font-weight: 100;
+  margin: 0;
+  background-color: white;
+  z-index: 9999;
 }
 .nav-wrapper .line-1::after {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  width: 98px;
-  height: 0.5px;
+  width: 0.5px;
+  height: 98px;
   background-color: black;
 }
-.nav-wrapper nav {
-  display: flex;
-  width: 20vw;
-  flex-direction: column;
+.nav-wrapper .line-2 {
+  width: 18vw;
+  height: 400px;
 }
-.nav-wrapper nav ul {
+.nav-wrapper .line-2::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.5px;
+  height: 100%;
+  background-color: black;
+}
+.nav-wrapper .line-1, .nav-wrapper .line-2 {
+  text-align: center;
+  padding: 1rem 0rem 1.5rem 0.5rem;
+}
+.nav-wrapper .line-1.hidden, .nav-wrapper .line-2.hidden {
+  display: none;
+}
+
+.internal-link {
   display: flex;
   flex-direction: column;
-  list-style-type: none;
-}
-.nav-wrapper nav .internal-link {
-  margin: 0 0 0 -3.5rem;
-  display: flex;
   justify-content: space-around;
+  list-style-type: none;
+  width: 20vw;
 }
-.nav-wrapper nav .internal-link li:not(.item) {
+.internal-link h1, .internal-link li:not(.item):not(.line-1) {
   text-align: center;
   padding: 2.5rem 0rem 2.5rem 0.5rem;
   rotate: -90deg;
 }
-.nav-wrapper nav .internal-link li:nth-child(2) {
+.internal-link .nav-hidden {
   display: none;
 }
-.nav-wrapper nav .internal-link .item {
+.internal-link .item {
   font-size: x-large;
   text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 #home {
   display: flex;
 }
 
-section {
-  width: 80vw;
+.carousel-container {
+  margin-bottom: 2rem;
+  width: 100%;
 }
-
 .carousel-container .carousel {
   width: 90%;
   height: 550px;
   background-color: gray;
 }
 
+@media screen and (max-width: 1440px) {
+  .nav-wrapper .section-title {
+    font-size: 2rem;
+    left: -1rem;
+  }
+}
+@media screen and (max-width: 1255px) {
+  .nav-wrapper .section-title {
+    left: -1.5rem;
+  }
+}
+@media screen and (max-width: 998px) {
+  .nav-wrapper .section-title {
+    left: -3rem;
+  }
+}
 @media screen and (max-width: 800px) {
   .header-sub {
     display: none;
+  }
+  #agence .section-title {
+    left: -4rem;
   }
   figure {
     margin-left: 1rem;
@@ -98,16 +144,11 @@ section {
   figure figcaption {
     visibility: hidden;
   }
-}
-@media screen and (max-width: 450px) {
-  .carousel-container .carousel {
-    height: 300px;
-  }
   .nav-wrapper {
     display: flex;
     flex-direction: column;
   }
-  .nav-wrapper .line-1:nth-child(3) {
+  .nav-wrapper .line-1.hidden {
     display: block;
   }
   .nav-wrapper nav .internal-link li:not(.item, .line-1) {
@@ -115,6 +156,20 @@ section {
   }
   .nav-wrapper nav .internal-link li:nth-child(2) {
     display: block;
+  }
+}
+@media screen and (max-width: 580px) {
+  #agence .section-title {
+    left: -5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .carousel-container .carousel {
+    height: 200px;
+  }
+  #agence .section-title {
+    font-size: 1.5rem;
+    left: -4.5rem;
   }
 }
 
