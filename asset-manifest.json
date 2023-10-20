@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Maison_Auben/static/css/main.2f81dd5a.css",
-    "main.js": "/Maison_Auben/static/js/main.fd105a25.js",
+    "main.css": "/Maison_Auben/static/css/main.6a47e2c1.css",
+    "main.js": "/Maison_Auben/static/js/main.9c344ea6.js",
     "static/js/787.7367cb7e.chunk.js": "/Maison_Auben/static/js/787.7367cb7e.chunk.js",
     "index.html": "/Maison_Auben/index.html",
-    "main.2f81dd5a.css.map": "/Maison_Auben/static/css/main.2f81dd5a.css.map",
-    "main.fd105a25.js.map": "/Maison_Auben/static/js/main.fd105a25.js.map",
+    "main.6a47e2c1.css.map": "/Maison_Auben/static/css/main.6a47e2c1.css.map",
+    "main.9c344ea6.js.map": "/Maison_Auben/static/js/main.9c344ea6.js.map",
     "787.7367cb7e.chunk.js.map": "/Maison_Auben/static/js/787.7367cb7e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f81dd5a.css",
-    "static/js/main.fd105a25.js"
+    "static/css/main.6a47e2c1.css",
+    "static/js/main.9c344ea6.js"
   ]
 }
