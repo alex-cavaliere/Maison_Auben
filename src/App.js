@@ -1,7 +1,31 @@
 import './App.css';
 import Header from './components/Header';
+import {useEffect, useState, useRef} from 'react';
 
 function App() {
+  const [data, setData] = useState();
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/data.json`)
+    .then(res => res.json())
+    .then(data => setData(data))
+    .catch(err => console.log(err))
+  },[])
+  let maisonParags;
+  let etapesParags;
+  if(data){
+    const descriptions = data.articles.descriptions
+    descriptions.forEach(description => {
+      if(description.maisonAuben){
+        maisonParags = description.maisonAuben.split('.').map((text, index) => {
+          return <span key={index}>{text}.<br/></span>
+        })
+      }else if(description.etapes){
+        etapesParags = description.etapes.split('.').map((text, index) => {
+          return <span key={index}>{text}.<br/></span>
+        })
+      }
+    })
+  }
   return (
     <div id="main">
       <Header />
@@ -26,20 +50,28 @@ function App() {
         </div>
       </section>
       <section id="agence">
-        <aside className='nav-wrapper'>
-            <div className='internal-link'>
-              <div className='line-2'></div>
-              <h1 className='section-title'>L'AGENCE</h1>
-              <div className='line-2'></div>
+        <div className='agence-article'>
+          <aside className='nav-wrapper'>
+              <div className='internal-link'>
+                <div className='line-2'></div>
+                <h1 className='section-title'>L'AGENCE</h1>
+                <div className='line-2'></div>
+              </div>
+          </aside>
+          <article className='description-container'>
+            <div className='description'>
+              <div className='text'>
+                <h2 className='article-head'>MAISON AUBÈN</h2>
+                <p className='article-text'>{maisonParags}</p>
+              </div>
+              <img src='https://static.wixstatic.com/media/3f174c_c1a61b1d06c2414eaaa1c874b28cb7a0~mv2.jpg/v1/fill/w_390,h_489,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/33dfe90304eb8b9d04849e26505b4016.jpg' alt='Auben'/>
             </div>
-        </aside>
-        <article className='agence-article'>
-          <div className='text'>
-            <h2 className='article-head'>MAISON AUBÈN</h2>
-            <p className='article-text'>Ad esse proident aute minim anim laborum do excepteur laborum sunt anim dolor magna. Dolor ullamco amet anim velit in nostrud mollit quis minim et proident irure nostrud. Veniam sit voluptate mollit qui est nostrud commodo aute duis fugiat id. Consequat deserunt pariatur sit ea officia.Ad dolore ullamco occaecat eiusmod veniam. Do culpa occaecat tempor commodo tempor enim in ipsum eu irure nisi velit mollit veniam. Veniam sunt adipisicing dolor nisi officia anim laborum culpa consectetur non ea reprehenderit officia do. Aliqua amet irure irure id adipisicing irure cillum dolor sunt nisi dolor voluptate. Occaecat anim anim amet ut. Minim enim velit exercitation aliqua cillum ullamco Lorem duis. Quis aliquip mollit tempor proident non culpa velit.Ad esse proident aute minim anim laborum do excepteur laborum sunt anim dolor magna. Dolor ullamco amet anim velit in nostrud mollit quis minim et proident irure nostrud. Veniam sit voluptate mollit qui est nostrud commodo aute duis fugiat id. Consequat deserunt pariatur sit ea officia.Ad dolore ullamco occaecat eiusmod veniam. Do culpa occaecat tempor commodo tempor enim in ipsum eu irure nisi velit mollit veniam. Veniam sunt adipisicing dolor nisi officia anim laborum culpa consectetur non ea reprehenderit officia do. Aliqua amet irure irure id adipisicing irure cillum dolor sunt nisi dolor voluptate. Occaecat anim anim amet ut. Minim enim velit exercitation aliqua cillum ullamco Lorem duis. Quis aliquip mollit tempor proident non culpa velit.</p>
-          </div>
-          <img src='https://static.wixstatic.com/media/3f174c_c1a61b1d06c2414eaaa1c874b28cb7a0~mv2.jpg/v1/fill/w_390,h_489,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/33dfe90304eb8b9d04849e26505b4016.jpg' alt='Auben'/>
-        </article>
+            <div className='steps'>
+              <h3>LES DIFFÉRENTES ÉTAPES</h3>
+              <p className='steps-description'>{etapesParags}</p>
+            </div>
+          </article>
+        </div>
       </section>
     </div>
   );
