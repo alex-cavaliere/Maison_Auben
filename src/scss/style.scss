@@ -3,6 +3,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 3rem;
+        margin-bottom: 3rem;
         & article{
             width: 72%;
             & h2, h3{
@@ -20,6 +21,19 @@
             & .steps{
                 & .steps-description{
                     white-space: pre-wrap;
+                }
+                & .card-wrapper{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-top: 2rem;
+                    & .card-container{
+                        margin: 1rem auto 1rem auto;
+                    }
+                    & .arrow{
+                        font-size: xx-large;
+                    }
                 }
             }
             & .text{
@@ -62,7 +76,7 @@ figure{
     position: relative;
     width: fit-content;
     & ul{
-        margin: 0 0 0 -2.5rem;
+        margin: 0 0 0 -3rem;
     }
     & .section-title{
         position: absolute;
@@ -87,7 +101,7 @@ figure{
     }
     & .line-2{
         width: 18vw;
-        height: 400px;
+        height: 100%;
         &::after{
             content: '';
             display: inline-block;
@@ -99,7 +113,7 @@ figure{
     }
     & .line-1, .line-2{
         text-align: center;
-        padding: 1rem 0rem 1.5rem 0.5rem;
+        padding: 1rem 0rem 1.5rem -0.5rem;
         &.hidden{
             display: none;
         }
@@ -110,7 +124,9 @@ figure{
     flex-direction: column;
     justify-content: space-around;
     list-style-type: none;
+    margin-top: -3rem;
     width: 20vw;
+    height: 100%;
     & h1, li:not(.item):not(.line-1){
         text-align: center;
         padding: 2.5rem 0rem 2.5rem 0.5rem;
@@ -127,6 +143,7 @@ figure{
 } 
 #home{
     display: flex;
+    position: relative;
 }
 .carousel-container{
     margin-bottom: 2rem;
@@ -147,9 +164,16 @@ figure{
     }
 }
 @media screen and (max-width:1255px) {
+    #agence{
+        & .agence-article{
+            & .arrow{
+                visibility: hidden;
+            }
+        }
+    }
     .nav-wrapper{
         & .section-title{
-            left: -1.5rem;
+            left: -2rem;
         }
     }
 }
@@ -175,7 +199,7 @@ figure{
     }
     .nav-wrapper{
         & .section-title{
-            left: -3rem;
+            left: -3.3rem;
         }
     }
 }
@@ -219,7 +243,7 @@ figure{
         }
     }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
     #main{
         #agence{
             & .agence-article{
@@ -229,25 +253,52 @@ figure{
             }
         }
     }
-}
-
-@media screen and (max-width:580px) {
     #agence{
         & .section-title{
             left: -5rem;
         }
     }
 }
+
+@media screen and (max-width:580px) {
+    #agence{
+        & .section-title{
+            left: -5.5rem;
+        }
+    }
+}
 @media screen and (max-width: 450px) {
     .carousel-container{
         & .carousel{
-            height: 200px;
+            height: 300px;
         }
     }   
+    .internal-link{
+        margin-top: 5rem;
+        & .item{
+            margin-left: 0.3rem;
+        }
+    }
     #agence{
+        & .agence-article{
+            margin-top: -8rem;
+        }
         & .section-title{
-            font-size: 1.5rem;
-            left: -4.5rem;
+            font-size: 1.1rem;
+            padding: 0 1rem 0 1rem;
+            left: -2.4rem;
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    #agence{
+        & .agence-article{
+            margin-top: -8rem;
+        }
+        & .section-title{
+            font-size: 1.1rem;
+            padding: 0 1rem 0 1rem;
+            left: -3rem;
         }
     }
 }
