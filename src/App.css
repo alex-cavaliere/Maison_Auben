@@ -131,7 +131,7 @@ figure figcaption {
 .internal-link h1, .internal-link li:not(.item):not(.line-1) {
   text-align: center;
   padding: 2.5rem 0rem 2.5rem 0.5rem;
-  rotate: -90deg;
+  transform: rotate(-90deg);
 }
 .internal-link .nav-hidden {
   display: none;
