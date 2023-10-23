@@ -8,9 +8,11 @@
             width: 72%;
             & h2, h3{
                 margin-top: 0;
-                margin-bottom: 6rem;
+                margin-bottom: 5rem;
                 font-size: 25px;
                 font-weight: 100;
+            }
+            & h3{
                 max-width: 70%;
             }
         }
@@ -62,15 +64,15 @@ header{
 figure{
     width: min-content;
     text-align: center;
-    margin: 1rem 0 0 4.5rem;
+    margin: 1rem 0 0 4rem;
     & img{
         max-height: 120px;
         max-width: 170px;
     }
     & figcaption{
         font-size: 0.6rem;
-        width: 90%;
-        margin: -1rem auto auto auto;
+        width: 95%;
+        margin: -1rem auto auto 0.5rem;
     }
 }
 .nav-wrapper{
@@ -96,7 +98,7 @@ figure{
         content: '';
         display: inline-block;
         vertical-align: middle;
-        width: 0.5px;
+        width: 0.8px;
         height: 98px;
         background-color: black;
     }
@@ -107,7 +109,7 @@ figure{
             content: '';
             display: inline-block;
             vertical-align: middle;
-            width: 0.5px;
+            width: 0.8px;
             height: 100%;
             background-color: black;
         }
@@ -128,8 +130,14 @@ figure{
     margin-top: -3rem;
     width: 20vw;
     height: 100%;
+    & a{
+        margin: auto;
+        text-decoration: none;
+        color: inherit;
+    }
     & h1, li:not(.item):not(.line-1){
         text-align: center;
+        width: max-content;
         padding: 2.5rem 0rem 2.5rem 0.5rem;
         transform: rotate(-90deg);
     }
@@ -242,6 +250,7 @@ figure{
                 }
                 & li:nth-child(2){
                     display: block;
+                    width: 100%;
                 }
             } 
         }
