@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Maison_Auben/static/css/main.268543c3.css",
-    "main.js": "/Maison_Auben/static/js/main.c6c2e5f8.js",
+    "main.css": "/Maison_Auben/static/css/main.0c50c4cc.css",
+    "main.js": "/Maison_Auben/static/js/main.f886158c.js",
     "static/js/787.7367cb7e.chunk.js": "/Maison_Auben/static/js/787.7367cb7e.chunk.js",
-    "static/media/FontsFree-Net-GallientRegular-eZoMp.ttf": "/Maison_Auben/static/media/FontsFree-Net-GallientRegular-eZoMp.419a762c1efbc6a5bd7c.ttf",
+    "static/media/FormImage.jpg": "/Maison_Auben/static/media/FormImage.636ffc5a7d1d5e71f1e4.jpg",
     "index.html": "/Maison_Auben/index.html",
-    "main.268543c3.css.map": "/Maison_Auben/static/css/main.268543c3.css.map",
-    "main.c6c2e5f8.js.map": "/Maison_Auben/static/js/main.c6c2e5f8.js.map",
+    "main.0c50c4cc.css.map": "/Maison_Auben/static/css/main.0c50c4cc.css.map",
+    "main.f886158c.js.map": "/Maison_Auben/static/js/main.f886158c.js.map",
     "787.7367cb7e.chunk.js.map": "/Maison_Auben/static/js/787.7367cb7e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.268543c3.css",
-    "static/js/main.c6c2e5f8.js"
+    "static/css/main.0c50c4cc.css",
+    "static/js/main.f886158c.js"
   ]
 }
