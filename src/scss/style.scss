@@ -1,9 +1,44 @@
 #main{
-    #agence{
+    & section{
         display: flex;
+        margin-bottom: 3rem;
+        & .form-wrapper{
+            display: flex;
+            margin-top: 9rem;
+            width: 100%;
+        }
+        & .form-foto{
+            & img{
+                width: 300px;
+                height: 400px;
+            }
+        }
+        & form{
+            display: grid;
+            grid-template-columns: auto;
+            width: 60%;
+            margin: auto;
+            & label{
+                position: relative;
+                padding: 1rem;
+                & input, textarea{
+                    border: none;
+                    border-bottom: 1px solid black;
+                    margin-top: 1rem;
+                    width: 80%;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+    & #contact{
+        margin-top: -6rem;
+    }
+    & #agence{
         flex-direction: column;
         margin-top: 3rem;
-        margin-bottom: 3rem;
         & article{
             width: 72%;
             & h2, h3{
@@ -24,6 +59,25 @@
             & .steps{
                 & .steps-description{
                     white-space: pre-wrap;
+                }
+                & .quotes-container{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 80%;
+                    margin: 7rem auto auto auto;
+                    & .quotes{
+                        max-width: 60%;
+                        text-align: center;
+                    }
+                    & .quote-icon:nth-child(n+2){
+                        align-self: flex-end;
+                        & svg{
+                            transform: rotate(180deg);
+                        }
+                    }
+                    & .quote-icon svg{
+                        width: 40px;
+                    }
                 }
                 & .card-wrapper{
                     display: flex;
@@ -61,7 +115,7 @@ header{
     }
 }
 
-figure{
+#auben-logo{
     width: min-content;
     text-align: center;
     margin: 1rem 0 0 4rem;
@@ -72,6 +126,7 @@ figure{
     & figcaption{
         font-size: 0.6rem;
         width: 95%;
+        letter-spacing: 2px;
         margin: -1rem auto auto 0.5rem;
     }
 }
@@ -134,6 +189,11 @@ figure{
         margin: auto;
         text-decoration: none;
         color: inherit;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: transform 250ms ease-out;
+        }
     }
     & h1, li:not(.item):not(.line-1){
         text-align: center;
@@ -162,6 +222,18 @@ figure{
         width: 90%;
         height: 550px;
         background-color: gray;
+    }
+}
+footer{
+    background-color: #E0DEDA;
+    height: 200px;
+    & #auben-footer{
+        width: fit-content;
+        margin: auto;
+        & img{
+            margin-top: 2rem;
+            width: 150px;
+        }
     }
 }
 @media screen and (max-width:1440px) {
@@ -217,7 +289,7 @@ figure{
     .header-sub{
         display: none;
     }
-    #agence{
+    #agence, #contact{
         .section-title{
             left: -4rem;
         }
@@ -255,6 +327,9 @@ figure{
             } 
         }
     }
+    .form-foto{
+        display: none;
+    }
 }
 @media screen and (max-width:650px) {
     #main{
@@ -266,7 +341,7 @@ figure{
             }
         }
     }
-    #agence{
+    #agence, #contact{
         & .section-title{
             left: -5rem;
         }
@@ -274,7 +349,7 @@ figure{
 }
 
 @media screen and (max-width:580px) {
-    #agence{
+    #agence, #contact{
         & .section-title{
             left: -5.5rem;
         }
@@ -292,7 +367,7 @@ figure{
             margin-left: 0.3rem;
         }
     }
-    #agence{
+    #agence, #contact{
         & .agence-article{
             margin-top: -8rem;
         }
@@ -304,7 +379,7 @@ figure{
     }
 }
 @media screen and (max-width: 320px) {
-    #agence{
+    #agence, #contact{
         & .agence-article{
             margin-top: -8rem;
         }

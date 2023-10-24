@@ -1,19 +1,15 @@
-@font-face {
-  font-family: 'Gallient Regular';
-  src: url('./assets/fonts/FontsFree-Net-GallientRegular-eZoMp.ttf') format('truetype');
-}
 html{
   scroll-behavior: smooth;
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Gallient Regular', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 1.7px;
-  font-weight: 700;
+  letter-spacing: 3px;
+  font-weight: 300;
   font-size: 13px;
 }
 
