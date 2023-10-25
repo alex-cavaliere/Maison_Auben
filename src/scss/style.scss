@@ -22,6 +22,9 @@
                 position: relative;
                 padding: 1rem;
                 & input, textarea{
+                    &.error{
+                        border-bottom: 2px solid red;
+                    }
                     border: none;
                     border-bottom: 1px solid black;
                     margin-top: 1rem;
@@ -30,6 +33,14 @@
                         outline: none;
                     }
                 }
+            }
+            & .submit-btn{
+                border: none;
+                background-color: transparent;
+                width: 80%;
+                text-align: end;
+                font-size: 22px;
+                margin-top: 2rem;
             }
         }
     }
@@ -326,6 +337,17 @@ footer{
                 }
             } 
         }
+    }
+    #main{
+        & #agence{
+            & .agence-article{
+                & .steps{
+                    & .quotes-container{
+                        width: 100%;
+                    }
+                }
+            } 
+        } 
     }
     .form-foto{
         display: none;

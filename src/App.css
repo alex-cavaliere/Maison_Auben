@@ -27,8 +27,19 @@
   margin-top: 1rem;
   width: 80%;
 }
+#main section form label input.error, #main section form label textarea.error {
+  border-bottom: 2px solid red;
+}
 #main section form label input:focus, #main section form label textarea:focus {
   outline: none;
+}
+#main section form .submit-btn {
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  text-align: end;
+  font-size: 22px;
+  margin-top: 2rem;
 }
 #main #contact {
   margin-top: -6rem;
@@ -300,6 +311,9 @@ footer #auben-footer img {
   }
   .nav-wrapper nav .internal-link li:nth-child(2) {
     display: block;
+    width: 100%;
+  }
+  #main #agence .agence-article .steps .quotes-container {
     width: 100%;
   }
   .form-foto {

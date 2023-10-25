@@ -5,6 +5,7 @@ import BasicCard from './components/Card';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
 
+
 function App() {
   const [data, setData] = useState();
   useEffect(() => {
