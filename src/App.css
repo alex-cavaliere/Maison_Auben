@@ -230,7 +230,7 @@ header .logo-container {
 .carousel-container .carousel {
   width: 90%;
   height: 550px;
-  background: url("https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.jpg?raw=true");
+  background: url("https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.jpg?raw=true") no-repeat;
   background-size: contain;
 }
 
