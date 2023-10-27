@@ -1,9 +1,12 @@
 import './App.css';
+import mainLogo from './assets/logo_auben.png'
 import Header from './components/Header';
 import {useEffect, useState } from 'react';
 import BasicCard from './components/Card';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
+import quoteLeft from './assets/quote.svg'
+import quoteRight from './assets/quote-mirror.svg'
 
 
 function App() {
@@ -32,7 +35,7 @@ function App() {
   }
   return (
     <div id="main">
-      <Header />
+      <Header logo={mainLogo}/>
       <section id="home">
         <aside className='nav-wrapper'>
           <nav>
@@ -87,12 +90,12 @@ function App() {
                 </div>
               </div>
               <div className='quotes-container'>
-                <span className='quote-icon'><svg clipRule="evenodd" fillRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.301 4c.411 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.738 4.129-4.308 4.129-3.24 0-4.83-2.547-4.83-5.307 0-5.98 6.834-10.693 8.468-10.693zm-10.833 0c.41 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.739 4.129-4.308 4.129-3.241 0-4.83-2.547-4.83-5.307 0-5.98 6.833-10.693 8.468-10.693z" fillRule="nonzero"/></svg></span>
+                <span className='quote-icon'><img src={quoteLeft} alt='quote-img'/></span>
                 <div className='quotes'>
                   <h4>MME LEMOINE - RILLIEUX LA PAPE (AGENCE ORPI)</h4>
                   <p className='quote'>Nous vous remercions pour la qualité de vos conseils, vos propositions d’agencement et de décoration. Nos collaborateurs et nous-mêmes nous sentons vraiment bien dans notre agence.</p>
                 </div>
-                <span className='quote-icon'><svg clipRule="evenodd" fillRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.301 4c.411 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.738 4.129-4.308 4.129-3.24 0-4.83-2.547-4.83-5.307 0-5.98 6.834-10.693 8.468-10.693zm-10.833 0c.41 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.739 4.129-4.308 4.129-3.241 0-4.83-2.547-4.83-5.307 0-5.98 6.833-10.693 8.468-10.693z" fillRule="nonzero"/></svg></span>
+                <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
               </div>
             </div>
           </article>
@@ -115,7 +118,7 @@ function App() {
       </section>
       <footer>
         <figure id='auben-footer'>
-          <img src='https://static.wixstatic.com/media/3f174c_08d85cf0eff844f7847191093627d821~mv2.png/v1/fill/w_230,h_163,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/LOGO%20SITE%20CLAIR.png' className="App-logo" alt="logo" />
+          <img src={mainLogo} alt='footer-logo'/>
           <figcaption>AUDREY & BENJAMIN</figcaption>
         </figure>
       </footer>

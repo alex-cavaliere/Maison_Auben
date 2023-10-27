@@ -1,10 +1,11 @@
 
-function Header(){
+function Header(props){
+    const logo = props.logo
     return( 
         <header className="App-header">
             <div className='logo-container'>
                 <figure id='auben-logo'>
-                    <img src='https://static.wixstatic.com/media/3f174c_08d85cf0eff844f7847191093627d821~mv2.png/v1/fill/w_230,h_163,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/LOGO%20SITE%20CLAIR.png' className="App-logo" alt="logo" />
+                    <img src={logo} className="App-logo" alt="header-logo" />
                     <figcaption>ARCHITECTES D'INTÉRIEUR & DÉCORATEURS</figcaption>
                 </figure>
             </div>

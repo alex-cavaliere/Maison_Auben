@@ -82,11 +82,9 @@
 #main #agence .agence-article .steps .quotes-container .quote-icon:nth-child(n+2) {
   align-self: flex-end;
 }
-#main #agence .agence-article .steps .quotes-container .quote-icon:nth-child(n+2) svg {
-  transform: rotate(180deg);
-}
-#main #agence .agence-article .steps .quotes-container .quote-icon svg {
+#main #agence .agence-article .steps .quotes-container .quote-icon img {
   width: 40px;
+  height: 40px;
 }
 #main #agence .agence-article .steps .card-wrapper {
   display: flex;
@@ -232,7 +230,8 @@ header .logo-container {
 .carousel-container .carousel {
   width: 90%;
   height: 550px;
-  background-color: gray;
+  background: url("https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.jpg?raw=true");
+  background-size: contain;
 }
 
 footer {
