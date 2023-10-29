@@ -105,6 +105,7 @@
   text-align: end;
 }
 #main #agence .agence-article img {
+  margin-bottom: 2rem;
   height: 500px;
 }
 
@@ -223,16 +224,34 @@ header .logo-container {
 }
 
 .carousel-container {
+  position: relative;
   margin-bottom: 2rem;
   width: 100%;
   height: fit-content;
 }
-.carousel-container .carousel {
+.carousel-container .carousel img {
+  object-fit: cover;
+  border-radius: 25px;
   width: 90%;
-  height: 550px;
-  background: url("https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.jpg?raw=true") no-repeat;
-  background-size: cover;
-  background-position: 50%;
+  height: 500px;
+}
+.carousel-container .carousel .carousel-controls img {
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-counter {
+  text-align: center;
+  color: white;
+  width: 90%;
+  transform: translateY(-600%);
+}
+
+.carousel-controls {
+  transform: translateY(-650%);
+  display: flex;
+  max-width: 90%;
+  justify-content: space-between;
 }
 
 footer {
@@ -286,10 +305,8 @@ footer #auben-footer img {
   #agence .section-title, #contact .section-title {
     left: -4rem;
   }
-  figure {
-    margin-left: 1rem;
-  }
   figure img {
+    margin-left: -3rem;
     height: 5rem;
     width: 7rem;
   }
@@ -313,6 +330,15 @@ footer #auben-footer img {
     display: block;
     width: 100%;
   }
+  .carousel-container .carousel img {
+    height: 400px;
+  }
+  .carousel-counter {
+    display: none;
+  }
+  .carousel-controls {
+    transform: translateY(-500%);
+  }
   #main #agence .agence-article .steps .quotes-container {
     width: 100%;
   }
@@ -334,8 +360,11 @@ footer #auben-footer img {
   }
 }
 @media screen and (max-width: 450px) {
-  .carousel-container .carousel {
+  .carousel-container .carousel img {
     height: 300px;
+  }
+  .carousel-controls {
+    transform: translateY(-400%);
   }
   .internal-link {
     margin-top: 5rem;

@@ -108,6 +108,7 @@
                 text-align: end;
             }
             & img{
+                margin-bottom: 2rem;
                 height: 500px;
             }
         }
@@ -224,16 +225,36 @@ header{
     position: relative;
 }
 .carousel-container{
+    position: relative;
     margin-bottom: 2rem;
     width: 100%;
     height: fit-content;
     & .carousel{
-        width: 90%;
-        height: 550px;
-        background: url('https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.jpg?raw=true') no-repeat;
-        background-size: cover;
-        background-position: 50%;
+        & img{
+            object-fit: cover;
+            border-radius: 25px;
+            width: 90%;
+            height: 500px;
+        } 
+        & .carousel-controls{
+            & img{
+                width: 40px;
+                height: 40px;
+            }
+        }
     }
+}
+.carousel-counter{
+text-align: center;
+color: white;
+width: 90%;
+transform: translateY(-600%);
+}
+.carousel-controls{
+transform: translateY(-650%);
+display: flex;
+max-width: 90%;
+justify-content: space-between;
 }
 footer{
     background-color: #E0DEDA;
@@ -306,8 +327,8 @@ footer{
         }
     }
     figure{
-        margin-left: 1rem;
         & img{
+            margin-left: -3rem;
             height: 5rem;
             width: 7rem;
         }
@@ -337,6 +358,17 @@ footer{
                 }
             } 
         }
+    }
+    .carousel-container{
+        & .carousel img{
+            height: 400px;
+        }
+    }   
+    .carousel-counter{
+    display: none;
+    }
+    .carousel-controls{
+    transform: translateY(-500%);
     }
     #main{
         & #agence{
@@ -379,10 +411,13 @@ footer{
 }
 @media screen and (max-width: 450px) {
     .carousel-container{
-        & .carousel{
+        & .carousel img{
             height: 300px;
         }
     }   
+    .carousel-controls{
+        transform: translateY(-400%);
+    }
     .internal-link{
         margin-top: 5rem;
         & .item{
