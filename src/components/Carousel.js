@@ -29,6 +29,7 @@ function Carousel(props){
                     <img src={chevronLeft} alt='chevronLeft' onClick={prevPic}></img>
                     <img src={chevronRight} alt='chevronRight' onClick={nextPic}></img>
                 </div>
+                <div className="btn-container"><button className="carousel-btn">DÉCOUVRIR</button></div>
                 <div className='carousel-counter'>{imgIndex + 1} / {pictures.length}</div>
             </div>
             }

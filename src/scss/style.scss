@@ -243,11 +243,23 @@ header{
         }
     }
 }
-.carousel-counter{
+.carousel-counter, .btn-container{
 text-align: center;
 color: white;
 width: 90%;
-transform: translateY(-600%);
+}
+.carousel-counter{
+    transform: translateY(-600%);
+}
+.btn-container{
+    transform: translateY(-300%);
+}
+.carousel-btn{
+    text-align: center;
+    background-color: rgba(#000000, 0.3);
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    border: 1px solid white;
 }
 .carousel-controls{
 transform: translateY(-800%);

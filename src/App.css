@@ -239,11 +239,26 @@ header .logo-container {
   height: 30px;
 }
 
-.carousel-counter {
+.carousel-counter, .btn-container {
   text-align: center;
   color: white;
   width: 90%;
+}
+
+.carousel-counter {
   transform: translateY(-600%);
+}
+
+.btn-container {
+  transform: translateY(-300%);
+}
+
+.carousel-btn {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 1rem 2rem 1rem 2rem;
+  border: 1px solid white;
 }
 
 .carousel-controls {
