@@ -232,14 +232,13 @@ header{
     & .carousel{
         & img{
             object-fit: cover;
-            border-radius: 25px;
             width: 90%;
             height: 500px;
         } 
         & .carousel-controls{
             & img{
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
             }
         }
     }
@@ -251,9 +250,9 @@ width: 90%;
 transform: translateY(-600%);
 }
 .carousel-controls{
-transform: translateY(-650%);
+transform: translateY(-800%);
 display: flex;
-max-width: 90%;
+width: 90%;
 justify-content: space-between;
 }
 footer{
@@ -264,7 +263,7 @@ footer{
         margin: auto;
         & img{
             margin-top: 2rem;
-            width: 150px;
+            max-width: 150px;
         }
     }
 }
@@ -326,14 +325,16 @@ footer{
             left: -4rem;
         }
     }
-    figure{
-        & img{
-            margin-left: -3rem;
-            height: 5rem;
-            width: 7rem;
-        }
-        & figcaption{
-            visibility: hidden;
+    header{
+        & figure{
+            & img{
+                margin-left: -3rem;
+                height: 5rem;
+                width: 7rem;
+            }
+            & figcaption{
+                visibility: hidden;
+            }
         }
     }
     .nav-wrapper{
@@ -412,11 +413,16 @@ footer{
 @media screen and (max-width: 450px) {
     .carousel-container{
         & .carousel img{
-            height: 300px;
+            height: 200px;
+            width: 95%;
         }
     }   
     .carousel-controls{
-        transform: translateY(-400%);
+        transform: translateY(-350%);
+        width: 95%;
+        & img{
+            width: 20px;
+        }
     }
     .internal-link{
         margin-top: 5rem;
