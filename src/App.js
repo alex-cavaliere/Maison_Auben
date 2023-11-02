@@ -1,17 +1,55 @@
 import './App.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import mainLogo from './assets/logo_auben.png'
 import Header from './components/Header';
 import {useEffect, useState } from 'react';
 import BasicCard from './components/Card';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
+import chevronLeft from './assets/chevron-left.svg'
+import chevronRight from './assets/chevron-right.svg'
 import quoteLeft from './assets/quote.svg'
 import quoteRight from './assets/quote-mirror.svg'
-import Carousel from './components/Carousel';
+import CarouselItem from './components/Carousel';
 
 
 function App() {
   const [data, setData] = useState();
+  const renderArrowPrev = (clickHandler, hasPrev) => {
+    return (
+      <div
+        onClick={clickHandler}
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: 0,
+          transform: 'translateY(-50%)',
+          cursor: 'pointer',
+          zIndex: '99999'
+        }}
+      >
+        {hasPrev && <img src={chevronLeft} style={{width: '40px'}}  alt="Previous" />}
+      </div>
+    );
+  };
+  
+  const renderArrowNext = (clickHandler, hasNext) => {
+    return (
+      <div
+        onClick={clickHandler}
+        style={{
+          position: 'absolute',
+          top: '50%',
+          right: 0,
+          transform: 'translateY(-50%)',
+          cursor: 'pointer',
+        }}
+      >
+        {hasNext && <img src={chevronRight} style={{width: '40px'}}  alt="Next" />}
+      </div>
+    );
+  };
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/data.json`)
     .then(res => res.json())
@@ -54,7 +92,13 @@ function App() {
         </nav>
       </aside>
       <div className='carousel-container'>
-        <Carousel pictures={data.projets.particulier[0].images}/>
+        <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
+          {
+            data.projets.particulier[0].images.map(url => {
+              return <CarouselItem pictures={url}/>
+            })
+          }
+        </Carousel>
       </div>
     </section>
     <section id="agence">
