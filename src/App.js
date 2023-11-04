@@ -26,10 +26,10 @@ function App() {
           left: 0,
           transform: 'translateY(-50%)',
           cursor: 'pointer',
-          zIndex: '99999'
+          zIndex: '1'
         }}
       >
-        {hasPrev && <img src={chevronLeft} style={{width: '40px'}}  alt="Previous" />}
+        {hasPrev && <img src={chevronLeft} style={{width: '60px'}}  alt="Previous" />}
       </div>
     );
   };
@@ -46,7 +46,7 @@ function App() {
           cursor: 'pointer',
         }}
       >
-        {hasNext && <img src={chevronRight} style={{width: '40px'}}  alt="Next" />}
+        {hasNext && <img src={chevronRight} style={{width: '60px'}}  alt="Next" />}
       </div>
     );
   };
@@ -95,10 +95,15 @@ function App() {
         <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
           {
             data.projets.particulier[0].images.map(url => {
-              return <CarouselItem pictures={url}/>
+              return <div>
+                  <CarouselItem pictures={url}/>
+              </div>
             })
           }
         </Carousel>
+        <div className='btn-container'>
+          <button className='carousel-btn'>DÉCOUVRIR</button>
+        </div>
       </div>
     </section>
     <section id="agence">

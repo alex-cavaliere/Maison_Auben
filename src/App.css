@@ -224,7 +224,25 @@ header .logo-container {
 }
 
 .carousel-container {
+  position: relative;
   width: 74%;
+  height: fit-content;
+}
+.carousel-container .btn-container {
+  position: absolute;
+  width: 100%;
+  bottom: 5rem;
+  text-align: center;
+}
+.carousel-container .btn-container .carousel-btn {
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  color: white;
+}
+.carousel-container .btn-container .carousel-btn:hover {
+  transform: scale(1.1);
+  transition: transform 150ms ease-in-out;
 }
 
 footer {

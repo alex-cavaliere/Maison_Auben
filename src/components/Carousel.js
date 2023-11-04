@@ -1,8 +1,5 @@
-import { useState } from "react"
-import chevronLeft from '../assets/chevron-left.svg'
-import chevronRight from '../assets/chevron-right.svg'
 
-function Carousel(props){
+function CarouselItem(props){
     const {pictures} = props
 
     console.log(pictures)
@@ -13,4 +10,4 @@ function Carousel(props){
     )
 }
 
-export default Carousel
+export default CarouselItem
