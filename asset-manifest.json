@@ -1,21 +1,24 @@
 {
   "files": {
     "main.css": "/Maison_Auben/static/css/main.084b643f.css",
-    "main.js": "/Maison_Auben/static/js/main.88e7a4a6.js",
+    "main.js": "/Maison_Auben/static/js/main.89d9e1c1.js",
     "static/js/787.7367cb7e.chunk.js": "/Maison_Auben/static/js/787.7367cb7e.chunk.js",
     "static/media/FormImage.jpg": "/Maison_Auben/static/media/FormImage.636ffc5a7d1d5e71f1e4.jpg",
+    "static/media/cube 3.png": "/Maison_Auben/static/media/cube 3.00bb23b741af18909349.png",
     "static/media/logo_auben.png": "/Maison_Auben/static/media/logo_auben.97e4fafe1197ce557e08.png",
+    "static/media/cube 1.png": "/Maison_Auben/static/media/cube 1.09f3d60c0c2a59f1c191.png",
+    "static/media/cube 2.png": "/Maison_Auben/static/media/cube 2.ea87db2ea56bd579aad1.png",
     "static/media/quote-mirror.svg": "/Maison_Auben/static/media/quote-mirror.1264a3ca70d83161609bd4318cb80438.svg",
     "static/media/quote.svg": "/Maison_Auben/static/media/quote.27cff3fb1b81c03e389d49664fad30f2.svg",
     "index.html": "/Maison_Auben/index.html",
     "static/media/chevron-left.svg": "/Maison_Auben/static/media/chevron-left.8f3dad4139acda0f74ebac7b3688b4ae.svg",
     "static/media/chevron-right.svg": "/Maison_Auben/static/media/chevron-right.4330167b08c67d8f5fd9a79c685b57fd.svg",
     "main.084b643f.css.map": "/Maison_Auben/static/css/main.084b643f.css.map",
-    "main.88e7a4a6.js.map": "/Maison_Auben/static/js/main.88e7a4a6.js.map",
+    "main.89d9e1c1.js.map": "/Maison_Auben/static/js/main.89d9e1c1.js.map",
     "787.7367cb7e.chunk.js.map": "/Maison_Auben/static/js/787.7367cb7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.084b643f.css",
-    "static/js/main.88e7a4a6.js"
+    "static/js/main.89d9e1c1.js"
   ]
 }
