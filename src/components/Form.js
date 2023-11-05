@@ -9,6 +9,7 @@ function Form(){
     const firstName = createRef()
     const lastName = createRef()
     const email = createRef()
+    const message = createRef()
     const handleSubmit = useCallback((e) => {
         e.preventDefault()
         const contactFormData = {
@@ -34,11 +35,17 @@ function Form(){
                 email.current.className = 'error'
             }else{
                 email.current.className = ''
-            }if(firstName.current.className !== 'error' && lastName.current.className !== 'error' && email.current.className !== 'error'){
+            }if(values.message.value.length <= 2){
+                console.log('not valid')
+                message.current.className = 'error'
+            }else{
+                message.current.className = ''
+            }
+            if(firstName.current.className !== 'error' && lastName.current.className !== 'error' && email.current.className !== 'error' && message.current.className !== 'error'){
                 console.log('submit successful')
             }
         }
-    },[email, firstName, lastName, values, x.emailregex, x.textregex])
+    },[email, firstName, lastName, message, values, x.emailregex, x.textregex])
     return(
         <form onSubmit={handleSubmit}>
             <label htmlFor='name'>
@@ -55,7 +62,7 @@ function Form(){
             </label>
             <label htmlFor='message'>
                 Contacter <br/>
-                <textarea id='message' name='message'></textarea>
+                <textarea ref={message} id='message' name='message'></textarea>
             </label>
             <input className='submit-btn' type='submit' value='Envoyer'></input>
         </form>

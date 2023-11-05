@@ -7,6 +7,9 @@ import {useEffect, useState } from 'react';
 import BasicCard from './components/Card';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
+import cube1 from './assets/cube 1.png'
+import cube2 from './assets/cube 2.png'
+import cube3 from './assets/cube 3.png'
 import chevronLeft from './assets/chevron-left.svg'
 import chevronRight from './assets/chevron-right.svg'
 import quoteLeft from './assets/quote.svg'
@@ -94,8 +97,8 @@ function App() {
       <div className='carousel-container'>
         <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
           {
-            data.projets.particulier[0].images.map(url => {
-              return <div>
+            data.projets.particulier[0].images.map((url, index) => {
+              return <div key={index}>
                   <CarouselItem pictures={url}/>
               </div>
             })
@@ -128,15 +131,15 @@ function App() {
             <p className='steps-description'>{etapesParags}</p>
             <div className='card-wrapper'>
               <div className='card-container'>
-                <BasicCard />
+                <BasicCard cube={cube1} cardTitle='Step N° 1'/>
               </div>
               <div className='arrow'><span><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></span></div>
               <div className='card-container'>
-                <BasicCard />
+                <BasicCard cube={cube2} cardTitle='Step N° 2'/>
               </div>
               <div className='arrow'><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></div>
               <div className='card-container'>
-                <BasicCard />
+                <BasicCard cube={cube3} cardTitle='Step N° 3'/>
               </div>
             </div>
             <div className='quotes-container'>
