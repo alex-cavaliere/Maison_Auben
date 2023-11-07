@@ -187,6 +187,10 @@ header{
         }
     }
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .internal-link{
     display: flex;
     flex-direction: column;
@@ -197,8 +201,6 @@ header{
     height: 100%;
     & a{
         margin: auto;
-        text-decoration: none;
-        color: inherit;
         &:hover{
             cursor: pointer;
             transform: scale(1.1);
@@ -242,6 +244,16 @@ header{
                 transform: scale(1.1);
                 transition: transform 150ms ease-in-out;
             }
+        }
+    }
+}
+.carousel .slider-wrapper.axis-horizontal .slider .slide{
+    max-height: 550px;
+    & .carousel-wrapper{
+        & img{
+            max-height: 550px;
+            object-fit: cover;
+            object-position: 65% 35%;
         }
     }
 }
@@ -402,6 +414,9 @@ footer{
 }
 @media screen and (max-width: 450px) {
     .carousel-container{
+        & .btn-container{
+            display: none;
+        }
         & .carousel img{
             height: 200px;
             width: 95%;

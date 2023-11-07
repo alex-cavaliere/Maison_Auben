@@ -184,6 +184,11 @@ header .logo-container {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .internal-link {
   display: flex;
   flex-direction: column;
@@ -195,8 +200,6 @@ header .logo-container {
 }
 .internal-link a {
   margin: auto;
-  text-decoration: none;
-  color: inherit;
 }
 .internal-link a:hover {
   cursor: pointer;
@@ -243,6 +246,15 @@ header .logo-container {
 .carousel-container .btn-container .carousel-btn:hover {
   transform: scale(1.1);
   transition: transform 150ms ease-in-out;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  max-height: 550px;
+}
+.carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
+  max-height: 550px;
+  object-fit: cover;
+  object-position: 65% 35%;
 }
 
 footer {
@@ -351,6 +363,9 @@ footer #auben-footer img {
   }
 }
 @media screen and (max-width: 450px) {
+  .carousel-container .btn-container {
+    display: none;
+  }
   .carousel-container .carousel img {
     height: 200px;
     width: 95%;

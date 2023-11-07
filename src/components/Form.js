@@ -1,51 +1,45 @@
-import { createRef, useCallback, useState } from "react"
+import { createRef, useCallback } from "react"
 
 function Form(){
     const x = {
-        emailregex : /^[A-z0-9\.\+_-]+@[A-z0-9\._-]+\.[A-z]{2,4}$/,
+        emailregex : /^[A-z0-9.+_-]+@[A-z0-9._-]+\.[A-z]{2,4}$/,
         textregex : /^[A-z ]{2,20}$/
     }
-    const [values, setValues] = useState()
     const firstName = createRef()
     const lastName = createRef()
     const email = createRef()
     const message = createRef()
     const handleSubmit = useCallback((e) => {
         e.preventDefault()
-        const contactFormData = {
-            firstName: e.target.name,
-            lastName: e.target.surname,
-            email: e.target.email,
-            message: e.target.message
+        firstName.current.value = e.target.name.value
+        lastName.current.value = e.target.surname.value
+        email.current.value = e.target.email.value
+        message.current.value = e.target.message.value
+        if((!x.textregex.test(firstName.current.value) && firstName.current.value.length >= 3) || firstName.current.value.length < 3){
+            console.log('name not valid')
+            firstName.current.className = 'error'
+        }else{
+            firstName.current.className = ''
+        }if((!x.textregex.test(lastName.current.value) && lastName.current.value.length >= 2) || lastName.current.value.length < 2){
+            console.log('surname not valid')
+            lastName.current.className = 'error'
+        }else{
+            lastName.current.className = ''
+        }if(!x.emailregex.test(email.current.value)){
+            console.log('email not valid')
+            email.current.className = 'error'
+        }else{
+            email.current.className = ''
+        }if(message.current.value.length <= 10){
+            console.log('not valid')
+            message.current.className = 'error'
+        }else{
+            message.current.className = ''
         }
-        setValues(contactFormData)
-        if(values !== undefined){
-            if((!x.textregex.test(values.firstName.value) && values.firstName.value.length >= 3) || values.firstName.value.length < 3){
-                console.log('name not valid')
-                firstName.current.className = 'error'
-            }else{
-                firstName.current.className = ''
-            }if((!x.textregex.test(values.lastName.value) && values.lastName.value.length >= 3) || values.lastName.value.length < 3){
-                console.log('surname not valid')
-                lastName.current.className = 'error'
-            }else{
-                lastName.current.className = ''
-            }if(!x.emailregex.test(values.email.value)){
-                console.log('email not valid')
-                email.current.className = 'error'
-            }else{
-                email.current.className = ''
-            }if(values.message.value.length <= 2){
-                console.log('not valid')
-                message.current.className = 'error'
-            }else{
-                message.current.className = ''
-            }
-            if(firstName.current.className !== 'error' && lastName.current.className !== 'error' && email.current.className !== 'error' && message.current.className !== 'error'){
-                console.log('submit successful')
-            }
+        if(firstName.current.className !== 'error' && lastName.current.className !== 'error' && email.current.className !== 'error' && message.current.className !== 'error'){
+            console.log('submit successful')
         }
-    },[email, firstName, lastName, message, values, x.emailregex, x.textregex])
+    },[email, firstName, lastName, message, x.emailregex, x.textregex])
     return(
         <form onSubmit={handleSubmit}>
             <label htmlFor='name'>
