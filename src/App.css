@@ -257,6 +257,43 @@ a {
   object-position: 65% 35%;
 }
 
+#gallery-container {
+  display: flex;
+}
+#gallery-container h5 {
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-top: -1.7rem;
+}
+#gallery-container h5 span {
+  padding: 0.5rem;
+  line-height: 1px;
+  font-size: large;
+}
+#gallery-container .gallery {
+  margin-bottom: 2rem;
+  animation: fadeIn 600ms ease-in-out;
+}
+#gallery-container .gallery-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#gallery-container .gallery-wrapper .card {
+  margin: 0;
+  min-width: 254px;
+  min-height: 205px;
+}
+#gallery-container .gallery-wrapper .card:hover {
+  transform: scale(1.05);
+  transition: transform 250ms ease-in-out;
+}
+#gallery-container .gallery-wrapper .card img {
+  object-fit: cover;
+  max-width: 250px;
+  min-height: 280px;
+}
+
 footer {
   background-color: #E0DEDA;
   height: 200px;
@@ -400,6 +437,14 @@ footer #auben-footer img {
     font-size: 1.1rem;
     padding: 0 1rem 0 1rem;
     left: -3rem;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
