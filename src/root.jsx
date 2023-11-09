@@ -1,8 +1,8 @@
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import mainLogo from './assets/logo_auben.png'
 import {useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BasicCard from './components/Card';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
@@ -18,6 +18,7 @@ import CarouselItem from './components/Carousel';
 
 function Root() {
   const [data, setData] = useState();
+  const onNavigate = useNavigate()
   const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
@@ -101,15 +102,15 @@ function Root() {
         <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
           {
             imgCollection.map((img, index) => {
-              return <div className='carousel-wrapper' key={index}>
+              return <div onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)}  className='carousel-wrapper' key={index}>
                   <CarouselItem pictures={img.portrait}/>
+                  <div className='btn-container'>
+                    <button onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)} className='carousel-btn'>DÉCOUVRIR</button>
+                  </div>
               </div>
             })
           }
         </Carousel>
-        <div className='btn-container'>
-          <button className='carousel-btn'>DÉCOUVRIR</button>
-        </div>
       </div>
     </section>
     <section id="agence">

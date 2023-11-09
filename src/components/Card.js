@@ -24,7 +24,7 @@ export default function BasicCard(props) {
           {cardTitle}
         </Typography>
         <Typography variant="h5" component="div">
-          <img style={{objectFit:'contain', width: 185, height: 120}} src={cube} alt={cube}/>
+          <img style={{objectFit:'contain', width:'100%', height: 200}} src={cube} alt={cube}/>
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           adjective

@@ -1,3 +1,7 @@
+#root {
+  overflow: hidden;
+}
+
 #main section {
   display: flex;
   margin-bottom: 3rem;
@@ -260,6 +264,18 @@ a {
 #gallery-container {
   display: flex;
 }
+#gallery-container .gallery-nav .line-3 {
+  width: 18vw;
+  height: 100%;
+  text-align: center;
+}
+#gallery-container .gallery-nav .line-3::after {
+  content: "";
+  display: inline-block;
+  background-color: black;
+  height: 100%;
+  width: 0.8px;
+}
 #gallery-container h5 {
   font-weight: 300;
   font-size: 0.8rem;
@@ -271,7 +287,7 @@ a {
   font-size: large;
 }
 #gallery-container .gallery {
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   animation: fadeIn 600ms ease-in-out;
 }
 #gallery-container .gallery-wrapper {
@@ -280,9 +296,9 @@ a {
   width: 100%;
 }
 #gallery-container .gallery-wrapper .card {
-  margin: 0;
-  min-width: 254px;
-  min-height: 205px;
+  margin: 0.2rem;
+  max-width: 270px;
+  height: 270px;
 }
 #gallery-container .gallery-wrapper .card:hover {
   transform: scale(1.05);
@@ -290,12 +306,22 @@ a {
 }
 #gallery-container .gallery-wrapper .card img {
   object-fit: cover;
-  max-width: 250px;
-  min-height: 280px;
+  width: 100%;
+  height: 270px;
+}
+
+#item-gallery {
+  display: flex;
+}
+#item-gallery section {
+  width: 73%;
 }
 
 footer {
+  position: absolute;
   background-color: #E0DEDA;
+  margin-top: 2rem;
+  width: 100%;
   height: 200px;
 }
 footer #auben-footer {
@@ -384,6 +410,24 @@ footer #auben-footer img {
   }
   .form-foto {
     display: none;
+  }
+  #gallery-container .gallery-wrapper .card {
+    margin: auto auto 0.7rem auto;
+  }
+}
+@media screen and (max-width: 666px) {
+  .gallery-wrapper .card {
+    max-width: 370px;
+    height: 270px;
+  }
+  .gallery-wrapper .card:hover {
+    transform: scale(1.05);
+    transition: transform 250ms ease-in-out;
+  }
+  .gallery-wrapper .card img {
+    object-fit: cover;
+    width: 100%;
+    height: 270px;
   }
 }
 @media screen and (max-width: 650px) {

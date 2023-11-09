@@ -11,15 +11,20 @@ import Header from './components/Header';
 import mainLogo from './assets/logo_auben.png'
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
+import ItemGallery from './components/ItemGallery';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Maison_Auben",
     element: <Root />,
   },
   {
-    path: "/projets",
-    element: <Gallery/>,
+    path: "Maison_Auben/projets",
+    element: <Gallery />,
+  },
+  {
+    path: "Maison_Auben/projets/:id",
+    element: <ItemGallery />
   }
 ]);
 
