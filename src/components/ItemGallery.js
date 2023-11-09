@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import Nav from "./Nav"
 import { useEffect, useState } from "react";
-import GalleryCard from "./GalleryCard";
 
 function ItemGallery(){
     const [data, setData] = useState()
