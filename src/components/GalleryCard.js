@@ -9,7 +9,6 @@ function GalleryCard(props){
             <div className="gallery-wrapper">
                 {
                     categories.map((img, index) => {
-                        console.log(img.id)
                         return <figure key={index} className="card">
                             <Link to={'/Maison_Auben/projets/' + img.id}><img src={img.portrait} alt={img.title + "-img"}></img></Link>
                         </figure>

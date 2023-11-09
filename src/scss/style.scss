@@ -313,6 +313,20 @@ a {
 
 #item-gallery{
     display: flex;
+    & .item-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        & figure{
+            max-width: 48%;
+            margin: 0.2rem;
+            & img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
     & section{
         width: 73%;
     }

@@ -81,6 +81,7 @@ function Root() {
       }
     }
     localStorage.setItem('projets', JSON.stringify(data.projets))
+    localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
     const descriptions = data.articles.descriptions
     descriptions.forEach(description => {
       if(description.maisonAuben){
