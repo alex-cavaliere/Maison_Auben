@@ -80,7 +80,6 @@ function Root() {
         default: imgCollection = [...particulier, ...professionnel, ...promotion]
       }
     }
-    localStorage.setItem('projets', JSON.stringify(data.projets))
     localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
     const descriptions = data.articles.descriptions
     descriptions.forEach(description => {

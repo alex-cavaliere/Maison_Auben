@@ -15,15 +15,15 @@ import ItemGallery from './components/ItemGallery';
 
 const router = createBrowserRouter([
   {
-    path: "/Maison_Auben",
+    path: "/",
     element: <Root />,
   },
   {
-    path: "Maison_Auben/projets",
+    path: "/projets",
     element: <Gallery />,
   },
   {
-    path: "Maison_Auben/projets/:id",
+    path: "/projets/:id",
     element: <ItemGallery />
   }
 ]);

@@ -1,21 +1,27 @@
 import GalleryCard from "./GalleryCard"
 import Nav from "./Nav";
+import { useEffect, useState } from "react";
 
 function Gallery(){
-    const projets = JSON.parse(localStorage.getItem("projets") || "[]");
-    console.log(projets)
+    const [data, setData] = useState()
+    useEffect(() => {
+        fetch(`${process.env.PUBLIC_URL}/data.json`)
+        .then(async res => await res.json())
+        .then(data => setData(data))
+        .catch(err => console.log(err))
+      },[])
     return(
-        <div id="gallery-container">
+        data && (<div id="gallery-container">
             <div className="gallery-nav">
                 <Nav/>
                 <div className='line-3'></div>
             </div>
             <div className="gallery-items">
-                <GalleryCard categories={projets.particulier} title='PARTICULIER'/>
-                <GalleryCard categories={projets.professionnel} title='PROFESSIONNEL'/>
-                <GalleryCard categories={projets.promotion} title='PROMOTION'/>
+                <GalleryCard categories={data.projets.particulier} title='PARTICULIER'/>
+                <GalleryCard categories={data.projets.professionnel} title='PROFESSIONNEL'/>
+                <GalleryCard categories={data.projets.promotion} title='PROMOTION'/>
             </div>
-        </div>
+        </div>)
     )
 }
 
