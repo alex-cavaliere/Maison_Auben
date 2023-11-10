@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 
 function Header(props){
@@ -7,6 +8,9 @@ function Header(props){
 
     const ToggleMenu = () => {
         setIsOpen(!isOpen)
+    }
+    const closeMenu = () => {
+        setIsOpen(false)
     }
     return( 
         <header className="App-header">
@@ -20,9 +24,9 @@ function Header(props){
             </div>
             <nav className={`mobile-nav ${isOpen ? 'show' : ''}`}>
                 <ul>
-                    <a href='/Maison_Auben/projets'><li>PROJETS</li></a>
-                    <a href='/Maison_Auben#agence'><li>L'AGENCE</li></a>
-                    <a href='/Maison_Auben#contact'><li>CONTACT</li></a>
+                    <NavLink to='/Maison_Auben/projets' onClick={closeMenu}><li>PROJETS</li></NavLink>
+                    <a href='/Maison_Auben#agence' onClick={closeMenu}><li>L'AGENCE</li></a>
+                    <a href='/Maison_Auben#contact' onClick={closeMenu}><li>CONTACT</li></a>
                 </ul>
             </nav>
             <button onClick={ToggleMenu} className={`mobile-toggle ${isOpen ? 'open' : ''}`}>

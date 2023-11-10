@@ -14,15 +14,15 @@ import ItemGallery from './components/ItemGallery';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header logo={mainLogo}/>
     <Router>
+    <Header logo={mainLogo}/>
       <Routes>
         <Route exact path='/Maison_Auben' element={<Root />}/>
         <Route path='/Maison_Auben/projets' element={<Gallery />}/>
         <Route path='/Maison_Auben/projets/:id' element={<ItemGallery />}/>
       </Routes>
-    </Router>
     <Footer logo={mainLogo}/>
+    </Router>
   </React.StrictMode>
 );
 
