@@ -10,7 +10,7 @@ function GalleryCard(props){
                 {
                     categories.map((img, index) => {
                         return <figure key={index} className="card">
-                            <Link to={'/Maison_Auben/projets/' + img.id}><img src={img.portrait} alt={img.title + "-img"}></img></Link>
+                            <Link to={'/projets/' + img.id}><img src={img.portrait} alt={img.title + "-img"}></img></Link>
                         </figure>
                     })
                 }

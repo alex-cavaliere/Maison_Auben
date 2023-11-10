@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Root from './root';
 import Header from './components/Header';
 import mainLogo from './assets/logo_auben.png'
@@ -13,28 +10,19 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import ItemGallery from './components/ItemGallery';
 
-const router = createBrowserRouter([
-  {
-    path: "/Maison_Auben",
-    element: <Root />,
-  },
-  {
-    path: "Maison_Auben/projets",
-    element: <Gallery />,
-  },
-  {
-    path: "Maison_Auben/projets/:id",
-    element: <ItemGallery />
-  }
-]);
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header logo={mainLogo}/>
-    <RouterProvider router={router}/>
-    <Footer logo={mainLogo}/>
+    <Router basename='/Maison_Auben'>
+      <Header logo={mainLogo}/>
+      <Routes>
+        <Route exact path='/' element={<Root />}/>
+        <Route path='/projets' element={<Gallery />}/>
+        <Route path='/projets/:id' element={<ItemGallery />}/>
+      </Routes>
+      <Footer logo={mainLogo}/>
+    </Router>
   </React.StrictMode>
 );
 
