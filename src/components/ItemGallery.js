@@ -17,20 +17,23 @@ function ItemGallery(){
     return(
         data && (
             <div id='item-gallery'>
-            <Nav />
-            <section>
-                <h1>{data.title}</h1>
-                <div className='item-container'>
-                    {
-                        data.images.map((img, index) => {
-                            return <figure key={index}>
-                                <img src={img} alt={data.title}/>
-                            </figure>
-                        })
-                    }
+                <div className='item-nav'>
+                    <Nav />
+                    <div className="line-3"></div>
                 </div>
-            </section>
-        </div>
+                <section>
+                    <h1>{data.title}</h1>
+                    <div className='item-container'>
+                        {
+                            data.images.map((img, index) => {
+                                return <figure key={index}>
+                                    <img src={img} alt={data.title}/>
+                                </figure>
+                            })
+                        }
+                    </div>
+                </section>
+            </div>
         )
     )
 }
