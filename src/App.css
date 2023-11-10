@@ -121,6 +121,54 @@ header {
   align-items: baseline;
   width: 92%;
 }
+header .mobile-toggle {
+  visibility: hidden;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background: none;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+}
+header .mobile-toggle.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+header .mobile-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+header .mobile-toggle.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+header .mobile-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.634);
+  margin: 5px 0;
+  transition: 0.4s;
+}
+header .mobile-nav {
+  position: absolute;
+  top: 7rem;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  opacity: 0;
+}
+header .mobile-nav.show {
+  opacity: 1;
+  animation: fadeIn 400ms ease-in-out;
+  z-index: 1;
+}
+header .mobile-nav ul {
+  width: fit-content;
+  margin: auto;
+  list-style-type: none;
+}
+header .mobile-nav ul li {
+  padding: 2rem;
+}
 header .logo-container {
   width: fit-content;
 }
@@ -402,6 +450,9 @@ footer #auben-footer img {
   }
   #agence .section-title, #contact .section-title {
     left: -4rem;
+  }
+  header .mobile-toggle {
+    visibility: visible;
   }
   header figure img {
     margin-left: -3rem;

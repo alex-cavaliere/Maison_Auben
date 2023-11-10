@@ -1,15 +1,8 @@
 import GalleryCard from "./GalleryCard"
 import Nav from "./Nav";
-import { useEffect, useState } from "react";
+import data from "../data/data.json";
 
 function Gallery(){
-    const [data, setData] = useState()
-    useEffect(() => {
-        fetch(`${process.env.PUBLIC_URL}/data.json`)
-        .then(async res => await res.json())
-        .then(data => setData(data))
-        .catch(err => console.log(err))
-      },[])
     return(
         data && (<div id="gallery-container">
             <div className="gallery-nav">

@@ -1,7 +1,7 @@
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import data from './data/data.json'
 import { Carousel } from 'react-responsive-carousel';
-import {useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BasicCard from './components/Card';
 import Form from './components/Form';
@@ -17,7 +17,6 @@ import quoteRight from './assets/quote-mirror.svg'
 import CarouselItem from './components/Carousel';
 
 function Root() {
-  const [data, setData] = useState();
   const onNavigate = useNavigate()
   const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
@@ -53,12 +52,6 @@ function Root() {
       </div>
     );
   };
-  useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/data.json`)
-    .then(async res => await res.json())
-    .then(data => setData(data))
-    .catch(err => console.log(err))
-  },[])
   let maisonParags;
   let etapesParags;
   let imgCollection = []
@@ -95,7 +88,7 @@ function Root() {
     })
   }
   return (
-    data && (<div id="main">
+    <div id="main">
     <section id="home">
       <Nav />
       <div className='carousel-container'>
@@ -173,8 +166,7 @@ function Root() {
         <Form />
       </div>
     </section>
-  </div>)
-  );
+  </div>);
 }
 
 export default Root;
