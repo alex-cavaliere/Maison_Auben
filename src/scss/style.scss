@@ -118,6 +118,20 @@
         }
     }
 }
+.loader{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E0DEDA;
+    z-index: 9999;
+    & img{
+        max-width: 250px;
+        animation: fadeIn 1s ease-in-out;
+    }
+}
 header{
     position: relative;
     display: flex;
@@ -164,13 +178,14 @@ header{
         &.show{
             opacity: 1;
             animation: fadeIn 400ms ease-in-out;
-            z-index: 1;
+            z-index: 10;
         }
         & ul{
             width: fit-content;
             margin: auto;
             list-style-type: none;
             & li{
+                margin-right: 1rem;
                 padding: 2rem;
             }
         }

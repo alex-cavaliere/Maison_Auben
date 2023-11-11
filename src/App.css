@@ -114,6 +114,21 @@
   height: 500px;
 }
 
+.loader {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E0DEDA;
+  z-index: 9999;
+}
+.loader img {
+  max-width: 250px;
+  animation: fadeIn 1s ease-in-out;
+}
+
 header {
   position: relative;
   display: flex;
@@ -160,7 +175,7 @@ header .mobile-nav {
 header .mobile-nav.show {
   opacity: 1;
   animation: fadeIn 400ms ease-in-out;
-  z-index: 1;
+  z-index: 10;
 }
 header .mobile-nav ul {
   width: fit-content;
@@ -168,6 +183,7 @@ header .mobile-nav ul {
   list-style-type: none;
 }
 header .mobile-nav ul li {
+  margin-right: 1rem;
   padding: 2rem;
 }
 header .logo-container {

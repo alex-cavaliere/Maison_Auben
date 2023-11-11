@@ -3,7 +3,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import data from './data/data.json'
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import BasicCard from './components/Card';
+import Loader from './components/Loader';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
 import Nav from './components/Nav';
@@ -18,6 +20,7 @@ import CarouselItem from './components/Carousel';
 
 function Root() {
   const onNavigate = useNavigate()
+  const [imagesLoaded, setImagesLoaded] = useState(false)
   const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
@@ -59,6 +62,7 @@ function Root() {
     const particulier = data.projets.particulier
     const professionnel = data.projets.professionnel
     const promotion = data.projets.promotion
+    let imagesLoadedCount = 0
     for(let category in data.projets){
       switch(category){
         case 'particulier':
@@ -74,6 +78,24 @@ function Root() {
       }
     }
     localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
+    
+    console.log(imgCollection)
+
+    imgCollection.forEach((image) => {
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.href = image.images
+      
+      link.onload = () => {
+        imagesLoadedCount++;
+        if (imagesLoadedCount === imgCollection.length) {
+          // Tutte le immagini sono state precaricate
+          setImagesLoaded(true)
+        }
+      };
+      document.head.appendChild(link)
+    });
     const descriptions = data.articles.descriptions
     descriptions.forEach(description => {
       if(description.maisonAuben){
@@ -88,85 +110,88 @@ function Root() {
     })
   }
   return (
-    <div id="main">
-    <section id="home">
-      <Nav />
-      <div className='carousel-container'>
-        <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
-          {
-            imgCollection.map((img, index) => {
-              return <div onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)}  className='carousel-wrapper' key={index}>
-                  <CarouselItem pictures={img.portrait}/>
-                  <div className='btn-container'>
-                    <button onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)} className='carousel-btn'>DÉCOUVRIR</button>
-                  </div>
+    <>
+    {imagesLoaded ? (<div id="main">
+      <section id="home">
+        <Nav />
+        <div className='carousel-container'>
+          <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
+            {
+              imgCollection.map((img, index) => {
+                return <div onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)}  className='carousel-wrapper' key={index}>
+                    <CarouselItem pictures={img.portrait}/>
+                    <div className='btn-container'>
+                      <button onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)} className='carousel-btn'>DÉCOUVRIR</button>
+                    </div>
+                </div>
+              })
+            }
+          </Carousel>
+        </div>
+      </section>
+      <section id="agence">
+        <div className='agence-article'>
+          <aside className='nav-wrapper'>
+              <div className='internal-link'>
+                <div className='line-2'></div>
+                <h1 className='section-title'>L'AGENCE</h1>
+                <div className='line-2'></div>
               </div>
-            })
-          }
-        </Carousel>
-      </div>
-    </section>
-    <section id="agence">
-      <div className='agence-article'>
+          </aside>
+          <article className='description-container'>
+            <div className='description'>
+              <div className='text'>
+                <h2 className='article-head'>MAISON AUBÈN</h2>
+                <p className='article-text'>{maisonParags}</p>
+              </div>
+              <img src='https://static.wixstatic.com/media/3f174c_c1a61b1d06c2414eaaa1c874b28cb7a0~mv2.jpg/v1/fill/w_390,h_489,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/33dfe90304eb8b9d04849e26505b4016.jpg' alt='Auben'/>
+            </div>
+            <div className='steps'>
+              <h3>LES DIFFÉRENTES ÉTAPES</h3>
+              <p className='steps-description'>{etapesParags}</p>
+              <div className='card-wrapper'>
+                <div className='card-container'>
+                  <BasicCard cube={cube1} cardTitle='Step N° 1'/>
+                </div>
+                <div className='arrow'><span><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></span></div>
+                <div className='card-container'>
+                  <BasicCard cube={cube2} cardTitle='Step N° 2'/>
+                </div>
+                <div className='arrow'><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></div>
+                <div className='card-container'>
+                  <BasicCard cube={cube3} cardTitle='Step N° 3'/>
+                </div>
+              </div>
+              <div className='quotes-container'>
+                <span className='quote-icon'><img src={quoteLeft} alt='quote-img'/></span>
+                <div className='quotes'>
+                  <h4>MME LEMOINE - RILLIEUX LA PAPE (AGENCE ORPI)</h4>
+                  <p className='quote'>Nous vous remercions pour la qualité de vos conseils, vos propositions d’agencement et de décoration. Nos collaborateurs et nous-mêmes nous sentons vraiment bien dans notre agence.</p>
+                </div>
+                <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id='contact'>
         <aside className='nav-wrapper'>
-            <div className='internal-link'>
-              <div className='line-2'></div>
-              <h1 className='section-title'>L'AGENCE</h1>
-              <div className='line-2'></div>
-            </div>
+          <div className='internal-link'>
+            <div className='line-2'></div>
+            <h1 className='section-title'>CONTACT</h1>
+            <div className='line-2'></div>
+          </div>
         </aside>
-        <article className='description-container'>
-          <div className='description'>
-            <div className='text'>
-              <h2 className='article-head'>MAISON AUBÈN</h2>
-              <p className='article-text'>{maisonParags}</p>
-            </div>
-            <img src='https://static.wixstatic.com/media/3f174c_c1a61b1d06c2414eaaa1c874b28cb7a0~mv2.jpg/v1/fill/w_390,h_489,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/33dfe90304eb8b9d04849e26505b4016.jpg' alt='Auben'/>
+        <div className='form-wrapper'>
+          <div className='form-foto'>
+            <img src={formFoto} alt={formFoto}></img>
           </div>
-          <div className='steps'>
-            <h3>LES DIFFÉRENTES ÉTAPES</h3>
-            <p className='steps-description'>{etapesParags}</p>
-            <div className='card-wrapper'>
-              <div className='card-container'>
-                <BasicCard cube={cube1} cardTitle='Step N° 1'/>
-              </div>
-              <div className='arrow'><span><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></span></div>
-              <div className='card-container'>
-                <BasicCard cube={cube2} cardTitle='Step N° 2'/>
-              </div>
-              <div className='arrow'><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></div>
-              <div className='card-container'>
-                <BasicCard cube={cube3} cardTitle='Step N° 3'/>
-              </div>
-            </div>
-            <div className='quotes-container'>
-              <span className='quote-icon'><img src={quoteLeft} alt='quote-img'/></span>
-              <div className='quotes'>
-                <h4>MME LEMOINE - RILLIEUX LA PAPE (AGENCE ORPI)</h4>
-                <p className='quote'>Nous vous remercions pour la qualité de vos conseils, vos propositions d’agencement et de décoration. Nos collaborateurs et nous-mêmes nous sentons vraiment bien dans notre agence.</p>
-              </div>
-              <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-    <section id='contact'>
-      <aside className='nav-wrapper'>
-        <div className='internal-link'>
-          <div className='line-2'></div>
-          <h1 className='section-title'>CONTACT</h1>
-          <div className='line-2'></div>
+          <Form />
         </div>
-      </aside>
-      <div className='form-wrapper'>
-        <div className='form-foto'>
-          <img src={formFoto} alt={formFoto}></img>
-        </div>
-        <Form />
-      </div>
-    </section>
-  </div>);
+      </section>
+    </div>) : (<Loader />)}
+  </>
+  )
 }
 
 export default Root;
