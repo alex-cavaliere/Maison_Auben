@@ -71,6 +71,10 @@
 #main #agence .agence-article .description {
   display: flex;
 }
+#main #agence .agence-article .description img {
+  margin-bottom: 2rem;
+  height: 500px;
+}
 #main #agence .agence-article .steps .steps-description {
   white-space: pre-wrap;
 }
@@ -81,15 +85,20 @@
   margin: 7rem auto auto auto;
 }
 #main #agence .agence-article .steps .quotes-container .quotes {
-  max-width: 60%;
+  width: 80%;
   text-align: center;
 }
 #main #agence .agence-article .steps .quotes-container .quote-icon:nth-child(n+2) {
   align-self: flex-end;
+  text-align: end;
+}
+#main #agence .agence-article .steps .quotes-container .quote-icon {
+  width: 5%;
+  height: 5%;
 }
 #main #agence .agence-article .steps .quotes-container .quote-icon img {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
 }
 #main #agence .agence-article .steps .card-wrapper {
   display: flex;
@@ -108,10 +117,6 @@
   width: 80%;
   padding: 0 2rem 2rem 2rem;
   text-align: end;
-}
-#main #agence .agence-article img {
-  margin-bottom: 2rem;
-  height: 500px;
 }
 
 .loader {

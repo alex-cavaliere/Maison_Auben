@@ -3,9 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import data from './data/data.json'
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import BasicCard from './components/Card';
-import Loader from './components/Loader';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
 import Nav from './components/Nav';
@@ -20,7 +18,6 @@ import CarouselItem from './components/Carousel';
 
 function Root() {
   const onNavigate = useNavigate()
-  const [imagesLoaded, setImagesLoaded] = useState(false)
   const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
@@ -38,7 +35,6 @@ function Root() {
       </div>
     );
   };
-  
   const renderArrowNext = (clickHandler, hasNext) => {
     return (
       <div
@@ -62,40 +58,15 @@ function Root() {
     const particulier = data.projets.particulier
     const professionnel = data.projets.professionnel
     const promotion = data.projets.promotion
-    let imagesLoadedCount = 0
     for(let category in data.projets){
       switch(category){
-        case 'particulier':
-          imgCollection = [...particulier]
-          break;
-        case 'professionnel':
-          imgCollection = [...particulier ,...professionnel]
-          break;
-        case 'promotion':
+        case 'particulier' && 'professionnel' && 'promotion':
           imgCollection = [...particulier, ...professionnel, ...promotion]
           break;
         default: imgCollection = [...particulier, ...professionnel, ...promotion]
       }
     }
     localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
-    
-    console.log(imgCollection)
-
-    imgCollection.forEach((image) => {
-      const link = document.createElement('link')
-      link.rel = 'preload'
-      link.as = 'image'
-      link.href = image.images
-      
-      link.onload = () => {
-        imagesLoadedCount++;
-        if (imagesLoadedCount === imgCollection.length) {
-          // Tutte le immagini sono state precaricate
-          setImagesLoaded(true)
-        }
-      };
-      document.head.appendChild(link)
-    });
     const descriptions = data.articles.descriptions
     descriptions.forEach(description => {
       if(description.maisonAuben){
@@ -110,8 +81,7 @@ function Root() {
     })
   }
   return (
-    <>
-    {imagesLoaded ? (<div id="main">
+    <div id="main">
       <section id="home">
         <Nav />
         <div className='carousel-container'>
@@ -189,9 +159,7 @@ function Root() {
           <Form />
         </div>
       </section>
-    </div>) : (<Loader />)}
-  </>
-  )
+    </div>)
 }
 
 export default Root;

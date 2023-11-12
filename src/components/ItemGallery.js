@@ -1,9 +1,12 @@
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { useParams } from "react-router-dom"
 import Nav from "./Nav"
 import { useEffect, useState } from "react";
 
 function ItemGallery(){
     const [data, setData] = useState()
+    const [isOpen, setIsOpen] = useState(false)
     const projets = JSON.parse(localStorage.getItem("imgCollection") || "[]");
     const {id} = useParams()
     useEffect(() => {
@@ -14,6 +17,10 @@ function ItemGallery(){
             return data
         })
     },[id])
+    const openLightBox = () => {
+        setIsOpen(!isOpen)
+    }
+    console.log(data)
     return(
         data && (
             <div id='item-gallery'>
@@ -26,13 +33,18 @@ function ItemGallery(){
                     <div className='item-container'>
                         {
                             data.images.map((img, index) => {
-                                return <figure key={index}>
+                                return <figure onClick={openLightBox} key={index}>
                                     <img src={img} alt={data.title}/>
                                 </figure>
                             })
                         }
                     </div>
                 </section>
+                <Lightbox 
+                    open={isOpen}
+                    close={() => setIsOpen(false)}
+                    slides={data.images.map(imgUrl => {return {src: imgUrl}})}
+                />
             </div>
         )
     )

@@ -70,6 +70,10 @@
             display: flex;
             & .description{
                 display: flex;
+                & img{
+                    margin-bottom: 2rem;
+                    height: 500px;
+                }
             }
             & .steps{
                 & .steps-description{
@@ -81,16 +85,21 @@
                     width: 80%;
                     margin: 7rem auto auto auto;
                     & .quotes{
-                        max-width: 60%;
+                        width: 80%;
                         text-align: center;
                     }
                     & .quote-icon:nth-child(n+2){
                         align-self: flex-end;
+                        text-align: end
                     }
-                    & .quote-icon img{
-                        width: 40px;
-                        height: 40px;
-                    }
+                    & .quote-icon{
+                        width: 5%;
+                        height: 5%;
+                        & img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    } 
                 }
                 & .card-wrapper{
                     display: flex;
@@ -110,10 +119,6 @@
                 width: 80%;
                 padding: 0 2rem 2rem 2rem;
                 text-align: end;
-            }
-            & img{
-                margin-bottom: 2rem;
-                height: 500px;
             }
         }
     }
