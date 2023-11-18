@@ -11,6 +11,10 @@
   display: flex;
   margin-top: 9rem;
   width: 100%;
+  justify-content: center;
+}
+#main section .form-foto {
+  margin: auto;
 }
 #main section .form-foto img {
   width: 300px;
@@ -20,7 +24,6 @@
   display: grid;
   grid-template-columns: auto;
   width: 60%;
-  margin: auto;
 }
 #main section form label {
   position: relative;
@@ -139,7 +142,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  width: 92%;
+  width: 91%;
 }
 header .mobile-toggle {
   visibility: hidden;
@@ -193,12 +196,16 @@ header .mobile-nav ul li {
 }
 header .logo-container {
   width: fit-content;
+  position: relative;
+}
+header .logo-container a {
+  width: fit-content;
 }
 
 #auben-logo {
   width: min-content;
   text-align: center;
-  margin: 1rem 0 0 4rem;
+  margin: 1rem 0 0 2rem;
 }
 #auben-logo img {
   max-height: 120px;
@@ -215,19 +222,12 @@ header .logo-container {
   position: relative;
   width: fit-content;
 }
-.nav-wrapper ul {
-  margin: 0 0 0 -3.5rem;
-}
 .nav-wrapper .section-title {
-  position: absolute;
-  left: 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-left: -2.2rem;
   width: max-content;
-  font-size: 35px;
+  font-size: 26px;
   letter-spacing: 0.25em;
   font-weight: 100;
-  margin: 0;
   background-color: white;
   z-index: 9999;
 }
@@ -240,7 +240,6 @@ header .logo-container {
   background-color: black;
 }
 .nav-wrapper .line-2 {
-  width: 18vw;
   height: 100%;
 }
 .nav-wrapper .line-2::after {
@@ -264,13 +263,17 @@ a {
   color: inherit;
 }
 
+#agence .internal-link, #contact .internal-link {
+  margin: 0 0 0 1.5rem;
+}
+
 .internal-link {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   list-style-type: none;
-  margin-top: -3rem;
-  width: 20vw;
+  margin: 0 0 0 2rem;
+  max-width: 100px;
   height: 100%;
 }
 .internal-link a {
@@ -281,7 +284,7 @@ a {
   transform: scale(1.1);
   transition: transform 250ms ease-out;
 }
-.internal-link h1, .internal-link li:not(.item):not(.line-1) {
+.internal-link h1, .internal-link li:not(.item):not(.line-1):not(.line-2) {
   text-align: center;
   width: max-content;
   padding: 2.5rem 0rem 2.5rem 0.5rem;
@@ -303,13 +306,17 @@ a {
 
 .carousel-container {
   position: relative;
-  width: 74%;
+  margin: auto auto auto 2rem;
+  width: 78%;
   height: fit-content;
+}
+.carousel-container .carousel .control-dots {
+  display: none;
 }
 .carousel-container .btn-container {
   position: absolute;
-  width: 100%;
-  bottom: 5rem;
+  width: 90%;
+  bottom: 2rem;
   text-align: center;
 }
 .carousel-container .btn-container .carousel-btn {
@@ -325,6 +332,9 @@ a {
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide {
   max-height: 550px;
+}
+.carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper {
+  width: 100%;
 }
 .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
   max-height: 550px;
@@ -426,24 +436,24 @@ footer #auben-footer img {
   max-width: 150px;
 }
 
-@media screen and (max-width: 1440px) {
-  .nav-wrapper .section-title {
-    font-size: 2rem;
-    left: -1rem;
-  }
-}
 @media screen and (max-width: 1255px) {
+  header {
+    width: 95%;
+  }
   header figcaption {
     visibility: hidden;
   }
   #agence .agence-article .arrow {
     visibility: hidden;
   }
-  .nav-wrapper .section-title {
-    left: -2rem;
-  }
 }
 @media screen and (max-width: 998px) {
+  header {
+    width: 100%;
+  }
+  .carousel-container {
+    margin: 0;
+  }
   #main #agence .agence-article .description {
     flex-direction: column-reverse;
     align-items: center;
@@ -456,9 +466,6 @@ footer #auben-footer img {
     text-align: center;
     margin-bottom: 2rem;
   }
-  .nav-wrapper .section-title {
-    left: -3.3rem;
-  }
   .card {
     width: 100%;
   }
@@ -470,14 +477,14 @@ footer #auben-footer img {
   .header-sub {
     display: none;
   }
-  #agence .section-title, #contact .section-title {
-    left: -4rem;
+  #agence .internal-link, #contact .internal-link {
+    margin: 0 0 0 -2.8rem;
   }
   header .mobile-toggle {
     visibility: visible;
   }
   header figure img {
-    margin-left: -3rem;
+    margin-left: -1rem;
     height: 5rem;
     width: 7rem;
   }
@@ -485,8 +492,8 @@ footer #auben-footer img {
     display: flex;
     flex-direction: column;
   }
-  .nav-wrapper ul {
-    margin: 0 0 0 -3rem;
+  .nav-wrapper .internal-link {
+    margin: 0 0 0 -2rem;
   }
   .nav-wrapper .line-1.hidden {
     display: block;
@@ -541,13 +548,8 @@ footer #auben-footer img {
   #main #agence .agence-article img {
     height: 300px;
   }
-  #agence .section-title, #contact .section-title {
-    left: -5rem;
-  }
-}
-@media screen and (max-width: 580px) {
-  #agence .section-title, #contact .section-title {
-    left: -5.5rem;
+  .carousel-container {
+    margin: 0;
   }
 }
 @media screen and (max-width: 450px) {
@@ -565,10 +567,13 @@ footer #auben-footer img {
   .carousel-controls img {
     width: 20px;
   }
-  #agence .internal-link {
+  #main #agence .agence-article .description img {
+    height: 350px;
+  }
+  #main #agence .internal-link {
     margin-top: 5rem;
   }
-  #agence .internal-link .item {
+  #main #agence .internal-link .item {
     margin-left: 0.3rem;
   }
   #agence .agence-article, #contact .agence-article {
@@ -576,18 +581,12 @@ footer #auben-footer img {
   }
   #agence .section-title, #contact .section-title {
     font-size: 1.1rem;
-    padding: 0 1rem 0 1rem;
-    left: -2.4rem;
+    margin-left: -0.5rem;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
   #agence .agence-article, #contact .agence-article {
     margin-top: -8rem;
-  }
-  #agence .section-title, #contact .section-title {
-    font-size: 1.1rem;
-    padding: 0 1rem 0 1rem;
-    left: -3rem;
   }
 }
 @keyframes fadeIn {

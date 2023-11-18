@@ -10,8 +10,10 @@
             display: flex;
             margin-top: 9rem;
             width: 100%;
+            justify-content: center;
         }
         & .form-foto{
+            margin: auto;
             & img{
                 width: 300px;
                 height: 400px;
@@ -21,7 +23,6 @@
             display: grid;
             grid-template-columns: auto;
             width: 60%;
-            margin: auto;
             & label{
                 position: relative;
                 padding: 1rem;
@@ -142,7 +143,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    width: 92%;
+    width: 91%;
     & .mobile-toggle{
         visibility: hidden;
         position: absolute;
@@ -197,13 +198,17 @@ header{
     }
     & .logo-container{
         width: fit-content;
+        position: relative;
+        & a{
+            width: fit-content;
+        }
     }
 }
 
 #auben-logo{
     width: min-content;
     text-align: center;
-    margin: 1rem 0 0 4rem;
+    margin: 1rem 0 0 2rem;
     & img{
         max-height: 120px;
         max-width: 170px;
@@ -218,19 +223,12 @@ header{
 .nav-wrapper{
     position: relative;
     width: fit-content;
-    & ul{
-        margin: 0 0 0 -3.5rem;
-    }
     & .section-title{
-        position: absolute;
-        left: 0;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        margin-left: -2.2rem;
         width: max-content;
-        font-size: 35px;
+        font-size: 26px;
         letter-spacing: 0.25em;   
         font-weight: 100;
-        margin: 0;
         background-color: white;
         z-index: 9999;
     }
@@ -243,7 +241,6 @@ header{
         background-color: black;
     }
     & .line-2{
-        width: 18vw;
         height: 100%;
         &::after{
             content: '';
@@ -266,13 +263,18 @@ a {
     text-decoration: none;
     color: inherit;
 }
+#agence, #contact{
+    .internal-link{
+        margin: 0 0 0 1.5rem;
+    }
+}
 .internal-link{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     list-style-type: none;
-    margin-top: -3rem;
-    width: 20vw;
+    margin: 0 0 0 2rem;
+    max-width: 100px;
     height: 100%;
     & a{
         margin: auto;
@@ -282,7 +284,7 @@ a {
             transition: transform 250ms ease-out;
         }
     }
-    & h1, li:not(.item):not(.line-1){
+    & h1, li:not(.item):not(.line-1):not(.line-2){
         text-align: center;
         width: max-content;
         padding: 2.5rem 0rem 2.5rem 0.5rem;
@@ -303,12 +305,16 @@ a {
 }
 .carousel-container{
     position: relative;
-    width: 74%;
+    margin: auto auto auto 2rem;
+    width: 78%;
     height: fit-content;
+    & .carousel .control-dots{
+        display: none;
+    }
     & .btn-container{
         position: absolute;
-        width: 100%;
-        bottom: 5rem;
+        width: 90%;
+        bottom: 2rem;
         text-align: center;
         & .carousel-btn{
             padding: 1rem 2rem 1rem 2rem;
@@ -325,6 +331,7 @@ a {
 .carousel .slider-wrapper.axis-horizontal .slider .slide{
     max-height: 550px;
     & .carousel-wrapper{
+        width: 100%;
         & img{
             max-height: 550px;
             object-fit: cover;
@@ -423,15 +430,11 @@ footer{
         }
     }
 }
-@media screen and (max-width:1440px) {
-    .nav-wrapper{
-        & .section-title{
-            font-size: 2rem;
-            left: -1rem;
-        }
-    }
-}
+
 @media screen and (max-width:1255px) {
+    header{
+        width: 95%;
+    }
     header figcaption{
         visibility: hidden;
     }
@@ -442,14 +445,15 @@ footer{
             }
         }
     }
-    .nav-wrapper{
-        & .section-title{
-            left: -2rem;
-        }
-    }
 }
 
 @media screen and (max-width:998px) {
+    header{
+        width: 100%;
+    }
+    .carousel-container{
+        margin: 0;
+    }
     #main{
         #agence{
             & .agence-article{
@@ -468,11 +472,6 @@ footer{
             }
         }
     }
-    .nav-wrapper{
-        & .section-title{
-            left: -3.3rem;
-        }
-    }
     .card{
         width: 100%;
     }
@@ -486,8 +485,8 @@ footer{
         display: none;
     }
     #agence, #contact{
-        .section-title{
-            left: -4rem;
+        & .internal-link{
+            margin: 0 0 0 -2.8rem;
         }
     }
     header{
@@ -496,7 +495,7 @@ footer{
         }
         & figure{
             & img{
-                margin-left: -3rem;
+                margin-left: -1rem;
                 height: 5rem;
                 width: 7rem;
             }
@@ -505,8 +504,8 @@ footer{
     .nav-wrapper{
         display: flex;
         flex-direction: column;
-        & ul{
-            margin: 0 0 0 -3rem;
+        & .internal-link{
+            margin: 0 0 0 -2rem;
         }
         & .line-1{
             &.hidden{
@@ -590,18 +589,8 @@ footer{
             }
         }
     }
-    #agence, #contact{
-        & .section-title{
-            left: -5rem;
-        }
-    }
-}
-
-@media screen and (max-width:580px) {
-    #agence, #contact{
-        & .section-title{
-            left: -5.5rem;
-        }
+    .carousel-container{
+        margin: 0;
     }
 }
 @media screen and (max-width: 450px) {
@@ -621,13 +610,22 @@ footer{
             width: 20px;
         }
     }
-    #agence{
-        .internal-link{
-            margin-top: 5rem;
-            & .item{
-                margin-left: 0.3rem;
+    #main{
+        & #agence{
+            & .agence-article{
+                & .description{
+                    & img{
+                        height: 350px;
+                    }
+                }
             }
-        }    
+            & .internal-link{
+                margin-top: 5rem;
+                & .item{
+                    margin-left: 0.3rem;
+                }
+            }   
+        }
     }
     #agence, #contact{
         & .agence-article{
@@ -635,20 +633,14 @@ footer{
         }
         & .section-title{
             font-size: 1.1rem;
-            padding: 0 1rem 0 1rem;
-            left: -2.4rem;
+            margin-left: -0.5rem;
         }
     }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
     #agence, #contact{
         & .agence-article{
             margin-top: -8rem;
-        }
-        & .section-title{
-            font-size: 1.1rem;
-            padding: 0 1rem 0 1rem;
-            left: -3rem;
         }
     }
 }

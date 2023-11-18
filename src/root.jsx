@@ -102,11 +102,11 @@ function Root() {
       <section id="agence">
         <div className='agence-article'>
           <aside className='nav-wrapper'>
-              <div className='internal-link'>
-                <div className='line-2'></div>
+              <ul className='internal-link'>
+                <li className='line-2'></li>
                 <h1 className='section-title'>L'AGENCE</h1>
-                <div className='line-2'></div>
-              </div>
+                <li className='line-2'></li>
+              </ul>
           </aside>
           <article className='description-container'>
             <div className='description'>
@@ -146,11 +146,11 @@ function Root() {
       </section>
       <section id='contact'>
         <aside className='nav-wrapper'>
-          <div className='internal-link'>
-            <div className='line-2'></div>
+          <ul className='internal-link'>
+            <li className='line-2'></li>
             <h1 className='section-title'>CONTACT</h1>
-            <div className='line-2'></div>
-          </div>
+            <li className='line-2'></li>
+          </ul>
         </aside>
         <div className='form-wrapper'>
           <div className='form-foto'>
