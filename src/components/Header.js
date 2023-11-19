@@ -30,10 +30,10 @@ function Header(props){
                 </ul>
             </nav>
             <button onClick={ToggleMenu} className={`mobile-toggle ${isOpen ? 'open' : ''}`}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </button>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </button>
             <div className='header-sub'>
                 <p>AUDREY & BENJAMIN</p>
             </div>

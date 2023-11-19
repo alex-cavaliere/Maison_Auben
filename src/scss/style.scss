@@ -56,15 +56,15 @@
         flex-direction: column;
         margin-top: 3rem;
         & article{
-            width: 72%;
+            width: 80%;
             & h2, h3{
                 margin-top: 0;
-                margin-bottom: 5rem;
+                margin: auto auto 5rem auto;
                 font-size: 25px;
                 font-weight: 100;
             }
             & h3{
-                max-width: 70%;
+                max-width: 90%;
             }
         }
         & .agence-article{
@@ -78,6 +78,8 @@
             }
             & .steps{
                 & .steps-description{
+                    margin: auto;
+                    width: 90%;
                     white-space: pre-wrap;
                 }
                 & .quotes-container{
@@ -287,7 +289,7 @@ a {
     & h1, li:not(.item):not(.line-1):not(.line-2){
         text-align: center;
         width: max-content;
-        padding: 2.5rem 0rem 2.5rem 0.5rem;
+        padding: 3rem 0rem 3rem 0.5rem;
         transform: rotate(-90deg);
     }
     & .nav-hidden{
@@ -296,7 +298,7 @@ a {
     & .item{
         font-size: x-large;
         text-align: center;
-        padding: 0.5rem 0 0.5rem 0;
+        padding: 1rem 0 1rem 0;
     }
 } 
 #home{
@@ -305,7 +307,7 @@ a {
 }
 .carousel-container{
     position: relative;
-    margin: auto auto auto 2rem;
+    margin: 0 auto auto 2rem;
     width: 78%;
     height: fit-content;
     & .carousel .control-dots{
@@ -313,7 +315,7 @@ a {
     }
     & .btn-container{
         position: absolute;
-        width: 90%;
+        width: 100%;
         bottom: 2rem;
         text-align: center;
         & .carousel-btn{
@@ -340,7 +342,8 @@ a {
     }
 }
 .line-3{
-    width: 18vw;
+    width: 100%;
+    margin-left: 2.2rem;
     height: 100%;
     text-align: center;
     &::after{
@@ -357,6 +360,7 @@ a {
         font-weight: 300;
         font-size: 0.8rem;
         margin-top: -1.7rem;
+        margin-left: 3rem;
         & span{
             padding: 0.5rem;
             line-height: 1px;
@@ -413,6 +417,7 @@ a {
     }
     & section{
         width: 73%;
+        margin: auto
     }
 }
 footer{
@@ -448,9 +453,6 @@ footer{
 }
 
 @media screen and (max-width:998px) {
-    header{
-        width: 100%;
-    }
     .carousel-container{
         margin: 0;
     }
@@ -501,6 +503,9 @@ footer{
             }
         }
     }
+    .line-3{
+        margin: 0.3rem;
+    }
     .nav-wrapper{
         display: flex;
         flex-direction: column;
@@ -525,6 +530,7 @@ footer{
         }
     }
     .carousel-container{
+        margin-left: 2rem;
         & .carousel img{
             height: 400px;
         }
@@ -550,6 +556,9 @@ footer{
         display: none;
     }
     #gallery-container{
+        & h5{
+            margin: auto;
+        }
         & .gallery-wrapper{
             & .card{
                 margin: 0.2rem;
@@ -565,8 +574,6 @@ footer{
 @media screen and (max-width: 666px) {
     .gallery-wrapper{
         & .card{
-            max-width: 370px;
-            height: 270px;
             &:hover{
                 transform: scale(1.05);
                 transition: transform 250ms ease-in-out;
