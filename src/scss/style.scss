@@ -1,6 +1,10 @@
 #root{
     overflow: hidden;
 }
+#main, #gallery-container, #item-gallery{
+    width: 85%;
+    margin: auto;
+}
 #main{
     & section{
         display: flex;
@@ -145,7 +149,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    width: 91%;
+    margin: auto;
+    width: 85%;
     & .mobile-toggle{
         visibility: hidden;
         position: absolute;
@@ -201,6 +206,7 @@ header{
     & .logo-container{
         width: fit-content;
         position: relative;
+        margin-left: -5.2rem;
         & a{
             width: fit-content;
         }
@@ -222,11 +228,18 @@ header{
         margin: -1rem auto auto 0.5rem;
     }
 }
+#contact{
+    .internal-link{
+        .section-title{
+            margin-left: -2rem;
+        }
+    }
+}
 .nav-wrapper{
     position: relative;
     width: fit-content;
     & .section-title{
-        margin-left: -2.2rem;
+        margin-left: -2.3rem;
         width: max-content;
         font-size: 26px;
         letter-spacing: 0.25em;   
@@ -255,6 +268,7 @@ header{
     }
     & .line-1, .line-2{
         text-align: center;
+        width: 70%;
         padding: 1rem 0rem 1.5rem 0;
         &.hidden{
             display: none;
@@ -267,7 +281,7 @@ a {
 }
 #agence, #contact{
     .internal-link{
-        margin: 0 0 0 1.5rem;
+        margin: -0.4rem 0 0 -0.5rem;
     }
 }
 .internal-link{
@@ -275,7 +289,7 @@ a {
     flex-direction: column;
     justify-content: space-around;
     list-style-type: none;
-    margin: 0 0 0 2rem;
+    padding: 0;
     max-width: 100px;
     height: 100%;
     & a{
@@ -289,7 +303,7 @@ a {
     & h1, li:not(.item):not(.line-1):not(.line-2){
         text-align: center;
         width: max-content;
-        padding: 3rem 0rem 3rem 0.5rem;
+        padding: 2.2rem 0rem 4rem 0.5rem;
         transform: rotate(-90deg);
     }
     & .nav-hidden{
@@ -298,7 +312,7 @@ a {
     & .item{
         font-size: x-large;
         text-align: center;
-        padding: 1rem 0 1rem 0;
+        padding: 1rem 2rem 1rem 0;
     }
 } 
 #home{
@@ -308,7 +322,7 @@ a {
 .carousel-container{
     position: relative;
     margin: 0 auto auto 2rem;
-    width: 78%;
+    width: 100%;
     height: fit-content;
     & .carousel .control-dots{
         display: none;
@@ -342,8 +356,7 @@ a {
     }
 }
 .line-3{
-    width: 100%;
-    margin-left: 2.2rem;
+    width: 72%;
     height: 100%;
     text-align: center;
     &::after{
@@ -417,7 +430,7 @@ a {
     }
     & section{
         width: 73%;
-        margin: auto
+        margin: 0 auto auto auto;
     }
 }
 footer{
@@ -437,9 +450,6 @@ footer{
 }
 
 @media screen and (max-width:1255px) {
-    header{
-        width: 95%;
-    }
     header figcaption{
         visibility: hidden;
     }
@@ -482,36 +492,26 @@ footer{
     }
 }
 @media screen and (max-width:800px){
-
     .header-sub{
         display: none;
     }
-    #agence, #contact{
-        & .internal-link{
-            margin: 0 0 0 -2.8rem;
-        }
-    }
     header{
+        & .logo-container{
+            margin-left: -3rem;
+        }
         & .mobile-toggle{
             visibility: visible;
         }
         & figure{
             & img{
-                margin-left: -1rem;
                 height: 5rem;
                 width: 7rem;
             }
         }
     }
-    .line-3{
-        margin: 0.3rem;
-    }
     .nav-wrapper{
         display: flex;
         flex-direction: column;
-        & .internal-link{
-            margin: 0 0 0 -2rem;
-        }
         & .line-1{
             &.hidden{
                 display: block;
@@ -526,11 +526,13 @@ footer{
                     display: block;
                     width: 100%;
                 }
+                & .item{
+                    padding: 1rem 1rem 1rem 0;
+                }
             } 
         }
     }
     .carousel-container{
-        margin-left: 2rem;
         & .carousel img{
             height: 400px;
         }
@@ -588,6 +590,7 @@ footer{
 }
 @media screen and (max-width:650px) {
     #main{
+        width: 95%;
         #agence{
             & .agence-article{
                 & img {
@@ -607,7 +610,6 @@ footer{
         }
         & .carousel img{
             height: 300px;
-            width: 95%;
         }
     }   
     .carousel-controls{
@@ -622,7 +624,8 @@ footer{
             & .agence-article{
                 & .description{
                     & img{
-                        height: 350px;
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }
