@@ -62,7 +62,8 @@
   margin-top: 3rem;
 }
 #main #agence article {
-  width: 80%;
+  width: 100%;
+  margin: auto;
 }
 #main #agence article h2, #main #agence article h3 {
   margin-top: 0;
@@ -277,10 +278,6 @@ a {
   color: inherit;
 }
 
-#agence .internal-link, #contact .internal-link {
-  margin: -0.4rem 0 0 -0.5rem;
-}
-
 .internal-link {
   display: flex;
   flex-direction: column;
@@ -344,14 +341,11 @@ a {
   transition: transform 150ms ease-in-out;
 }
 
-.carousel .slider-wrapper.axis-horizontal .slider .slide {
-  max-height: 550px;
-}
 .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper {
   width: 100%;
 }
 .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
-  max-height: 550px;
+  height: 550px;
   object-fit: cover;
   object-position: 65% 35%;
 }
@@ -372,11 +366,13 @@ a {
 #gallery-container {
   display: flex;
 }
+#gallery-container .gallery-items {
+  width: 100%;
+}
 #gallery-container h5 {
   font-weight: 300;
   font-size: 0.8rem;
   margin-top: -1.7rem;
-  margin-left: 3rem;
 }
 #gallery-container h5 span {
   padding: 0.5rem;
@@ -384,21 +380,19 @@ a {
   font-size: large;
 }
 #gallery-container .gallery {
+  float: right;
   margin-bottom: 6rem;
   animation: fadeIn 600ms ease-in-out;
   width: 91%;
 }
 #gallery-container .gallery-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   width: 100%;
 }
 #gallery-container .gallery-wrapper .card {
   margin: 0.2rem;
-  width: 270px;
-  height: 270px;
+  width: 97%;
 }
 #gallery-container .gallery-wrapper .card:hover {
   transform: scale(1.05);
@@ -407,7 +401,7 @@ a {
 #gallery-container .gallery-wrapper .card img {
   object-fit: cover;
   width: 100%;
-  height: 270px;
+  height: 100%;
 }
 
 #item-gallery {
@@ -423,12 +417,11 @@ a {
 }
 #item-gallery .item-container figure {
   width: 49%;
-  height: 340px;
   margin: 0.2rem;
 }
 #item-gallery .item-container figure img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 #item-gallery section {
@@ -460,6 +453,14 @@ footer #auben-footer img {
     visibility: hidden;
   }
 }
+@media screen and (max-width: 1050px) {
+  #item-gallery .item-container figure {
+    width: 100%;
+  }
+  #main .form-foto {
+    display: none;
+  }
+}
 @media screen and (max-width: 998px) {
   .carousel-container {
     margin: 0;
@@ -477,9 +478,6 @@ footer #auben-footer img {
     margin-bottom: 2rem;
   }
   .card {
-    width: 100%;
-  }
-  #item-gallery .item-container figure {
     width: 100%;
   }
 }
@@ -523,25 +521,23 @@ footer #auben-footer img {
   .carousel-controls {
     transform: translateY(-500%);
   }
+  #main #agence {
+    margin-bottom: 1rem;
+  }
   #main #agence .agence-article .steps .quotes-container {
     width: 100%;
-  }
-  .form-foto {
-    display: none;
   }
   #gallery-container h5 {
     margin: auto;
   }
-  #gallery-container .gallery-wrapper .card {
-    margin: 0.2rem;
-    width: 100%;
-    height: auto;
-  }
-  #gallery-container .gallery-wrapper .card img {
-    height: auto;
-  }
 }
 @media screen and (max-width: 666px) {
+  header {
+    width: 100%;
+  }
+  header #auben-logo {
+    margin-left: 4rem;
+  }
   .gallery-wrapper .card:hover {
     transform: scale(1.05);
     transition: transform 250ms ease-in-out;
@@ -553,14 +549,61 @@ footer #auben-footer img {
   }
 }
 @media screen and (max-width: 650px) {
+  #home .nav-wrapper {
+    margin-bottom: 5rem;
+  }
+  .internal-link {
+    width: 50%;
+  }
+  .internal-link .nav-hidden {
+    margin-left: -0.5rem;
+  }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
+    height: 400px;
+  }
   #main {
     width: 95%;
   }
-  #main #agence .agence-article img {
-    height: 300px;
+  #main #agence .agence-article .steps h3 {
+    width: 100%;
+  }
+  #main #agence .agence-article .steps .steps-description {
+    width: 100%;
+  }
+  #main #agence .agence-article .description {
+    margin-left: -2rem;
+  }
+  #gallery-container {
+    width: 95%;
+  }
+  #gallery-container .gallery {
+    width: 100%;
+  }
+  #gallery-container .gallery-wrapper {
+    grid-template-columns: auto auto;
+  }
+  #item-gallery {
+    width: 95%;
+  }
+  #item-gallery section {
+    margin: 0;
+    width: 80%;
   }
   .carousel-container {
     margin: 0;
+  }
+  #contact .internal-link .section-title {
+    margin-left: -1.7rem;
+  }
+  #agence .agence-article, #contact .agence-article {
+    margin-top: -8rem;
+  }
+  #agence .section-title, #contact .section-title {
+    font-size: 1.1rem;
+    margin-left: -2rem;
+  }
+  .line-3 {
+    width: 30%;
   }
 }
 @media screen and (max-width: 450px) {
@@ -570,12 +613,24 @@ footer #auben-footer img {
   .carousel-container .carousel img {
     height: 300px;
   }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
+    height: 300px;
+  }
   .carousel-controls {
     transform: translateY(-350%);
     width: 95%;
   }
   .carousel-controls img {
     width: 20px;
+  }
+  #gallery-container .gallery-wrapper {
+    grid-template-columns: auto;
+  }
+  #main #agence {
+    margin-top: -4rem;
+  }
+  #main #agence .agence-article .description {
+    justify-content: center;
   }
   #main #agence .agence-article .description img {
     width: 100%;
@@ -586,13 +641,6 @@ footer #auben-footer img {
   }
   #main #agence .internal-link .item {
     margin-left: 0.3rem;
-  }
-  #agence .agence-article, #contact .agence-article {
-    margin-top: -8rem;
-  }
-  #agence .section-title, #contact .section-title {
-    font-size: 1.1rem;
-    margin-left: -0.5rem;
   }
 }
 @media screen and (max-width: 360px) {

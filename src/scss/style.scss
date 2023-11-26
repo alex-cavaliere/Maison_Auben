@@ -60,7 +60,8 @@
         flex-direction: column;
         margin-top: 3rem;
         & article{
-            width: 80%;
+            width: 100%;
+            margin: auto;
             & h2, h3{
                 margin-top: 0;
                 margin: auto auto 5rem auto;
@@ -279,11 +280,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-#agence, #contact{
-    .internal-link{
-        margin: -0.4rem 0 0 -0.5rem;
-    }
-}
+
 .internal-link{
     display: flex;
     flex-direction: column;
@@ -345,11 +342,10 @@ a {
     }
 }
 .carousel .slider-wrapper.axis-horizontal .slider .slide{
-    max-height: 550px;
     & .carousel-wrapper{
         width: 100%;
         & img{
-            max-height: 550px;
+            height: 550px;
             object-fit: cover;
             object-position: 65% 35%;
         }
@@ -369,11 +365,13 @@ a {
 }
 #gallery-container{
     display: flex;
+    .gallery-items{
+        width: 100%;
+    }
     h5 {
         font-weight: 300;
         font-size: 0.8rem;
         margin-top: -1.7rem;
-        margin-left: 3rem;
         & span{
             padding: 0.5rem;
             line-height: 1px;
@@ -381,20 +379,18 @@ a {
         }
     }
     .gallery{
+        float: right;
         margin-bottom: 6rem;
         animation: fadeIn 600ms ease-in-out;
         width: 91%;
     }
     & .gallery-wrapper{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
         width: 100%;
         & .card{
             margin: 0.2rem;
-            width: 270px;
-            height: 270px;
+            width: 97%;
             &:hover{
                 transform: scale(1.05);
                 transition: transform 250ms ease-in-out;
@@ -402,7 +398,7 @@ a {
             & img{
                 object-fit: cover;
                 width: 100%;
-                height: 270px;
+                height: 100%;
             }
         }
     }
@@ -419,11 +415,10 @@ a {
         height: auto;
         & figure{
             width: 49%;
-            height: 340px;
             margin: 0.2rem;
             & img{
                 width: 100%;
-                height: 100%;
+                height: auto;
                 object-fit: cover;
             }
         }
@@ -461,6 +456,16 @@ footer{
         }
     }
 }
+@media screen and (max-width: 1050px) {
+    #item-gallery .item-container figure{
+        width: 100%;
+    }
+    #main{
+        & .form-foto{
+            display: none;
+        }
+    }
+}
 
 @media screen and (max-width:998px) {
     .carousel-container{
@@ -485,9 +490,6 @@ footer{
         }
     }
     .card{
-        width: 100%;
-    }
-    #item-gallery .item-container figure{
         width: 100%;
     }
 }
@@ -545,6 +547,7 @@ footer{
     }
     #main{
         & #agence{
+            margin-bottom: 1rem;
             & .agence-article{
                 & .steps{
                     & .quotes-container{
@@ -554,26 +557,19 @@ footer{
             } 
         } 
     }
-    .form-foto{
-        display: none;
-    }
     #gallery-container{
         & h5{
             margin: auto;
         }
-        & .gallery-wrapper{
-            & .card{
-                margin: 0.2rem;
-                width: 100%;
-                height: auto;
-                & img{
-                    height: auto;
-                }
-            }
-        }
     }
 }
 @media screen and (max-width: 666px) {
+    header{
+        width: 100%;
+        & #auben-logo{
+            margin-left: 4rem;
+        }
+    }
     .gallery-wrapper{
         & .card{
             &:hover{
@@ -589,18 +585,80 @@ footer{
     }
 }
 @media screen and (max-width:650px) {
+    #home{
+        & .nav-wrapper{
+            margin-bottom: 5rem;
+        }
+    }
+    .internal-link{
+        width: 50%;
+        & .nav-hidden{
+           margin-left: -0.5rem;
+        }
+        
+    }
+    .carousel .slider-wrapper.axis-horizontal .slider .slide{
+        & .carousel-wrapper{
+            & img{
+                height: 400px;
+            }
+        }
+    }
     #main{
         width: 95%;
         #agence{
             & .agence-article{
-                & img {
-                    height: 300px;
+                & .steps{
+                    & h3{
+                        width: 100%;
+                    }
+                    & .steps-description{
+                        width: 100%;
+                    }
+                }
+                & .description{
+                    margin-left: -2rem;
                 }
             }
         }
     }
+    #gallery-container{
+        width: 95%;
+        & .gallery{
+            width: 100%;
+        }
+        & .gallery-wrapper{
+            grid-template-columns: auto auto;
+        }
+    }
+    #item-gallery{
+        width: 95%;
+        & section{
+            margin: 0;
+            width: 80%;
+        }
+    }
     .carousel-container{
         margin: 0;
+    }
+    #contact{
+        & .internal-link{
+            & .section-title{
+                margin-left: -1.7rem;
+            }
+        }
+    }
+    #agence, #contact{
+        & .agence-article{
+            margin-top: -8rem;
+        }   
+        & .section-title{
+            font-size: 1.1rem;
+            margin-left: -2rem;
+        }
+    }
+    .line-3{
+        width: 30%;
     }
 }
 @media screen and (max-width: 450px) {
@@ -612,6 +670,13 @@ footer{
             height: 300px;
         }
     }   
+    .carousel .slider-wrapper.axis-horizontal .slider .slide{
+        & .carousel-wrapper{
+            & img{
+                height: 300px;
+            }
+        }
+    }
     .carousel-controls{
         transform: translateY(-350%);
         width: 95%;
@@ -619,10 +684,17 @@ footer{
             width: 20px;
         }
     }
+    #gallery-container{
+        & .gallery-wrapper{
+            grid-template-columns: auto;
+        }
+    }
     #main{
         & #agence{
+            margin-top: -4rem;
             & .agence-article{
                 & .description{
+                    justify-content: center;
                     & img{
                         width: 100%;
                         height: auto;
@@ -635,15 +707,6 @@ footer{
                     margin-left: 0.3rem;
                 }
             }   
-        }
-    }
-    #agence, #contact{
-        & .agence-article{
-            margin-top: -8rem;
-        }
-        & .section-title{
-            font-size: 1.1rem;
-            margin-left: -0.5rem;
         }
     }
 }
