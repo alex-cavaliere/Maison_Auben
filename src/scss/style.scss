@@ -280,7 +280,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+.internal-link:not(#home .internal-link){
+    margin-left: -0.4rem;
+}
 .internal-link{
     display: flex;
     flex-direction: column;
@@ -309,7 +311,7 @@ a {
     & .item{
         font-size: x-large;
         text-align: center;
-        padding: 1rem 2rem 1rem 0;
+        padding: 1rem 1.5rem 0 0;
     }
 } 
 #home{
@@ -527,9 +529,6 @@ footer{
                 & li:nth-child(2){
                     display: block;
                     width: 100%;
-                }
-                & .item{
-                    padding: 1rem 1rem 1rem 0;
                 }
             } 
         }

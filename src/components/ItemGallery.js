@@ -1,4 +1,10 @@
 import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Video from "yet-another-react-lightbox/plugins/video";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import { useParams } from "react-router-dom"
 import Nav from "./Nav"
@@ -7,6 +13,7 @@ import { useEffect, useState } from "react";
 function ItemGallery(){
     const [data, setData] = useState()
     const [isOpen, setIsOpen] = useState(false)
+    const [imgIndex, setImgIndex] = useState(0)
     const projets = JSON.parse(localStorage.getItem("imgCollection") || "[]");
     const {id} = useParams()
     useEffect(() => {
@@ -20,7 +27,8 @@ function ItemGallery(){
     const openLightBox = () => {
         setIsOpen(!isOpen)
     }
-    console.log(data)
+    const updateIndex = ({index: current}) => setImgIndex(current)
+    console.log(imgIndex)
     return(
         data && (
             <div id='item-gallery'>
@@ -32,8 +40,8 @@ function ItemGallery(){
                     <h1>{data.title}</h1>
                     <div className='item-container'>
                         {
-                            data.images.map((img, index) => {
-                                return <figure onClick={openLightBox} key={index}>
+                            data.images.map((img, idx) => {
+                                return <figure onClick={openLightBox} key={idx}>
                                     <img src={img} alt={data.title}/>
                                 </figure>
                             })
@@ -41,9 +49,16 @@ function ItemGallery(){
                     </div>
                 </section>
                 <Lightbox 
-                    open={isOpen}
-                    close={() => setIsOpen(false)}
-                    slides={data.images.map(imgUrl => {return {src: imgUrl}})}
+                index={imgIndex}
+                open={isOpen}
+                close={() => setIsOpen(false)}
+                slides={data.images.map(img => {
+                    return {src:img}
+                })}
+                on={{
+                    view: updateIndex,
+                    }}
+                plugins={[Captions, Fullscreen, Slideshow, Video, Zoom]}
                 />
             </div>
         )
