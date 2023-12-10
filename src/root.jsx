@@ -104,7 +104,7 @@ function Root() {
           <aside className='nav-wrapper'>
               <ul className='internal-link'>
                 <li className='line-2'></li>
-                <h1 className='section-title'>L'AGENCE</h1>
+                <li className='section-title'>L'AGENCE</li>
                 <li className='line-2'></li>
               </ul>
           </aside>
@@ -148,7 +148,7 @@ function Root() {
         <aside className='nav-wrapper'>
           <ul className='internal-link'>
             <li className='line-2'></li>
-            <h1 className='section-title'>CONTACT</h1>
+            <li className='section-title'>CONTACT</li>
             <li className='line-2'></li>
           </ul>
         </aside>

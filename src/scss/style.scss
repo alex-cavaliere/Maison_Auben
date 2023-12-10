@@ -280,9 +280,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.internal-link:not(#home .internal-link){
-    margin-left: -0.4rem;
-}
 .internal-link{
     display: flex;
     flex-direction: column;
@@ -291,7 +288,7 @@ a {
     padding: 0;
     max-width: 100px;
     height: 100%;
-    & a{
+    & .projet-link{
         margin: auto;
         &:hover{
             cursor: pointer;
@@ -299,7 +296,7 @@ a {
             transition: transform 250ms ease-out;
         }
     }
-    & h1, li:not(.item):not(.line-1):not(.line-2){
+    & .section-title, li:not(.item):not(.line-1):not(.line-2){
         text-align: center;
         width: max-content;
         padding: 2.2rem 0rem 4rem 0.5rem;

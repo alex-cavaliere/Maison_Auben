@@ -278,10 +278,6 @@ a {
   color: inherit;
 }
 
-.internal-link:not(#home .internal-link) {
-  margin-left: -0.4rem;
-}
-
 .internal-link {
   display: flex;
   flex-direction: column;
@@ -291,15 +287,15 @@ a {
   max-width: 100px;
   height: 100%;
 }
-.internal-link a {
+.internal-link .projet-link {
   margin: auto;
 }
-.internal-link a:hover {
+.internal-link .projet-link:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: transform 250ms ease-out;
 }
-.internal-link h1, .internal-link li:not(.item):not(.line-1):not(.line-2) {
+.internal-link .section-title, .internal-link li:not(.item):not(.line-1):not(.line-2) {
   text-align: center;
   width: max-content;
   padding: 2.2rem 0rem 4rem 0.5rem;
