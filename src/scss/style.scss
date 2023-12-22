@@ -1,3 +1,9 @@
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1ov6c4t-MuiPaper-root-MuiCard-root{
+    background-color: #E0DEDA;
+}
+html{
+    background-color: #E0DEDA;
+}
 #root{
     overflow: hidden;
 }
@@ -19,8 +25,8 @@
         & .form-foto{
             margin: auto;
             & img{
-                width: 300px;
-                height: 400px;
+                width: 350px;
+                height: 500px;
             }
         }
         & form{
@@ -31,6 +37,7 @@
                 position: relative;
                 padding: 1rem;
                 & input, textarea{
+                    background-color: #E0DEDA;
                     &.error{
                         border-bottom: 2px solid red;
                     }
@@ -219,8 +226,7 @@ header{
     text-align: center;
     margin: 1rem 0 0 2rem;
     & img{
-        max-height: 120px;
-        max-width: 170px;
+        width: 170px;
     }
     & figcaption{
         font-size: 0.6rem;
@@ -245,7 +251,7 @@ header{
         font-size: 26px;
         letter-spacing: 0.25em;   
         font-weight: 100;
-        background-color: white;
+
         z-index: 9999;
     }
     & .line-1::after{
@@ -290,7 +296,7 @@ a {
     height: 100%;
     & .projet-link{
         margin: auto;
-        &:hover{
+        & a:hover{
             cursor: pointer;
             transform: scale(1.1);
             transition: transform 250ms ease-out;

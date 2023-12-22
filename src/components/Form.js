@@ -47,7 +47,7 @@ function Form(){
                 <input ref={firstName} type='text' id="name" name='name'></input>
             </label>
             <label htmlFor="surname">
-                Nom de Famille <br/>
+                Nom <br/>
                 <input ref={lastName} type='text' id="surname" name="surname"></input>
             </label>
             <label htmlFor='email'>

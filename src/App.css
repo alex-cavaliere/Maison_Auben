@@ -1,3 +1,11 @@
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1ov6c4t-MuiPaper-root-MuiCard-root {
+  background-color: #E0DEDA;
+}
+
+html {
+  background-color: #E0DEDA;
+}
+
 #root {
   overflow: hidden;
 }
@@ -22,8 +30,8 @@
   margin: auto;
 }
 #main section .form-foto img {
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 500px;
 }
 #main section form {
   display: grid;
@@ -35,6 +43,7 @@
   padding: 1rem;
 }
 #main section form label input, #main section form label textarea {
+  background-color: #E0DEDA;
   border: none;
   border-bottom: 1px solid black;
   margin-top: 1rem;
@@ -218,8 +227,7 @@ header .logo-container a {
   margin: 1rem 0 0 2rem;
 }
 #auben-logo img {
-  max-height: 120px;
-  max-width: 170px;
+  width: 170px;
 }
 #auben-logo figcaption {
   font-size: 0.6rem;
@@ -242,7 +250,6 @@ header .logo-container a {
   font-size: 26px;
   letter-spacing: 0.25em;
   font-weight: 100;
-  background-color: white;
   z-index: 9999;
 }
 .nav-wrapper .line-1::after {
@@ -290,7 +297,7 @@ a {
 .internal-link .projet-link {
   margin: auto;
 }
-.internal-link .projet-link:hover {
+.internal-link .projet-link a:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: transform 250ms ease-out;
