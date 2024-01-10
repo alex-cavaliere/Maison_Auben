@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Root from './root';
 import Header from './components/Header';
 import mainLogo from './assets/logo_auben.png'
-//import whiteLogo from './assets/logo_auben_white.png'
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import ItemGallery from './components/ItemGallery';
@@ -22,7 +21,7 @@ root.render(
         <Route path='/Maison_Auben/projets' element={<Gallery />}/>
         <Route path='/Maison_Auben/projets/:id' element={<ItemGallery />}/>
       </Routes>
-    <Footer logo={mainLogo}/>
+    <Footer logo='https://static.wixstatic.com/media/3f174c_5a3182d5754949fa995006c87e2554ce~mv2.png/v1/fill/w_256,h_181,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/face%20carte%20AUB%C3%88N%202.png'/>
     </Router>
   </React.StrictMode>
 );

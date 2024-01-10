@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo_auben_white.png'
 
 function Nav(){
     return(

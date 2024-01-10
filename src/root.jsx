@@ -16,9 +16,14 @@ import quoteLeft from './assets/quote.svg'
 import quoteRight from './assets/quote-mirror.svg'
 import CarouselItem from './components/Carousel';
 
+window.onload = () => {
+  const headerSub = document.getElementsByClassName('header-sub')
+  headerSub[0].style.display = 'block'
+}
+
 function Root() {
-  const onNavigate = useNavigate()
-  const renderArrowPrev = (clickHandler, hasPrev) => {
+    const onNavigate = useNavigate()
+    const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
         onClick={clickHandler}
@@ -85,7 +90,7 @@ function Root() {
       <section id="home">
         <Nav />
         <div className='carousel-container'>
-          <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false}>
+          <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
             {
               imgCollection.map((img, index) => {
                 return <div onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)}  className='carousel-wrapper' key={index}>

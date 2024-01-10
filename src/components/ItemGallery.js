@@ -17,6 +17,8 @@ function ItemGallery(){
     const projets = JSON.parse(localStorage.getItem("imgCollection") || "[]");
     const {id} = useParams()
     useEffect(() => {
+        const headerSub = document.getElementsByClassName('header-sub')
+        headerSub[0].style.display = 'none'
         projets.map(projet => {
             if(projet.id === id){
                 setData(projet)
@@ -28,7 +30,7 @@ function ItemGallery(){
         setIsOpen(!isOpen)
     }
     const updateIndex = ({index: current}) => setImgIndex(current)
-    console.log(imgIndex)
+    //console.log(imgIndex)
     return(
         data && (
             <div id='item-gallery'>
@@ -41,7 +43,7 @@ function ItemGallery(){
                     <div className='item-container'>
                         {
                             data.images.map((img, idx) => {
-                                return <figure onClick={openLightBox} key={idx}>
+                                return <figure onClick={openLightBox} className={"image-" + idx} key={idx}>
                                     <img src={img} alt={data.title}/>
                                 </figure>
                             })
