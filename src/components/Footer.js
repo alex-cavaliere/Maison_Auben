@@ -3,9 +3,6 @@ function Footer(props){
     const { logo } = props
     return(
     <footer>
-        <figure id='auben-footer'>
-            <img src={logo} alt='footer-logo'/>
-        </figure>
         <div className='footer-container'>
             <p style={{fontSize:'1rem', letterSpacing:'0.3rem'}}>AUDREY & BENJAMIN</p>
             <a className="footer-mail" href="mailto:contact@maisonauben.com">contact@maisonauben.com</a>

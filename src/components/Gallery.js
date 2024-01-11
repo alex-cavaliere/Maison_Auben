@@ -1,12 +1,12 @@
 import GalleryCard from "./GalleryCard"
 import Nav from "./Nav";
 import data from "../data/data.json";
-
+/*
 window.onload = () => {
     const headerSub = document.getElementsByClassName('header-sub')
     headerSub[0].style.display = 'block'
 }
-
+*/
 function Gallery(){
     return(
         data && (<div id="gallery-container">

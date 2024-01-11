@@ -191,7 +191,7 @@ header{
         position: absolute;
         top: 7rem;
         height: 100vh;
-        width: 100vw;
+        margin: auto;
         background-color: #E0DEDA;
         opacity: 0;
         z-index: -1;
@@ -240,11 +240,6 @@ header{
             margin-left: -2rem;
         }
     }
-}
-.footer-container{
-    text-align: center;
-    width: fit-content;
-    margin: auto;
 }
 .nav-wrapper{
     position: relative;
@@ -367,7 +362,7 @@ a {
 }
 .line-3{
     width: 72%;
-    height: 100%;
+    height: 50%;
     text-align: center;
     &::after{
         content: '';
@@ -405,6 +400,7 @@ a {
         & .card{
             margin: 0.2rem;
             width: 97%;
+            min-height: 215px;
             &:hover{
                 transform: scale(1.05);
                 transition: transform 250ms ease-in-out;
@@ -421,23 +417,30 @@ a {
 #item-gallery{
     display: flex;
     animation: fadeIn 600ms ease-in-out;
+    & .item-title{
+        font-weight: 200;
+        text-align: end;
+        margin-right: 0.5rem;
+    }
     & .item-container{
-        display: flex;
-        flex-direction: column;
+        display: flex; 
         flex-wrap: wrap;
-        width: 100%;
-        height: 1200px;
-        & figure:nth-child(2n){
-            & img{
-                height: 500px;
-            }
+        & figure:nth-child(odd){
+            width: 32%;
+        }
+        & figure:nth-child(3){
+            width: 65%;
+        }
+        & figure:nth-child(4){
+            width: 32%;
         }
         & figure{
-            width: 49%;
-            margin: 0.2rem;
+            margin: 0 0.2rem 0.4rem 0.2rem;
+            width: 65%;
+            height: auto;
             & img{
                 width: 100%;
-                height: auto;
+                height: 100%;
                 object-fit: cover;
             }
         }
@@ -447,21 +450,21 @@ a {
         margin: -3.5rem auto auto auto;
     }
 }
-footer{
+#auben-footer{
     position: absolute;
+    margin: 0;
+    right: 0.4rem;
+    & img{
+        transform: rotate(-90deg);
+        width: 160px;
+    }
+}
+footer{
     background-color: #E0DEDA;
-    margin-top: 2rem;
+    margin-top: 10rem;
     width: 100%;
     height: 200px;
-    & #auben-footer{
-        position: absolute;
-        margin: 0;
-        left: 2.5rem;
-        & img{
-            transform: rotate(-90deg);
-            width: 160px;
-        }
-    }
+    margin-bottom: 5rem; 
     & .footer-container{
         display: flex;
         flex-direction: column;
@@ -491,9 +494,6 @@ footer{
     }
 }
 @media screen and (max-width: 1050px) {
-    #item-gallery .item-container figure{
-        width: 100%;
-    }
     #main{
         & .form-foto{
             display: none;
@@ -505,8 +505,14 @@ footer{
     .carousel-container{
         margin: 0;
     }
-    #auben-footer{
-        display: none;
+    #gallery-container{
+        width: 95%;
+        & .gallery{
+            width: 100%;
+        }
+        & .gallery-wrapper{
+            grid-template-columns: auto auto;
+        }
     }
     #main{
         #agence{
@@ -535,6 +541,9 @@ footer{
         display: none;
     }
     header{
+        & .mobile-nav{
+            width: 100%;
+        }
         & .logo-container{
             margin-left: -3rem;
         }
@@ -547,6 +556,12 @@ footer{
                 width: 7rem;
             }
         }
+    }
+    #item-gallery .item-container figure{
+        width: 100%;
+    }
+    #item-gallery .item-container figure:nth-child(odd){
+        width: 100%;
     }
     .nav-wrapper{
         display: flex;
@@ -604,6 +619,9 @@ footer{
             margin-left: 4rem;
         }
     }
+    #auben-footer{
+        display: none;
+    }
     .gallery-wrapper{
         & .card{
             &:hover{
@@ -615,6 +633,13 @@ footer{
                 width: 100%;
                 height: 270px;
             }
+        }
+    }
+    #item-gallery{
+        .item-container {
+            -moz-column-count:    1;
+            -webkit-column-count: 1;
+            column-count:         1;
         }
     }
 }
@@ -654,15 +679,6 @@ footer{
                     margin-left: -2rem;
                 }
             }
-        }
-    }
-    #gallery-container{
-        width: 95%;
-        & .gallery{
-            width: 100%;
-        }
-        & .gallery-wrapper{
-            grid-template-columns: auto auto;
         }
     }
     #item-gallery{
@@ -741,6 +757,15 @@ footer{
                     margin-left: 0.3rem;
                 }
             }   
+        }
+    }
+    #item-gallery{
+        .item-container {
+            & figure{
+                & img{
+                    margin-left: -3rem;
+                }
+            }
         }
     }
 }

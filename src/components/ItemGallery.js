@@ -39,7 +39,7 @@ function ItemGallery(){
                     <div className="line-3"></div>
                 </div>
                 <section>
-                    <h1>{data.title}</h1>
+                    <h1 className='item-title'>{data.title}</h1>
                     <div className='item-container'>
                         {
                             data.images.map((img, idx) => {

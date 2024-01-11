@@ -16,11 +16,6 @@ import quoteLeft from './assets/quote.svg'
 import quoteRight from './assets/quote-mirror.svg'
 import CarouselItem from './components/Carousel';
 
-window.onload = () => {
-  const headerSub = document.getElementsByClassName('header-sub')
-  headerSub[0].style.display = 'block'
-}
-
 function Root() {
     const onNavigate = useNavigate()
     const renderArrowPrev = (clickHandler, hasPrev) => {
@@ -156,6 +151,9 @@ function Root() {
             <li className='section-title'>CONTACT</li>
             <li className='line-2'></li>
           </ul>
+          <figure id='auben-footer'>
+            <img src='https://static.wixstatic.com/media/3f174c_5a3182d5754949fa995006c87e2554ce~mv2.png/v1/fill/w_256,h_181,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/face%20carte%20AUB%C3%88N%202.png' alt='footer-logo'/>
+        </figure>
         </aside>
         <div className='form-wrapper'>
           <div className='form-foto'>
