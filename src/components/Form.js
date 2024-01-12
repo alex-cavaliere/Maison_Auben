@@ -58,7 +58,9 @@ function Form(){
                 Contacter <br/>
                 <textarea ref={message} id='message' name='message'></textarea>
             </label>
-            <input className='submit-btn' type='submit' value='Envoyer'></input>
+            <div className="submit-container">
+                <input className='submit-btn' type='submit' value='Envoyer'></input>    
+            </div>
         </form>
     )
 }

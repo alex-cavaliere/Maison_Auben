@@ -1,9 +1,3 @@
-.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1ov6c4t-MuiPaper-root-MuiCard-root{
-    background-color: #E0DEDA;
-}
-.css-kijvg9{
-    background-color: #E0DEDA;
-}
 html{
     background-color: #E0DEDA;
 }
@@ -53,13 +47,21 @@ html{
                     }
                 }
             }
+            & .submit-container{
+                width: 80%;
+                text-align: end;
+            }
             & .submit-btn{
                 border: none;
                 background-color: transparent;
-                width: 80%;
-                text-align: end;
+                width: fit-content;
                 font-size: 22px;
                 margin-top: 2rem;
+                &:hover{
+                    color: white;
+                    transition: color 150ms ease-in-out;
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -72,20 +74,24 @@ html{
         & article{
             width: 100%;
             margin: auto;
-            & h2, h3{
+            & h2{
                 margin-top: 0;
                 margin: auto auto 5rem auto;
                 font-size: 25px;
                 font-weight: 100;
             }
             & h3{
+                margin: auto auto 5rem 2rem;
                 max-width: 90%;
+                font-size: 25px;
+                font-weight: 100;
             }
         }
         & .agence-article{
             display: flex;
             & .description{
                 display: flex;
+                justify-content: space-between;
                 & img{
                     margin-bottom: 2rem;
                     height: 500px;
@@ -93,7 +99,7 @@ html{
             }
             & .steps{
                 & .steps-description{
-                    margin: auto;
+                    margin: auto auto 5rem 2rem;
                     width: 90%;
                     white-space: pre-wrap;
                 }
@@ -134,9 +140,12 @@ html{
                 }
             }
             & .text{
-                width: 80%;
+                width: 50%;
+                font-size: 0.8rem;
                 padding: 0 2rem 2rem 2rem;
-                text-align: end;
+                & .article-head{
+                    text-align: end;
+                }
             }
         }
     }
@@ -319,6 +328,11 @@ a {
         padding: 1rem 1.5rem 0 0;
     }
 } 
+.step-list{
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    list-style-type: "-";
+}
 #home{
     display: flex;
     position: relative;
@@ -501,6 +515,9 @@ footer{
         & .form-foto{
             display: none;
         }
+        & #agence .agence-article .text .article-head{
+            text-align: center;
+        }
     }
 }
 
@@ -673,8 +690,10 @@ footer{
                 & .steps{
                     & h3{
                         width: 100%;
+                        margin-left: 0;
                     }
                     & .steps-description{
+                        margin-left: 0;
                         width: 100%;
                     }
                 }
