@@ -12,9 +12,10 @@ import cube2 from './assets/cube 2.png'
 import cube3 from './assets/cube 3.png'
 import chevronLeft from './assets/chevron-left.svg'
 import chevronRight from './assets/chevron-right.svg'
+import CarouselItem from './components/Carousel';
+import Quote from './components/Quote';
 import quoteLeft from './assets/quote.svg'
 import quoteRight from './assets/quote-mirror.svg'
-import CarouselItem from './components/Carousel';
 
 function Root() {
     const onNavigate = useNavigate()
@@ -53,11 +54,13 @@ function Root() {
   };
   let maisonParags;
   let etapesParags;
+  let quotes;
   let imgCollection = []
   if(data){
     const particulier = data.projets.particulier
     const professionnel = data.projets.professionnel
     const promotion = data.projets.promotion
+    console.log(quotes)
     for(let category in data.projets){
       switch(category){
         case 'particulier' && 'professionnel' && 'promotion':
@@ -77,9 +80,26 @@ function Root() {
         etapesParags = description.etapes.split('.').map((text, index) => {
           return <span key={index}>{text}.<br/></span>
         })
+      }else if(description.quotes){
+        quotes = description.quotes
       }
     })
   }
+  const allQuotes = document.getElementsByClassName('quote')
+  
+  setInterval(function() {
+    for(let i = 0; i < allQuotes.length; i++){
+      const currentQuote = allQuotes[0]
+      const nextQuote = allQuotes[1]
+      if(currentQuote.style.opacity === '0'){
+        currentQuote.style.opacity = '1'
+        nextQuote.style.opacity = '0'
+      }else{
+        currentQuote.style.opacity = '0'
+        nextQuote.style.opacity = '1'
+      }
+    }
+  },5000)
   const listStep_1 = ['PRISE DE CÔTE', 'PLAN DES ÉTATS DES LIEUX', 'PLAN PROJETS', 'VISUEL 3D MAQUETTE BLANCHE']
   const listStep_2 = ['RÉALISATION DES PLANS TECHNIQUES', 'PERSPECTIVE 3D COULEURS', 'CHOIX DES MATÉRIAUX', 'CHOIX DU MOBILIERS']
   const listStep_3 = ['CONSULTATION DES ENTREPRISES', 'PLANNING DES TRAVAUX', 'SUIVI DE CHANTIER', 'RÉCEPTION DES OUVRAGES']
@@ -137,11 +157,16 @@ function Root() {
               </div>
               <div className='quotes-container'>
                 <span className='quote-icon'><img src={quoteLeft} alt='quote-img'/></span>
-                <div className='quotes'>
-                  <h4>MME LEMOINE - RILLIEUX LA PAPE (AGENCE ORPI)</h4>
-                  <p className='quote'>Nous vous remercions pour la qualité de vos conseils, vos propositions d’agencement et de décoration. Nos collaborateurs et nous-mêmes nous sentons vraiment bien dans notre agence.</p>
-                </div>
+                {
+                  quotes.map((quote, index) => {
+                    return <Quote key={'quote' + index} title={quote.title} text={quote.text} />
+                  })
+                }
                 <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
+                <div className='controls-container'>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg></span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></span>
+                </div>
               </div>
             </div>
           </article>

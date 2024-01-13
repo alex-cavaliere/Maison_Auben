@@ -7,6 +7,18 @@
                 },
                 {
                     "etapes": "Laboris et anim exercitation eu proident. Mollit irure qui commodo officia. Ad proident nostrud amet amet ut deserunt fugiat ullamco labore labore nostrud.Aliquip pariatur culpa nulla ea nostrud occaecat sint sunt cupidatat officia incididunt laboris do. Ad Lorem veniam pariatur exercitation labore occaecat sit et. Laboris quis proident est in in nostrud occaecat cillum ullamco. Consectetur elit commodo eu voluptate dolor voluptate. Pariatur quis ut aliquip enim."
+                },
+                {
+                    "quotes": [
+                        {
+                            "title": "MME OLLIVON - GRÉZIEU LA VARENNE (L'IMPRO GOURMANDE)",
+                            "text": "Maison Aubèn a su être à notre écoute lors de l'aménagement de notre local de vente en alliant inventivité, originalité et fonctionnalité ! Proches de leur client et sensibles aux détails, je recommande vivement cette talentueuse association !"
+                        },
+                        {
+                            "title": "MME LEMOINE - RILLIEUX LA PAPE (AGENCE ORPI)",
+                            "text": "Nous vous remercions pour la qualité de vos conseils, vos propositions d’agencement et de décoration. Nos collaborateurs et nous-mêmes nous sentons vraiment bien dans notre agence."
+                        }
+                    ]
                 }
             ]
         },

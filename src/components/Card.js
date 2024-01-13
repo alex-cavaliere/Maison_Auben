@@ -2,7 +2,6 @@ import * as React from 'react';
 
 export default function BasicCard(props) {
   const {cube, list} = props
-  console.log(list)
   return (
     <div className='card-body'>
       <img style={{objectFit:'contain', width:'100%', height: 200}} src={cube} alt={cube}/>

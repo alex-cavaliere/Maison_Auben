@@ -107,22 +107,45 @@ html {
   white-space: pre-wrap;
 }
 #main #agence .agence-article .steps .quotes-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 80%;
+  height: 300px;
   margin: 7rem auto auto auto;
-}
-#main #agence .agence-article .steps .quotes-container .quotes {
-  width: 80%;
   text-align: center;
+}
+#main #agence .agence-article .steps .quotes-container .controls-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+#main #agence .agence-article .steps .quotes-container .controls-container span {
+  padding: 0.6rem;
+}
+#main #agence .agence-article .steps .quotes-container .quote {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+#main #agence .agence-article .steps .quotes-container .quote:nth-child(2) {
+  opacity: 0;
+}
+#main #agence .agence-article .steps .quotes-container .quote .quote-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  width: 80%;
+  margin: auto;
+  padding: 2.5rem 0 2.5rem 0;
 }
 #main #agence .agence-article .steps .quotes-container .quote-icon:nth-child(n+2) {
   align-self: flex-end;
   text-align: end;
 }
 #main #agence .agence-article .steps .quotes-container .quote-icon {
-  width: 5%;
-  height: 5%;
+  width: 7%;
+  height: 7%;
 }
 #main #agence .agence-article .steps .quotes-container .quote-icon img {
   width: 100%;
@@ -460,6 +483,8 @@ a {
 #item-gallery .item-container figure img {
   width: 100%;
   height: 100%;
+  min-height: 300px;
+  max-height: 450px;
   object-fit: cover;
 }
 #item-gallery section {
