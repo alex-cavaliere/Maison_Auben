@@ -92,6 +92,17 @@ html{
             & .description{
                 display: flex;
                 justify-content: space-between;
+                & .text{
+                    & .maison-section{
+                        & .maison-parag{
+                            padding-inline-start: 1.5rem;
+                            & li{
+                                color: white;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
                 & img{
                     margin-bottom: 2rem;
                     height: 500px;
@@ -102,6 +113,10 @@ html{
                     margin: auto auto 5rem 2rem;
                     width: 90%;
                     white-space: pre-wrap;
+                    & span{
+                        display: block;
+                        margin-bottom: 1rem;
+                    }
                 }
                 & .quotes-container{
                     position: relative;

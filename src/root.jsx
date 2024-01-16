@@ -73,9 +73,10 @@ function Root() {
     const descriptions = data.articles.descriptions
     descriptions.forEach(description => {
       if(description.maisonAuben){
-        maisonParags = description.maisonAuben.split('.').map((text, index) => {
+        maisonParags = description.maisonAuben
+        /*maisonParags = description.maisonAuben.split('.').map((text, index) => {
           return <span key={index}>{text}.<br/></span>
-        })
+        })*/
       }else if(description.etapes){
         etapesParags = description.etapes.split('.').map((text, index) => {
           return <span key={index}>{text}.<br/></span>
@@ -135,7 +136,16 @@ function Root() {
             <div className='description'>
               <div className='text'>
                 <h2 className='article-head'>MAISON AUBÈN</h2>
-                <p className='article-text'>{maisonParags}</p>
+                {
+                  maisonParags.map((parag, index) => {
+                    return <div className='maison-section' key={index}> 
+                      <ul className="maison-parag">
+                        <li>{parag.title}</li>
+                      </ul>
+                      <p className='maison-text'>{parag.text}</p>
+                    </div>
+                  })
+                }
               </div>
               <img src='https://static.wixstatic.com/media/3f174c_c1a61b1d06c2414eaaa1c874b28cb7a0~mv2.jpg/v1/fill/w_390,h_489,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/33dfe90304eb8b9d04849e26505b4016.jpg' alt='Auben'/>
             </div>

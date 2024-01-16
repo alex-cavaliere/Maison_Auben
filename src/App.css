@@ -97,6 +97,13 @@ html {
   display: flex;
   justify-content: space-between;
 }
+#main #agence .agence-article .description .text .maison-section .maison-parag {
+  padding-inline-start: 1.5rem;
+}
+#main #agence .agence-article .description .text .maison-section .maison-parag li {
+  color: white;
+  font-size: 0.9rem;
+}
 #main #agence .agence-article .description img {
   margin-bottom: 2rem;
   height: 500px;
@@ -105,6 +112,10 @@ html {
   margin: auto auto 5rem 2rem;
   width: 90%;
   white-space: pre-wrap;
+}
+#main #agence .agence-article .steps .steps-description span {
+  display: block;
+  margin-bottom: 1rem;
 }
 #main #agence .agence-article .steps .quotes-container {
   position: relative;
