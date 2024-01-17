@@ -123,7 +123,7 @@ html{
                     display: flex;
                     justify-content: space-between;
                     width: 80%;
-                    height: 300px;
+                    height: 200px;
                     margin: 7rem auto auto auto;
                     text-align: center;
                     & .controls-container{
@@ -135,12 +135,18 @@ html{
                             padding: 0.6rem;
                         }
                     }
+                    & h4{
+                        width: 80%;
+                        margin: auto;
+                    }
                     & .quote{
                         position: absolute;
                         width: 100%;
                         text-align: center;
-                        &:nth-child(2){
-                            opacity: 0;
+                        opacity: 0;
+                        transition: opacity 1s ease-in-out;
+                        &.active{
+                            opacity: 1;
                         }
                         & .quote-text{
                             font-style: italic;
@@ -559,6 +565,9 @@ footer{
             text-align: center;
         }
     }
+    #main #agence .agence-article .steps .quotes-container{
+        height: 250px;
+    }
 }
 
 @media screen and (max-width:998px) {
@@ -782,6 +791,9 @@ footer{
             height: 300px;
         }
     }   
+    #main #agence .agence-article .steps .quotes-container{
+        height: 400px;
+    }
     .carousel .slider-wrapper.axis-horizontal .slider .slide{
         & .carousel-wrapper{
             & img{
@@ -836,6 +848,9 @@ footer{
         & .agence-article{
             margin-top: -8rem;
         }
+    }
+    #main #agence .agence-article .steps .quotes-container{
+        height: 500px;
     }
 }
 

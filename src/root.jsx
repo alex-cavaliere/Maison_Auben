@@ -60,7 +60,6 @@ function Root() {
     const particulier = data.projets.particulier
     const professionnel = data.projets.professionnel
     const promotion = data.projets.promotion
-    console.log(quotes)
     for(let category in data.projets){
       switch(category){
         case 'particulier' && 'professionnel' && 'promotion':
@@ -86,21 +85,6 @@ function Root() {
       }
     })
   }
-  const allQuotes = document.getElementsByClassName('quote')
-  
-  setInterval(function() {
-    for(let i = 0; i < allQuotes.length; i++){
-      const currentQuote = allQuotes[0]
-      const nextQuote = allQuotes[1]
-      if(currentQuote.style.opacity === '0'){
-        currentQuote.style.opacity = '1'
-        nextQuote.style.opacity = '0'
-      }else{
-        currentQuote.style.opacity = '0'
-        nextQuote.style.opacity = '1'
-      }
-    }
-  },5000)
   const listStep_1 = ['PRISE DE CÔTE', 'PLAN DES ÉTATS DES LIEUX', 'PLAN PROJETS', 'VISUEL 3D MAQUETTE BLANCHE']
   const listStep_2 = ['RÉALISATION DES PLANS TECHNIQUES', 'PERSPECTIVE 3D COULEURS', 'CHOIX DES MATÉRIAUX', 'CHOIX DU MOBILIERS']
   const listStep_3 = ['CONSULTATION DES ENTREPRISES', 'PLANNING DES TRAVAUX', 'SUIVI DE CHANTIER', 'RÉCEPTION DES OUVRAGES']
@@ -167,11 +151,7 @@ function Root() {
               </div>
               <div className='quotes-container'>
                 <span className='quote-icon'><img src={quoteLeft} alt='quote-img'/></span>
-                {
-                  quotes.map((quote, index) => {
-                    return <Quote key={'quote' + index} title={quote.title} text={quote.text} />
-                  })
-                }
+                <Quote quotes={quotes}/> 
                 <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
                 <div className='controls-container'>
                   <span><svg xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg></span>
