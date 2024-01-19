@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import data from './data/data.json'
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import BasicCard from './components/Card';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
@@ -85,6 +86,27 @@ function Root() {
       }
     })
   }
+  const [currentIndex, setCurrentIndex] = useState(0)
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+        }, 7000);
+        return () => {
+            clearInterval(intervalId);
+          };
+  }, [quotes.length]);
+  const prevQuote = () => {
+    setCurrentIndex(currentIndex - 1)
+  }
+  const nextQuote = () => {
+    setCurrentIndex(currentIndex + 1)
+  }
+  if(currentIndex < 0){
+    setCurrentIndex(currentIndex + 1)
+  }
+  if(currentIndex >= quotes.length){
+    setCurrentIndex(currentIndex - 1)
+  }
   const listStep_1 = ['PRISE DE CÔTE', 'PLAN DES ÉTATS DES LIEUX', 'PLAN PROJETS', 'VISUEL 3D MAQUETTE BLANCHE']
   const listStep_2 = ['RÉALISATION DES PLANS TECHNIQUES', 'PERSPECTIVE 3D COULEURS', 'CHOIX DES MATÉRIAUX', 'CHOIX DU MOBILIERS']
   const listStep_3 = ['CONSULTATION DES ENTREPRISES', 'PLANNING DES TRAVAUX', 'SUIVI DE CHANTIER', 'RÉCEPTION DES OUVRAGES']
@@ -151,11 +173,11 @@ function Root() {
               </div>
               <div className='quotes-container'>
                 <span className='quote-icon'><img src={quoteLeft} alt='quote-img'/></span>
-                <Quote quotes={quotes}/> 
+                <Quote quotes={quotes} currentIndex={currentIndex}/> 
                 <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
                 <div className='controls-container'>
-                  <span><svg xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg></span>
-                  <span><svg xmlns="http://www.w3.org/2000/svg" height="8" width="8" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></span>
+                  <span onClick={prevQuote} className={`control ${0 === currentIndex ? 'active' : ''}`}><span></span></span>
+                  <span onClick={nextQuote} className={`control ${1 === currentIndex ? 'active' : ''}`}><span></span></span>
                 </div>
               </div>
             </div>
