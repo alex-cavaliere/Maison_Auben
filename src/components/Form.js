@@ -1,7 +1,6 @@
 import { createRef, useRef } from "react"
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import axios from 'axios';
 
 function Form(){
     const x = {

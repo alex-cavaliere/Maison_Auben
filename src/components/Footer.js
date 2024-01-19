@@ -4,7 +4,7 @@ function Footer(props){
     return(
     <footer>
         <div className='footer-container'>
-            <p style={{fontSize:'1rem', letterSpacing:'0.3rem'}}>AUDREY & BENJAMIN</p>
+            <p style={{fontSize:'0.7rem', letterSpacing:'0.3rem'}}>AUDREY & BENJAMIN</p>
             <a className="footer-mail" href="mailto:contact@maisonauben.com">contact@maisonauben.com</a>
             
             <a href="tel:+33 6 87 16 90 90">TEL : +33 6 87 16 90 90</a>

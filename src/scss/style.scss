@@ -5,7 +5,7 @@ html{
     overflow: hidden;
 }
 #main, #gallery-container, #item-gallery{
-    width: 85%;
+    width: 75%;
     margin: auto;
 }
 #main{
@@ -15,7 +15,7 @@ html{
         animation: fadeIn 600ms ease-in-out;
         & .form-wrapper{
             display: flex;
-            margin-top: 9rem;
+            margin-top: 12rem;
             width: 100%;
             justify-content: center;
         }
@@ -66,7 +66,7 @@ html{
         }
     }
     & #contact{
-        margin-top: -6rem;
+        margin-top: -9rem;
     }
     & #agence{
         flex-direction: column;
@@ -76,12 +76,12 @@ html{
             margin: auto;
             & h2{
                 margin-top: 0;
-                margin: auto auto 5rem auto;
+                margin: auto auto 1rem auto;
                 font-size: 25px;
                 font-weight: 100;
             }
             & h3{
-                margin: auto auto 5rem 2rem;
+                margin: auto auto 2rem 2rem;
                 max-width: 90%;
                 font-size: 25px;
                 font-weight: 100;
@@ -89,7 +89,13 @@ html{
         }
         & .agence-article{
             display: flex;
+            & .nav-wrapper{
+                & .internal-link{
+                    margin: 0;
+                }
+            }
             & .description{
+                margin-top: 5rem;
                 display: flex;
                 justify-content: space-between;
                 & .text{
@@ -101,6 +107,11 @@ html{
                                 font-size: 0.9rem;
                             }
                         }
+                        & .maison-text{
+                            letter-spacing: 1.2px;
+                            font-size: 0.7rem;
+                            line-height: 25px;
+                        }
                     }
                 }
                 & img{
@@ -109,6 +120,7 @@ html{
                 }
             }
             & .steps{
+                margin-top: 5rem;
                 & .steps-description{
                     margin: auto auto 5rem 2rem;
                     width: 90%;
@@ -116,6 +128,8 @@ html{
                     & span{
                         display: block;
                         margin-bottom: 1rem;
+                        letter-spacing: 1.2px;
+                        font-size: 0.7rem;
                     }
                 }
                 & .quotes-container{
@@ -203,6 +217,7 @@ html{
                 padding: 0 2rem 2rem 2rem;
                 & .article-head{
                     text-align: end;
+
                 }
             }
         }
@@ -223,11 +238,18 @@ html{
     }
 }
 header{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin: auto;
-    width: 85%;
+    width: 76%;
+    & .header-sub{
+        position: absolute;
+        font-size: 10px;
+        top: 6rem;
+        right: 0;
+    }
     & .mobile-toggle{
         visibility: hidden;
         position: absolute;
@@ -298,30 +320,39 @@ header{
         max-width: 170px;
     }
     & figcaption{
-        font-size: 0.6rem;
-        width: 95%;
+        font-size: 8px;
+        width: 85%;
         letter-spacing: 2px;
-        margin: -1rem auto auto 0.5rem;
+        margin: -1rem auto auto 1.1rem;
     }
 }
 
 #contact{
     .internal-link{
         .section-title{
-            padding: 2rem 0rem 4rem 0.5rem;
+            padding: 2rem 0rem 8rem 0.9rem;
+        }
+    }
+}
+#agence{
+    .internal-link{
+        .section-title{
+            padding: 2rem 0rem 9rem 0.9rem;
         }
     }
 }
 .nav-wrapper{
     position: relative;
     width: fit-content;
+    & .internal-link{
+        margin-top: 3.2rem;
+    }
     & .section-title{
-        margin-left: -2.3rem;
+        margin-left: -2.5rem;
         width: max-content;
-        font-size: 26px;
-        letter-spacing: 0.25em;   
+        letter-spacing: 1rem;
+        font-size: 26px;  
         font-weight: 100;
-
         z-index: 9999;
     }
     & .line-1::after{
@@ -349,7 +380,7 @@ header{
     & .line-1{
         text-align: center;
         width: 70%;
-        padding: 1rem 0rem 1.5rem 0;
+        padding: 0;
         &.hidden{
             display: none;
         }
@@ -369,6 +400,7 @@ a {
     height: 100%;
     & .projet-link{
         margin: auto;
+        font-size: 10px;
         & a:hover{
             cursor: pointer;
             color: white;
@@ -378,16 +410,16 @@ a {
     & .section-title, li:not(.item):not(.line-1):not(.line-2){
         text-align: center;
         width: max-content;
-        padding: 1.6rem 0rem 4rem 0.5rem;
+        padding: 2.1rem 0rem 3.4rem 0.5rem;
         transform: rotate(-90deg);
     }
     & .nav-hidden{
         display: none;
     }
     & .item{
-        font-size: x-large;
+        font-size: large;
         text-align: center;
-        padding: 1rem 1.6rem 0 0;
+        padding: 0.7rem 1.2rem 0 0;
     }
 } 
 .step-list{
@@ -398,6 +430,7 @@ a {
 #home{
     display: flex;
     position: relative;
+    margin-top: -1.2rem;
 }
 .carousel-container{
     position: relative;
@@ -422,7 +455,7 @@ a {
         text-align: center;
         & .carousel-btn{
             padding: 1rem 2rem 1rem 2rem;
-            background-color: rgba(#000000, 0.4);
+            background-color: transparent;
             border: 1px solid white;
             color: white;
             opacity: 0;
@@ -533,7 +566,7 @@ a {
 }
 #auben-footer{
     position: absolute;
-    margin: 0;
+    margin: 4rem 0 0 0;
     right: 0.4rem;
     & img{
         transform: rotate(-90deg);
@@ -542,10 +575,11 @@ a {
 }
 footer{
     background-color: #E0DEDA;
-    margin-top: 10rem;
+    margin-top: 6.5rem;
     width: 100%;
     height: 200px;
     margin-bottom: 5rem; 
+    font-size: 0.6rem;
     & .footer-container{
         display: flex;
         flex-direction: column;
@@ -673,11 +707,13 @@ footer{
             } 
         }
     }
-    .carousel-container{
-        & .carousel img{
-            height: 400px;
+    .carousel .slider-wrapper.axis-horizontal .slider .slide{
+        & .carousel-wrapper{
+            & img{
+                height: 520px;
+            }
         }
-    }   
+    }
     .carousel-counter{
     display: none;
     }
@@ -686,6 +722,11 @@ footer{
     }
     #main{
         & #agence{
+            & .internal-link{
+                & .section-title{
+                    padding: 2rem 0rem 9.5rem 0.9rem
+                }
+            }
             margin-bottom: 1rem;
             & .agence-article{
                 & .steps{
@@ -695,11 +736,21 @@ footer{
                 }
             } 
         } 
+        & #contact{
+            & .internal-link{
+                & .section-title{
+                    padding: 2rem 0rem 8.5rem 0.9rem
+                }
+            }
+        }
     }
     #gallery-container{
         & h5{
             margin: auto;
         }
+    }
+    #auben-footer{
+        display: none;
     }
 }
 @media screen and (max-width: 666px) {
@@ -742,25 +793,19 @@ footer{
     .internal-link{
         width: 50%;
         & .nav-hidden{
-           margin-left: -0.5rem;
+           margin-left: -1rem;
         }
         & .item.facebook{
             padding: 1rem 0.6rem 0 0;
         }
         
     }
-    .carousel .slider-wrapper.axis-horizontal .slider .slide{
-        & .carousel-wrapper{
-            & img{
-                height: 400px;
-            }
-        }
-    }
     #main{
         width: 95%;
         #agence{
             margin-top: 3rem;
             & .agence-article{
+                margin-top: -3rem;
                 & .steps{
                     & h3{
                         width: 100%;
@@ -787,13 +832,6 @@ footer{
     .carousel-container{
         margin: 0;
     }
-    #contact{
-        & .internal-link{
-            & .section-title{
-                margin-left: -1.7rem;
-            }
-        }
-    }
     #agence, #contact{
         & .agence-article{
             margin-top: -8rem;
@@ -808,12 +846,14 @@ footer{
     }
 }
 @media screen and (max-width: 450px) {
+    #home{
+        .nav-wrapper{
+            margin-top: -2.5rem;
+        }
+    }
     .carousel-container{
         & .btn-container{
             display: none;
-        }
-        & .carousel img{
-            height: 300px;
         }
     }   
     #main #agence .agence-article .steps .quotes-container{
@@ -822,7 +862,7 @@ footer{
     .carousel .slider-wrapper.axis-horizontal .slider .slide{
         & .carousel-wrapper{
             & img{
-                height: 300px;
+                height: 400px;
             }
         }
     }
@@ -838,6 +878,9 @@ footer{
             grid-template-columns: auto;
         }
     }
+    #main #agence .agence-article .nav-wrapper .internal-link {
+        margin-top: 2rem;
+    }
     #main{
         & #agence{
             margin-top: -4rem;
@@ -851,7 +894,6 @@ footer{
                 }
             }
             & .internal-link{
-                margin-top: 5rem;
                 & .item{
                     margin-left: 0.3rem;
                 }
@@ -872,6 +914,19 @@ footer{
     #agence, #contact{
         & .agence-article{
             margin-top: -8rem;
+        }
+    }
+    #main #agence .agence-article .description img {
+        width: 90%;
+    }
+    .nav-wrapper{
+        width: 20%;
+    }
+    .carousel .slider-wrapper.axis-horizontal .slider .slide{
+        & .carousel-wrapper{
+            & img{
+                height: 300px;
+            }
         }
     }
     #main #agence .agence-article .steps .quotes-container{
