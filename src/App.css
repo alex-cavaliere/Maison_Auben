@@ -274,7 +274,7 @@ header .mobile-toggle .bar {
 }
 header .mobile-nav {
   position: absolute;
-  top: 7rem;
+  top: 6rem;
   height: 100vh;
   margin: auto;
   background-color: #E0DEDA;
