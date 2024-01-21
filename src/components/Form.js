@@ -12,10 +12,20 @@ function Form(){
     const lastName = createRef()
     const email = createRef()
     const message = createRef()
+    const telephone = createRef()
+    const surface = createRef()
+    const budget = createRef()
+    const location = createRef()
+    const locationType = createRef()
     const [formData, setFormData] = useState({
         name: '',
         surname: '',
         email: '',
+        telephone: '',
+        surface: '',
+        budget: '',
+        location: '',
+        locationType: '',
         message: '',
       });
     const handleSubmit = (e) => {
@@ -75,8 +85,27 @@ function Form(){
                 E-mail* <br/>
                 <input ref={email} type='email' id="email" name='email' onChange={handleChange}></input>
             </label>
+            <label htmlFor='telephone'>
+                Téléphone <br/>
+                <input ref={telephone} type='tel' id="telephone" name='telephone'  pattern="[0-9]{10}" onChange={handleChange}></input>
+            </label><label htmlFor='location'>
+                Localisation <br/>
+                <input ref={location} type='text' id="location" name='location' onChange={handleChange}></input>
+            </label>
+            <label htmlFor='locationType'>
+                Type de bien <br/>
+                <input ref={locationType} type='text' id="locationType" name='locationType' onChange={handleChange}></input>
+            </label>
+            <label htmlFor="surface">
+                Surface <br/>
+                <input ref={surface} type='text' id="surface" name="surface" onChange={handleChange}></input>
+            </label>
+            <label htmlFor='budget'>
+                Budget <br/>
+                <input ref={budget} type='number' id="budget" name='budget' onChange={handleChange}></input>
+            </label>
             <label htmlFor='message'>
-                Contacter <br/>
+                Dites nous en plus... <br/>
                 <textarea ref={message} id='message' name='message' onChange={handleChange}></textarea>
             </label>
             <div className="submit-container">

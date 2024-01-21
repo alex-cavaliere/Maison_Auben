@@ -31,19 +31,22 @@ html {
 }
 #main section form {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: repeat(2, 1fr);
   width: 60%;
 }
 #main section form label {
   position: relative;
   padding: 1rem;
 }
+#main section form label:nth-child(9) {
+  grid-column: span 2;
+}
 #main section form label input, #main section form label textarea {
   background-color: #E0DEDA;
   border: none;
   border-bottom: 1px solid black;
   margin-top: 1rem;
-  width: 80%;
+  width: 100%;
 }
 #main section form label input.error, #main section form label textarea.error {
   border-bottom: 2px solid red;
@@ -51,8 +54,12 @@ html {
 #main section form label input:focus, #main section form label textarea:focus {
   outline: none;
 }
+#main section form label textarea {
+  margin-top: 2rem;
+}
 #main section form .submit-container {
-  width: 80%;
+  grid-column: span 2;
+  width: 100%;
   text-align: end;
 }
 #main section form .submit-btn {

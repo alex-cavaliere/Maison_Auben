@@ -28,11 +28,14 @@ html{
         }
         & form{
             display: grid;
-            grid-template-columns: auto;
+            grid-template-columns: repeat(2, 1fr);
             width: 60%;
             & label{
                 position: relative;
                 padding: 1rem;
+                &:nth-child(9){
+                    grid-column: span 2;
+                }
                 & input, textarea{
                     background-color: #E0DEDA;
                     &.error{
@@ -41,14 +44,18 @@ html{
                     border: none;
                     border-bottom: 1px solid black;
                     margin-top: 1rem;
-                    width: 80%;
+                    width: 100%;
                     &:focus{
                         outline: none;
                     }
                 }
+                & textarea{
+                    margin-top: 2rem;
+                }
             }
             & .submit-container{
-                width: 80%;
+                grid-column: span 2;
+                width: 100%;
                 text-align: end;
             }
             & .submit-btn{
