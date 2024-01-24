@@ -1,5 +1,14 @@
 html {
   background-color: #E0DEDA;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
+}
+
+html:active {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
+}
+
+.yarl__portal_open {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
 }
 
 #root {
@@ -37,12 +46,14 @@ html {
 #main section form label {
   position: relative;
   padding: 1rem;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
 }
 #main section form label:nth-child(9) {
   grid-column: span 2;
 }
 #main section form label input, #main section form label textarea {
   background-color: #E0DEDA;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
   border: none;
   border-bottom: 1px solid black;
   margin-top: 1rem;
@@ -70,9 +81,9 @@ html {
   margin-top: 2rem;
 }
 #main section form .submit-btn:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
   color: white;
   transition: color 150ms ease-in-out;
-  cursor: pointer;
 }
 #main #contact {
   margin-top: -9rem;
@@ -158,14 +169,14 @@ html {
 }
 #main #agence .agence-article .steps .quotes-container .controls-container .control span {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border: 1px solid black;
   border-radius: 20px;
   background-color: #000000;
 }
 #main #agence .agence-article .steps .quotes-container .controls-container .control.active span {
-  transform: scale(1.5);
+  transform: scale(1.4);
   background-color: #E0DEDA;
 }
 #main #agence .agence-article .steps .quotes-container h4 {
@@ -184,7 +195,7 @@ html {
 }
 #main #agence .agence-article .steps .quotes-container .quote .quote-text {
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   width: 80%;
   margin: auto;
   padding: 2.5rem 0 2.5rem 0;
@@ -204,7 +215,6 @@ html {
 #main #agence .agence-article .steps .card-wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
   margin-top: 2rem;
 }
@@ -225,6 +235,7 @@ html {
 
 .loader {
   position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,8 +245,8 @@ html {
   z-index: 9999;
 }
 .loader img {
-  max-width: 250px;
-  animation: fadeIn 1s ease-in-out;
+  max-width: 500px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 header {
@@ -258,7 +269,7 @@ header .mobile-toggle {
   top: 2rem;
   right: 0;
   background: none;
-  cursor: pointer;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
   border: none;
   padding: 10px;
 }
@@ -308,6 +319,7 @@ header .logo-container {
   margin-left: -5.2rem;
 }
 header .logo-container a {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
   width: fit-content;
 }
 
@@ -384,6 +396,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a :hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
+}
 
 .internal-link {
   display: flex;
@@ -399,7 +414,6 @@ a {
   font-size: 10px;
 }
 .internal-link .projet-link a:hover {
-  cursor: pointer;
   color: white;
   transition: color 250ms ease-out;
 }
@@ -440,6 +454,7 @@ a {
   opacity: 1;
   transform: scale(1.1);
   transition: transform, opacity 250ms ease-in-out;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
 }
 .carousel-container .carousel .control-dots {
   display: none;
@@ -485,6 +500,7 @@ a {
 }
 #gallery-container .gallery-items {
   width: 100%;
+  margin-top: -1rem;
 }
 #gallery-container h5 {
   font-weight: 300;
@@ -557,7 +573,6 @@ a {
   object-fit: cover;
 }
 #item-gallery section {
-  width: 73%;
   margin: -3.5rem auto auto auto;
 }
 
@@ -586,12 +601,21 @@ footer .footer-container {
   width: fit-content;
   margin: auto;
 }
-footer .footer-container .footer-mail {
+footer .footer-container .footer-mail, footer .footer-container .mentions {
   padding: 0.5rem;
 }
 footer .footer-container .item {
   padding: 0.5rem;
   font-size: 1.2rem;
+}
+
+#mentions-legales {
+  width: 80%;
+  margin: auto;
+  margin-top: 3rem;
+}
+#mentions-legales h2 {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1255px) {
@@ -614,17 +638,38 @@ footer .footer-container .item {
   }
 }
 @media screen and (max-width: 998px) {
+  header {
+    width: 95%;
+  }
+  header .logo-container {
+    margin-left: 1rem;
+  }
+  header .logo-container #auben-logo img {
+    max-width: 120px;
+  }
   .carousel-container {
     margin: 0;
   }
+  #item-gallery {
+    width: 95%;
+    margin-top: 2rem;
+  }
   #gallery-container {
     width: 95%;
+    margin-top: 2rem;
   }
   #gallery-container .gallery {
     width: 100%;
   }
   #gallery-container .gallery-wrapper {
     grid-template-columns: auto auto;
+  }
+  #main {
+    margin-top: 2rem;
+  }
+  #main section form {
+    display: flex;
+    flex-direction: column;
   }
   #main #agence .agence-article .description {
     flex-direction: column-reverse;
@@ -638,6 +683,22 @@ footer .footer-container .item {
     text-align: center;
     margin-bottom: 2rem;
   }
+  #main {
+    width: 95%;
+  }
+  #main section {
+    margin-top: 0;
+    width: 100%;
+  }
+  #item-gallery .item-container figure {
+    width: 100%;
+  }
+  #item-gallery .item-container figure:nth-child(4) {
+    width: 100%;
+  }
+  #item-gallery .item-container figure:nth-child(odd) {
+    width: 100%;
+  }
   .card {
     width: 100%;
   }
@@ -650,7 +711,7 @@ footer .footer-container .item {
     width: 100%;
   }
   header .logo-container {
-    margin-left: -3rem;
+    margin-left: 0;
   }
   header .mobile-toggle {
     visibility: visible;
@@ -658,12 +719,6 @@ footer .footer-container .item {
   header figure img {
     height: 5rem;
     width: 7rem;
-  }
-  #item-gallery .item-container figure {
-    width: 100%;
-  }
-  #item-gallery .item-container figure:nth-child(odd) {
-    width: 100%;
   }
   .nav-wrapper {
     display: flex;
@@ -691,11 +746,17 @@ footer .footer-container .item {
   .carousel-controls {
     transform: translateY(-500%);
   }
+  #main section .form-wrapper {
+    margin-left: -5rem;
+  }
   #main #agence {
     margin-bottom: 1rem;
   }
   #main #agence .internal-link .section-title {
     padding: 2rem 0rem 9.5rem 0.9rem;
+  }
+  #main #agence .agence-article .steps .card-wrapper {
+    flex-wrap: wrap;
   }
   #main #agence .agence-article .steps .quotes-container {
     width: 100%;
@@ -711,16 +772,11 @@ footer .footer-container .item {
   }
 }
 @media screen and (max-width: 666px) {
-  header {
-    width: 100%;
-  }
-  header #auben-logo {
-    margin-left: 4rem;
-  }
   #auben-footer {
     display: none;
   }
   .gallery-wrapper .card:hover {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath fill='grey' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/%3E%3C/svg%3E") 5 5, auto;
     transform: scale(1.05);
     transition: transform 250ms ease-in-out;
   }
@@ -736,7 +792,11 @@ footer .footer-container .item {
   }
 }
 @media screen and (max-width: 650px) {
+  header {
+    width: 100%;
+  }
   #home .nav-wrapper {
+    width: fit-content;
     margin-bottom: 5rem;
   }
   .internal-link {
@@ -751,8 +811,24 @@ footer .footer-container .item {
   #main {
     width: 95%;
   }
+  #main #contact .internal-link .section-title {
+    padding: 2rem 0rem 9rem 0.9rem;
+  }
   #main #agence {
     margin-top: 3rem;
+  }
+  #main #agence .agence-article .steps {
+    margin-left: -1.2rem;
+  }
+  #main #agence .agence-article .steps .card-wrapper {
+    margin-left: -4rem;
+  }
+  #main #agence .agence-article .steps .quotes-container {
+    width: 100%;
+    margin-left: -3rem;
+  }
+  #main #agence .internal-link .section-title {
+    padding: 2rem 0rem 10rem 0.9rem;
   }
   #main #agence .agence-article {
     margin-top: -3rem;
@@ -766,14 +842,7 @@ footer .footer-container .item {
     width: 100%;
   }
   #main #agence .agence-article .description {
-    margin-left: -2rem;
-  }
-  #item-gallery {
-    width: 95%;
-  }
-  #item-gallery section {
-    margin: 0;
-    width: 80%;
+    margin-left: -3.5rem;
   }
   .carousel-container {
     margin: 0;
@@ -828,13 +897,19 @@ footer .footer-container .item {
   #main #agence .internal-link .item {
     margin-left: 0.3rem;
   }
-  #item-gallery .item-container figure img {
-    margin-left: -3rem;
-  }
 }
 @media screen and (max-width: 360px) {
+  #main section .form-wrapper {
+    margin-left: -3rem;
+  }
   #agence .agence-article, #contact .agence-article {
     margin-top: -8rem;
+  }
+  #main #agence .internal-link .section-title {
+    padding: 2rem 0rem 10.5rem 0.9rem;
+  }
+  #main #contact .internal-link .section-title {
+    padding: 2rem 0rem 9.4rem 0.9rem;
   }
   #main #agence .agence-article .description img {
     width: 90%;
@@ -842,11 +917,14 @@ footer .footer-container .item {
   .nav-wrapper {
     width: 20%;
   }
-  .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
-    height: 300px;
+  #main #agence .agence-article .steps {
+    margin-left: -0.5rem;
   }
   #main #agence .agence-article .steps .quotes-container {
-    height: 500px;
+    margin-left: -1rem;
+  }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide .carousel-wrapper img {
+    height: 300px;
   }
 }
 @keyframes fadeIn {
@@ -855,6 +933,14 @@ footer .footer-container .item {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
   }
 }
 

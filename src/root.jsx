@@ -11,15 +11,18 @@ import Nav from './components/Nav';
 import cube1 from './assets/cube 1.png'
 import cube2 from './assets/cube 2.png'
 import cube3 from './assets/cube 3.png'
+import Loader from './components/Loader';
 import chevronLeft from './assets/chevron-left.svg'
 import chevronRight from './assets/chevron-right.svg'
 import CarouselItem from './components/Carousel';
 import Quote from './components/Quote';
 import quoteLeft from './assets/quote.svg'
 import quoteRight from './assets/quote-mirror.svg'
+import mainLogo from './assets/logo_auben_white.png'
 
 function Root() {
     const onNavigate = useNavigate()
+    const [isLoading, setIsLoading] = useState(true)
     const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
@@ -29,7 +32,6 @@ function Root() {
           top: '50%',
           left: 0,
           transform: 'translateY(-50%)',
-          cursor: 'pointer',
           zIndex: '1'
         }}
       >
@@ -46,7 +48,6 @@ function Root() {
           top: '50%',
           right: 0,
           transform: 'translateY(-50%)',
-          cursor: 'pointer',
         }}
       >
         {hasNext && <img src={chevronRight} style={{width: '60px'}}  alt="Next" />}
@@ -107,11 +108,15 @@ function Root() {
   if(currentIndex >= quotes.length){
     setCurrentIndex(currentIndex - 1)
   }
+  setTimeout(() => {
+    setIsLoading(false)
+  }, 4500)
   const listStep_1 = ['PRISE DE CÔTE', 'PLAN DES ÉTATS DES LIEUX', 'PLAN PROJETS', 'VISUEL 3D MAQUETTE BLANCHE']
   const listStep_2 = ['RÉALISATION DES PLANS TECHNIQUES', 'PERSPECTIVE 3D COULEURS', 'CHOIX DES MATÉRIAUX', 'CHOIX DU MOBILIERS']
   const listStep_3 = ['CONSULTATION DES ENTREPRISES', 'PLANNING DES TRAVAUX', 'SUIVI DE CHANTIER', 'RÉCEPTION DES OUVRAGES']
   return (
-    <div id="main">
+    <>
+    {isLoading ? <Loader /> : <div id="main">
       <section id="home">
         <Nav />
         <div className='carousel-container'>
@@ -192,7 +197,7 @@ function Root() {
             <li className='line-2'></li>
           </ul>
           <figure id='auben-footer'>
-            <img src='https://static.wixstatic.com/media/3f174c_5a3182d5754949fa995006c87e2554ce~mv2.png/v1/fill/w_256,h_181,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/face%20carte%20AUB%C3%88N%202.png' alt='footer-logo'/>
+            <img src={mainLogo} alt='footer-logo'/>
         </figure>
         </aside>
         <div className='form-wrapper'>
@@ -202,7 +207,9 @@ function Root() {
           <Form />
         </div>
       </section>
-    </div>)
+    </div>}
+    </>
+  )
 }
 
 export default Root;

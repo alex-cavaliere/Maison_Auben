@@ -1,7 +1,7 @@
-import logo from '../assets/logo_auben.png'
+import logo from '../assets/animation_x2.gif'
 
 function Loader() {
-    return(<div className="loader">
+    return(<div className="loader" >
         <img src={logo} alt='logo-auben'/>
     </div>
     )

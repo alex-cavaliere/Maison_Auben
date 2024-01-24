@@ -1,10 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 
 function Header(props){
     const logo = props.logo
     const [isOpen, setIsOpen] = useState(false)
-
+    useEffect(() => {
+        window.onresize = () => {
+            const screenWidth = window.screen.width
+            if(screenWidth >= 800){
+                setIsOpen(false)
+            }
+        }
+    },[])
     const ToggleMenu = () => {
         setIsOpen(!isOpen)
     }

@@ -1,6 +1,6 @@
+import { NavLink } from "react-router-dom"
 
-function Footer(props){
-    const { logo } = props
+function Footer(){
     return(
     <footer>
         <div className='footer-container'>
@@ -11,7 +11,7 @@ function Footer(props){
             
             <a href="tel:+33 6 08 90 77 01">TEL : +33 6 08 90 77 01</a>
             
-            <p>MENTIONS LEGALES</p>
+            <NavLink className='mentions' to='/Maison_Auben/mentions_legales'>MENTIONS LEGALES</NavLink>
             
             <p>Suivez nos actualitées</p>
             <div>
