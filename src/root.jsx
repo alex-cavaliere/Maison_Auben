@@ -123,10 +123,10 @@ function Root() {
           <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
             {
               imgCollection.map((img, index) => {
-                return <div onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)}  className='carousel-wrapper' key={index}>
+                return <div onClick={() => onNavigate('/projets/' + img.id)}  className='carousel-wrapper' key={index}>
                     <CarouselItem pictures={img.portrait}/>
                     <div className='btn-container'>
-                      <button onClick={() => onNavigate('/Maison_Auben/projets/' + img.id)} className='carousel-btn'>DÉCOUVRIR</button>
+                      <button onClick={() => onNavigate('/projets/' + img.id)} className='carousel-btn'>DÉCOUVRIR</button>
                     </div>
                 </div>
               })

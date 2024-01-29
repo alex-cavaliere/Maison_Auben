@@ -18,10 +18,10 @@ root.render(
     <Router>
     <Header logo={mainLogo}/>
       <Routes>
-        <Route exact path='/Maison_Auben' element={<Root />}/>
-        <Route path='/Maison_Auben/projets' element={<Gallery />}/>
-        <Route path='/Maison_Auben/projets/:id' element={<ItemGallery />}/>
-        <Route path='/Maison_Auben/mentions_legales' element={<MentionsLegales />}/>
+        <Route exact path='/' element={<Root />}/>
+        <Route path='/projets' element={<Gallery />}/>
+        <Route path='/projets/:id' element={<ItemGallery />}/>
+        <Route path='/mentions_legales' element={<MentionsLegales />}/>
       </Routes>
     <Footer />
     </Router>
