@@ -11,7 +11,7 @@ function Footer(){
             
             <a href="tel:+33 6 08 90 77 01">TEL : +33 6 08 90 77 01</a>
             
-            <NavLink className='mentions' to='/Maison_Auben/mentions_legales'>MENTIONS LEGALES</NavLink>
+            <NavLink className='mentions' to='/mentions_legales'>MENTIONS LEGALES</NavLink>
             
             <p>Suivez nos actualitées</p>
             <div>
