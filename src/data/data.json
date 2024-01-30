@@ -36,6 +36,88 @@
             ]
         },
         "projets": {
+            "gallery": [
+                {
+                    "title": "Projet Vaugneray",
+                    "id": "ptc8",
+                    "portrait": "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/2106_MITTET_APD%20RDC%20POST%20-%20Image3.webp?raw=true",
+                        "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/2106_MITTET_APD%20RDC%20POST%20-%20Image3.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/IMG_4755.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/IMG_4760%202.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/IMG_4778%202.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/IMG_4793%202(1).webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PARTICULIER/PROJET%20VAUGNERAY/PHOTO-2022-11-24-14-58-40.webp"
+                    ]
+                },
+                {
+                    "title": "Orpi",
+                    "id": "prs2",
+                    "portrait": "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PROFESIONNEL/Orpi/AGENCE%20ORPY%20-%20RILLIEUX%20-%20acceuil.webp?raw=true",
+                    "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PROFESIONNEL/Orpi/AGENCE%20ORPY%20-%20RILLIEUX%20-%20acceuil.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Orpi/AGENCE%20ORPY%20-%20RILLIEUX%20-%20projet%201%20%20-%20Image1.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Orpi/AGENCE%20ORPY%20-%20RILLIEUX%20-%20projet%202%20%20-%20Image2.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Orpi/AGENCE%20ORPY%20-%20RILLIEUX%20-%20visuel%203.webp?raw=true"
+                    ]
+                },
+                {
+                    "title": "Projet Saint Didier",
+                    "id": "ptc6",
+                    "portrait":"https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DIDIER/2309_%20VAISSIERE%20_%20APD%20-%20Picture8.webp?raw=true",
+                    "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DIDIER/2309_%20VAISSIERE%20_%20APD%20-%20Picture1.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DIDIER/2309_%20VAISSIERE%20_%20APD%20-%20Picture10.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DIDIER/2309_%20VAISSIERE%20_%20APD%20-%20Picture7.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DIDIER/2309_%20VAISSIERE%20_%20APD%20-%20Picture8.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DIDIER/2309_%20VAISSIERE%20_%20APD%20-%20Picture9.webp?raw=true"
+                    ]
+                },
+                {             
+                    "title": "Projet Lyon 6",
+                    "id": "ptc2",
+                    "portrait":"https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture17%202.webp?raw=true",
+                    "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Image1.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture14.webp",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture15.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture17%202.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture9.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-suite%20parental.webp?raw=true"
+                    ]     
+                },
+                {
+                    "title": "Projet Saint Desert",
+                    "id": "ptc5",
+                    "portrait": "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DESERT/2201_%20EVVOA%20_%203D%20-%20Picture1.webp?raw=true",
+                    "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DESERT/2201_%20EVVOA%20_%203D%20-%20Picture1.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DESERT/2201_%20EVVOA%20_%203D%20-%20Picture2.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20SAINT%20DESERT/2201_%20EVVOA%20_%203D%202203%20-%20Picture8.webp?raw=true"
+                    ]
+                },
+                {
+                    "title": "L'impro Gourmande",
+                    "id": "prs1",
+                    "portrait": "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/L'impro%20Gourmande/L'IMPRO%20FOURMANDE%20-%20espace%20repas.webp?raw=true",
+                    "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/L'impro%20Gourmande/L'IMPRO%20FOURMANDE%20-%20espace%20repas.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/L'impro%20Gourmande/L'IMPRO%20FOURMANDE%20-%20espace%20repas.webp?raw=true"
+                    ]
+                },
+                {
+                    "title": "Point P - Mont d'or",
+                    "id": "prs4",
+                    "portrait": "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Point%20P%20-%20Mont%20d'or/POINT%20P%20-%20VITRINE%203.webp?raw=true",
+                    "images": [
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PROFESIONNEL/Point%20P%20-%20Mont%20d'or/POINT%20P%20-%20VITRINE.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Point%20P%20-%20Mont%20d'or/POINT%20P%20-%20VITRINE%202.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Point%20P%20-%20Mont%20d'or/POINT%20P%20-%20VITRINE%203.webp?raw=true",
+                        "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PROFESIONNEL/Point%20P%20-%20Mont%20d'or/POINT%20P%202.webp?raw=true"
+                    ]
+                }
+            ],
             "particulier": [
             {
                 "title": "Projet Belrose",
@@ -52,7 +134,7 @@
             {
                 "title": "Projet Lyon 6",
                 "id": "ptc2",
-                "portrait":                     "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-suite%20parental.webp?raw=true",
+                "portrait": "https://github.com/alex-cavaliere/Maison_Auben_Data/raw/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-suite%20parental.webp?raw=true",
                 "images": [
                     "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Image1.webp?raw=true",
                     "https://github.com/alex-cavaliere/Maison_Auben_Data/blob/main/PROJETS/PARTICULIER/PROJET%20LYON%206/2211_%20THEVENIAU%20_%20APD%20-%20Picture10.webp?raw=true",

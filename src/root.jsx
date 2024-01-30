@@ -62,14 +62,8 @@ function Root() {
     const particulier = data.projets.particulier
     const professionnel = data.projets.professionnel
     const promotion = data.projets.promotion
-    for(let category in data.projets){
-      switch(category){
-        case 'particulier' && 'professionnel' && 'promotion':
-          imgCollection = [...particulier, ...professionnel, ...promotion]
-          break;
-        default: imgCollection = [...particulier, ...professionnel, ...promotion]
-      }
-    }
+    imgCollection = data.projets.gallery 
+    console.log(imgCollection)
     localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
     const descriptions = data.articles.descriptions
     descriptions.forEach(description => {
