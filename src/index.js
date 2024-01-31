@@ -11,14 +11,13 @@ import Footer from './components/Footer';
 import ItemGallery from './components/ItemGallery';
 import MentionsLegales from './components/mentionsLegales';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
     <Header logo={mainLogo}/>
-      <Routes>
-        <Route exact path='/' element={<Root />}/>
+      <Routes basename={`/${process.env.PUBLIC_URL}`}>
+        <Route exact path='' element={<Root />}/>
         <Route path='/projets' element={<Gallery />}/>
         <Route path='/projets/:id' element={<ItemGallery />}/>
         <Route path='/mentions_legales' element={<MentionsLegales />}/>

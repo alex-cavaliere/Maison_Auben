@@ -255,6 +255,9 @@ html:active{
         animation: fadeIn 1.5s ease-in-out;
     }
 }
+.gallery-loader{
+    min-height: 800px;
+}
 header{
     position: relative;
     display: flex;

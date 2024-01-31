@@ -13,6 +13,7 @@ function ItemGallery(){
     const [data, setData] = useState()
     const [isOpen, setIsOpen] = useState(false)
     const [imgIndex, setImgIndex] = useState(0)
+    const [isLoading, setIsLoading] = useState(true)
     const projets = JSON.parse(localStorage.getItem("imgCollection") || "[]");
     const {id} = useParams()
     useEffect(() => {
@@ -30,6 +31,24 @@ function ItemGallery(){
     }
     const updateIndex = ({index: current}) => setImgIndex(current)
     //console.log(imgIndex)
+    let imagesLoadedCount = 0
+    if(data){
+        data.images.forEach((image) => {
+            const link = document.createElement('link')
+            link.rel = 'preload'
+            link.as = 'image'
+            link.href = image
+            link.onload = () => {
+                imagesLoadedCount++;
+                if (imagesLoadedCount === data.images.length) {
+                  // Tutte le immagini sono state precaricate
+                  setIsLoading(false)
+                }
+              };
+            
+            document.head.appendChild(link)
+        })
+    }
     return(
         data && (
             <div id='item-gallery'>
@@ -41,11 +60,11 @@ function ItemGallery(){
                     <h1 className='item-title'>{data.title}</h1>
                     <div className='item-container'>
                         {
-                            data.images.map((img, idx) => {
+                            !isLoading ? (data.images.map((img, idx) => {
                                 return <figure onClick={openLightBox} className={"image-" + idx} key={idx}>
                                     <img src={img} alt={data.title}/>
                                 </figure>
-                            })
+                            })) : (<div className="gallery-loader"></div>)
                         }
                     </div>
                 </section>
