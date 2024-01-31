@@ -28,7 +28,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build && copy build/index.html build/404.html",
+    "build": "react-scripts build && copy build\\index.html build\\404.html",
     "run:dev": "node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
