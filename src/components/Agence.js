@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import agenceImage from '../assets/agenceImage.webp'
 import BasicCard from '../components/Card';
 import Quote from './Quote';
 import cube1 from '../assets/cube 1.png'
@@ -58,7 +59,9 @@ function Agence(props){
                         })
                         }
                     </div>
-                    <img src='https://static.wixstatic.com/media/3f174c_c1a61b1d06c2414eaaa1c874b28cb7a0~mv2.jpg/v1/fill/w_390,h_489,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/33dfe90304eb8b9d04849e26505b4016.jpg' alt='Auben'/>
+                    <figure>
+                        <img src={agenceImage} alt='Auben'/>
+                    </figure>
                     </div>
                     <div className='steps'>
                     <h3>LES DIFFÉRENTES ÉTAPES</h3>

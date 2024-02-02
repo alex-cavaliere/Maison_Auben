@@ -30,9 +30,9 @@ function Header(props){
             </div>
             <nav className={`mobile-nav ${isOpen ? 'show' : ''}`}>
                 <ul>
-                    <NavLink to='/projets' onClick={closeMenu}><li>PROJETS</li></NavLink>
-                    <a href='/#agence' onClick={closeMenu}><li>L'AGENCE</li></a>
-                    <a href='/#contact' onClick={closeMenu}><li>CONTACT</li></a>
+                    <li><NavLink to='/projets' onClick={closeMenu}>PROJETS</NavLink></li>
+                    <li><a href='/#agence' onClick={closeMenu}>L'AGENCE</a></li>
+                    <li><a href='/#contact' onClick={closeMenu}>CONTACT</a></li>
                 </ul>
             </nav>
             <button onClick={ToggleMenu} className={`mobile-toggle ${isOpen ? 'open' : ''}`}>

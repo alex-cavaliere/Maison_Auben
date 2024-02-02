@@ -23,11 +23,6 @@ function Root() {
     }else {
       localStorage.setItem('firstLoad', true)
     }
-    useEffect(() => {
-      fetch('http://localhost:1337/api/articles')
-      .then(res => res.json())
-      .then(data => console.log(data))
-    }, [])
     const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
