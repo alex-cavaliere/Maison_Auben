@@ -81,8 +81,11 @@ function Agence(props){
                         <Quote quotes={quotes} currentIndex={currentIndex}/> 
                         <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
                         <div className='controls-container'>
-                        <span onClick={prevQuote} className={`control ${0 === currentIndex ? 'active' : ''}`}><span></span></span>
-                        <span onClick={nextQuote} className={`control ${1 === currentIndex ? 'active' : ''}`}><span></span></span>
+                            {
+                                quotes.map((quote, index) => {
+                                    return <span key={`quote-${index}`} onClick={currentIndex === 0 && currentIndex <= quotes.length ? nextQuote : prevQuote} className={`control ${index === currentIndex ? 'active' : ''}`}><span></span></span>
+                                })
+                            }
                         </div>
                     </div>
                     </div>

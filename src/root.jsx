@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import data from './data/data.json'
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Agence from './components/Agence';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
@@ -23,6 +23,11 @@ function Root() {
     }else {
       localStorage.setItem('firstLoad', true)
     }
+    useEffect(() => {
+      fetch('http://localhost:1337/api/articles')
+      .then(res => res.json())
+      .then(data => console.log(data))
+    }, [])
     const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div

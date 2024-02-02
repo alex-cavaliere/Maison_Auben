@@ -9,6 +9,9 @@ function Form(){
     }
     const form = useRef();
     const firstName = createRef()
+    const errorMessage_1 = createRef()
+    const errorMessage_2 = createRef()
+    const errorMessage_3 = createRef()
     const lastName = createRef()
     const email = createRef()
     const message = createRef()
@@ -35,19 +38,22 @@ function Form(){
         email.current.value = e.target.email.value
         message.current.value = e.target.message.value
         if((!x.textregex.test(firstName.current.value) && firstName.current.value.length >= 3) || firstName.current.value.length < 3){
-            console.log('name not valid')
+            errorMessage_1.current.className += ' show'
             firstName.current.className = 'error'
         }else{
+            errorMessage_1.current.className = 'error-message'
             firstName.current.className = ''
         }if((!x.textregex.test(lastName.current.value) && lastName.current.value.length >= 2) || lastName.current.value.length < 2){
-            console.log('surname not valid')
+            errorMessage_2.current.className += ' show'
             lastName.current.className = 'error'
         }else{
+            errorMessage_2.current.className = 'error-message'
             lastName.current.className = ''
         }if(!x.emailregex.test(email.current.value)){
-            console.log('email not valid')
+            errorMessage_3.current.className += ' show'
             email.current.className = 'error'
         }else{
+            errorMessage_3.current.className = 'error-message'
             email.current.className = ''
         }if(message.current.value.length <= 10){
             console.log('not valid')
@@ -76,14 +82,17 @@ function Form(){
             <label htmlFor='name'>
                 Prénom <br/>
                 <input ref={firstName} type='text' id="name" name='name' onChange={handleChange}></input>
+                <p ref={errorMessage_1} className="error-message">Saisissez un prénom valide</p>
             </label>
             <label htmlFor="surname">
                 Nom <br/>
                 <input ref={lastName} type='text' id="surname" name="surname" onChange={handleChange}></input>
+                <p ref={errorMessage_2} className="error-message">Saisissez un nom valide</p>
             </label>
             <label htmlFor='email'>
                 E-mail* <br/>
                 <input ref={email} type='email' id="email" name='email' onChange={handleChange}></input>
+                <p ref={errorMessage_3} className="error-message">Saisissez une email valide</p>
             </label>
             <label htmlFor='telephone'>
                 Téléphone <br/>
