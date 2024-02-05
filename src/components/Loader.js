@@ -1,4 +1,4 @@
-import logo from '../assets/animation_x2.webp'
+import logo from '../assets/animation_x2.gif'
 
 function Loader() {
     return(<div className="loader" >
