@@ -878,6 +878,7 @@ footer .footer-container .item {
   }
   .carousel-container {
     margin: 0;
+    margin-left: -1rem;
   }
   #agence .agence-article, #contact .agence-article {
     margin-top: -8rem;
