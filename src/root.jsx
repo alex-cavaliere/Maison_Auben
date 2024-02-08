@@ -54,6 +54,11 @@ function Root() {
       </div>
     );
   };
+  useEffect(() => {
+    fetch('http://localhost:1337/api/galleries?populate=*')
+    .then(res => res.json())
+    .then(data => console.log(data))
+  },[])
   let maisonParags;
   let etapesParags;
   let quotes;
