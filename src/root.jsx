@@ -1,9 +1,8 @@
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import data from './data/data.json'
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import Agence from './components/Agence';
 import Form from './components/Form';
 import formFoto from './assets/FormImage.jpg' 
@@ -13,9 +12,11 @@ import chevronLeft from './assets/chevron-left.svg'
 import chevronRight from './assets/chevron-right.svg'
 import CarouselItem from './components/Carousel';
 import mainLogo from './assets/logo_auben_white.png'
+import { DataContext } from './DataContext';
 
 function Root() {
     const onNavigate = useNavigate()
+    const prova = useContext(DataContext)
     const [isLoading, setIsLoading] = useState(true)
     const firstLoad = localStorage.getItem('firstLoad')
     if(firstLoad === null){
@@ -59,39 +60,26 @@ function Root() {
   let quotes;
   let imgCollection = []
   let carouselImgs = []
-  if(data){
-    const particulier = data.projets.particulier
-    const professionnel = data.projets.professionnel
-    const promotion = data.projets.promotion
-    for(let category in data.projets){
-      switch(category){
-        case 'particulier' && 'professionnel' && 'promotion':
-          imgCollection = [...particulier, ...professionnel, ...promotion]
-          break;
-        default: imgCollection = [...particulier, ...professionnel, ...promotion]
-      }
-    }
-    localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
-    carouselImgs = data.projets.gallery 
-    const descriptions = data.articles.descriptions
-    descriptions.forEach(description => {
-      if(description.maisonAuben){
-        maisonParags = description.maisonAuben
-      }else if(description.etapes){
-        etapesParags = description.etapes.split('.').map((text, index) => {
-          return <span key={index}>{text}.<br/></span>
-        })
-      }else if(description.quotes){
-        quotes = description.quotes
-      }
+  if(prova.articles.length !== 0){
+    maisonParags = prova.articles.data
+    etapesParags = prova.steps.data[0].attributes.content.split('.').map((text, index) => {
+      return <span key={index}>{text}.<br/></span>
     })
+    quotes = prova.quotes.data
+    carouselImgs = prova.gallery.data
+    const particulier = prova.ptc.data
+    const professionnel = prova.pfs.data
+    const promotion = prova.pmt.data
+    imgCollection = [...particulier, ...professionnel, ...promotion]
+    localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
   }
+  //console.log(prova, imgCollection)
   let imagesLoadedCount = 0
   carouselImgs.forEach((image) => {
     const link = document.createElement('link')
     link.rel = 'preload'
     link.as = 'image'
-    link.href = image.portrait
+    link.href = image.attributes.portrait.data.attributes.url
     setTimeout(() => {
       link.onload = () => {
         imagesLoadedCount++;
@@ -101,19 +89,20 @@ function Root() {
         }
       };
       document.head.appendChild(link)
-    }, 4000)
+    }, 3000)
   });
+  console.log(prova)
   return (
     <>
-    {isLoading ? <Loader /> : <div id="main">
+    {isLoading || prova.articles.length === 0 ? <Loader /> : <div id="main">
       <section id="home">
         <Nav />
         <div className='carousel-container'>
           <Carousel renderArrowPrev={renderArrowPrev} renderArrowNext={renderArrowNext} autoPlay={true} infiniteLoop={true} showThumbs={false} showStatus={false}>
             {
               carouselImgs.map((img, index) => {
-                return <div onClick={() => onNavigate('/projets/' + img.id)}  className='carousel-wrapper' key={index}>
-                    <CarouselItem pictures={img.portrait}/>
+                return <div onClick={() => onNavigate('/projets/' + img.attributes.slug)}  className='carousel-wrapper' key={index}>
+                    <CarouselItem pictures={img.attributes.portrait.data.attributes.url}/>
                     <div className='btn-container'>
                       <button onClick={() => onNavigate('/projets/' + img.id)} className='carousel-btn'>DÉCOUVRIR</button>
                     </div>

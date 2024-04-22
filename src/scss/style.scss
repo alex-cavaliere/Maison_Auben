@@ -582,8 +582,10 @@ a {
     animation: fadeIn 600ms ease-in-out;
     & .item-title{
         font-weight: 200;
+        font-size: 10px;
         text-align: end;
-        margin-right: 0.5rem;
+        margin-top: 5.1rem;
+        margin-right: 1.1rem;
     }
     & .item-container{
         display: flex; 
@@ -696,6 +698,12 @@ footer{
     #item-gallery{
         width: 95%;
         margin-top: 2rem;
+        & .item-nav{
+            margin-top: -3rem;
+        }
+        & .item-title{
+            margin-top: 1.5rem;
+        }
     }
     #gallery-container{
         width: 95%;

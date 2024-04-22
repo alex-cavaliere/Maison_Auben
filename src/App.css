@@ -574,8 +574,10 @@ a :hover {
 }
 #item-gallery .item-title {
   font-weight: 200;
+  font-size: 10px;
   text-align: end;
-  margin-right: 0.5rem;
+  margin-top: 5.1rem;
+  margin-right: 1.1rem;
 }
 #item-gallery .item-container {
   display: flex;
@@ -683,6 +685,12 @@ footer .footer-container .item {
   #item-gallery {
     width: 95%;
     margin-top: 2rem;
+  }
+  #item-gallery .item-nav {
+    margin-top: -3rem;
+  }
+  #item-gallery .item-title {
+    margin-top: 1.5rem;
   }
   #gallery-container {
     width: 95%;

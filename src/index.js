@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { DataProvider } from './DataContext';
 import Root from './root';
 import Header from './components/Header';
 import mainLogo from './assets/logo_auben_white.png'
@@ -14,16 +15,18 @@ import MentionsLegales from './components/mentionsLegales';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-    <Header logo={mainLogo}/>
-      <Routes basename={`/${process.env.PUBLIC_URL}`}>
-        <Route exact path='' element={<Root />}/>
-        <Route path='/projets' element={<Gallery />}/>
-        <Route path='/projets/:id' element={<ItemGallery />}/>
-        <Route path='/mentions_legales' element={<MentionsLegales />}/>
-      </Routes>
-    <Footer />
-    </Router>
+    <DataProvider>
+      <Router>
+      <Header logo={mainLogo}/>
+        <Routes basename={`/${process.env.PUBLIC_URL}`}>
+          <Route exact path='/' element={<Root />}/>
+          <Route path='/projets' element={<Gallery />}/>
+          <Route path='/projets/:id' element={<ItemGallery />}/>
+          <Route path='/mentions_legales' element={<MentionsLegales />}/>
+        </Routes>
+      <Footer />
+      </Router>
+    </DataProvider>
   </React.StrictMode>
 );
 

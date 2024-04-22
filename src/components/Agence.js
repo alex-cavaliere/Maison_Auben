@@ -52,9 +52,9 @@ function Agence(props){
                         maisonParags.map((parag, index) => {
                             return <div className='maison-section' key={index}> 
                             <ul className="maison-parag">
-                                <li>{parag.title}</li>
+                                <li>{parag.attributes.title}</li>
                             </ul>
-                            <p className='maison-text'>{parag.text}</p>
+                            <p className='maison-text'>{parag.attributes.content}</p>
                             </div>
                         })
                         }
