@@ -181,17 +181,15 @@ html:active {
   text-align: center;
 }
 #main #agence .agence-article .steps .quotes-container .controls-container .control {
-  padding: 0.6rem;
-}
-#main #agence .agence-article .steps .quotes-container .controls-container .control span {
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  margin: 0.6rem;
+  width: 8px;
+  height: 8px;
   border: 1px solid black;
   border-radius: 20px;
   background-color: #000000;
 }
-#main #agence .agence-article .steps .quotes-container .controls-container .control.active span {
+#main #agence .agence-article .steps .quotes-container .controls-container .control.active {
   transform: scale(1.4);
   background-color: #E0DEDA;
 }

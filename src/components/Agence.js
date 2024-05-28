@@ -11,6 +11,7 @@ import quoteRight from '../assets/quote-mirror.svg'
 function Agence(props){
     const {quotes, maisonParags, etapesParags} = props
     const [currentIndex, setCurrentIndex] = useState(0)
+    const quoteDot = document.getElementsByClassName('control')
     useEffect(() => {
         const intervalId = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % quotes.length);
@@ -22,8 +23,11 @@ function Agence(props){
     const prevQuote = () => {
         setCurrentIndex(currentIndex - 1)
     }
-    const nextQuote = () => {
-        setCurrentIndex(currentIndex + 1)
+    const selectQuote = (e) => {
+        for(let i = 0; i < quoteDot.length; i++){
+            quoteDot[i].index = i
+            setCurrentIndex(e.target.index)
+        }
     }
     if(currentIndex < 0){
         setCurrentIndex(currentIndex + 1)
@@ -85,8 +89,9 @@ function Agence(props){
                         <span className='quote-icon'><img src={quoteRight} alt='quote-img'/></span>
                         <div className='controls-container'>
                             {
+                            // sistemare questa funzione per gestire più commenti
                                 quotes.map((quote, index) => {
-                                    return <span key={`quote-${index}`} onClick={currentIndex === 0 && currentIndex <= quotes.length ? nextQuote : prevQuote} className={`control ${index === currentIndex ? 'active' : ''}`}><span></span></span>
+                                    return <span key={`quote-${index}`} onClick={(e) => selectQuote(e)} className={`control ${index === currentIndex ? 'active' : ''}`}></span>
                                 })
                             }
                         </div>

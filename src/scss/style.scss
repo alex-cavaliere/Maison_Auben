@@ -181,20 +181,16 @@ html:active{
                         width: 100%;
                         text-align: center;
                         & .control{
-                            padding: 0.6rem;
-                            & span{
-                                display: inline-block;
-                                width: 6px;
-                                height: 6px;
-                                border: 1px solid black;
-                                border-radius: 20px;
-                                background-color: #000000;
-                            }
+                            display: inline-block;
+                            margin: 0.6rem;
+                            width: 8px;
+                            height: 8px;
+                            border: 1px solid black;
+                            border-radius: 20px;
+                            background-color: #000000;
                             &.active{
-                                & span{
-                                    transform: scale(1.4);
-                                    background-color: #E0DEDA;
-                                }
+                                transform: scale(1.4);
+                                background-color: #E0DEDA;
                             }
                         }
                     }
