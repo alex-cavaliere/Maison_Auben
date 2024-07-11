@@ -21,12 +21,12 @@ function Header(props){
     return( 
         <header className="App-header">
             <div className='logo-container'>
-                <a href='/'>
+                <NavLink to='/'>
                     <figure id='auben-logo'>
                         <img src={logo} className="App-logo" alt="header-logo" />
                         <figcaption>ARCHITECTES D'INTÉRIEUR & DÉCORATEURS</figcaption>
                     </figure>
-                </a>
+                </NavLink>
             </div>
             <nav className={`mobile-nav ${isOpen ? 'show' : ''}`}>
                 <ul>

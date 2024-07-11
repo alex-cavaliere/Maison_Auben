@@ -368,6 +368,14 @@ header .logo-container a {
   position: relative;
   width: fit-content;
 }
+.nav-wrapper .gallery-nav .internal-link, .nav-wrapper .item-nav .internal-link {
+  margin-top: 2.4rem;
+}
+
+.nav-wrapper {
+  position: relative;
+  width: fit-content;
+}
 .nav-wrapper .internal-link {
   margin-top: 3.2rem;
 }

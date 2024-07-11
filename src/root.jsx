@@ -16,14 +16,7 @@ import { DataContext } from './DataContext';
 
 function Root() {
     const onNavigate = useNavigate()
-    const prova = useContext(DataContext)
-    const [isLoading, setIsLoading] = useState(true)
-    const firstLoad = localStorage.getItem('firstLoad')
-    if(firstLoad === null){
-      localStorage.setItem('firstLoad', false)
-    }else {
-      localStorage.setItem('firstLoad', true)
-    }
+    const data = useContext(DataContext)
     const renderArrowPrev = (clickHandler, hasPrev) => {
     return (
       <div
@@ -60,20 +53,20 @@ function Root() {
   let quotes;
   let imgCollection = []
   let carouselImgs = []
-  if(prova.articles.length !== 0){
-    maisonParags = prova.articles.data
-    etapesParags = prova.steps.data[0].attributes.content.split('.').map((text, index) => {
+  if(data.articles.length !== 0){
+    maisonParags = data.articles.data
+    etapesParags = data.steps.data[0].attributes.content.split('.').map((text, index) => {
       return <span key={index}>{text}.<br/></span>
     })
-    quotes = prova.quotes.data
-    carouselImgs = prova.gallery.data
-    const particulier = prova.ptc.data
-    const professionnel = prova.pfs.data
-    const promotion = prova.pmt.data
+    quotes = data.quotes.data
+    carouselImgs = data.gallery.data
+    const particulier = data.ptc.data
+    const professionnel = data.pfs.data
+    const promotion = data.pmt.data
     imgCollection = [...particulier, ...professionnel, ...promotion]
     localStorage.setItem('imgCollection', JSON.stringify(imgCollection))
   }
-  //console.log(prova, imgCollection)
+  //console.log(data, imgCollection)
   let imagesLoadedCount = 0
   carouselImgs.forEach((image) => {
     const link = document.createElement('link')
@@ -85,16 +78,14 @@ function Root() {
         imagesLoadedCount++;
         if (imagesLoadedCount === carouselImgs.length) {
           // Tutte le immagini sono state precaricate
-          setIsLoading(false)
         }
       };
-      document.head.appendChild(link)
     }, 3000)
   });
-  console.log(prova)
+  //console.log(data.isLoading)
   return (
     <>
-    {isLoading || prova.articles.length === 0 ? <Loader /> : <div id="main">
+    {data.isLoading || data.articles.length === 0 ? <Loader /> : <div id="main">
       <section id="home">
         <Nav />
         <div className='carousel-container'>

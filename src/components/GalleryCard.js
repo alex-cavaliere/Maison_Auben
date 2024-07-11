@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 function GalleryCard(props){
     const { categories } = props
     const { title } = props
-    //console.log(categories)
     return (
-        categories && <section className="gallery">
+        categories.data && <section className="gallery">
             <h5><span>•</span>{title}</h5>
             <div className="gallery-wrapper">
                 {

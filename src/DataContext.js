@@ -4,6 +4,7 @@ import { createContext, useState, useEffect } from "react";
 export const DataContext = createContext()
 
 export const DataProvider = ({children}) => {
+    const [isLoading, setIsLoading] = useState(true)
     const [articles, setArticles] = useState([])
     const [quotes, setQuotes] = useState([])
     const [steps, setSteps] = useState([])
@@ -42,9 +43,12 @@ export const DataProvider = ({children}) => {
             }
         }
         fetchData()
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 3000)
     },[])
     return(
-        <DataContext.Provider value={{articles, quotes, steps, gallery, ptc, pfs, pmt}}>
+        <DataContext.Provider value={{articles, quotes, steps, gallery, ptc, pfs, pmt, isLoading}}>
             {children}
         </DataContext.Provider>
     )
